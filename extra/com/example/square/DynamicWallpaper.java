@@ -190,3 +190,4 @@ public final class DynamicWallpaper {
     static Bitmap render(int[] p, Random r) {
         Bitmap b = Bitmap.createBitmap(W, H, Bitmap.Config.ARGB_8888);
         Canvas c = new Canvas(b);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
