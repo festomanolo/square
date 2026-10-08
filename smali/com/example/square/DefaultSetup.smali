@@ -213,3 +213,12 @@
     const/16 v6, 0x30
 
     invoke-direct {v4, v5, v1, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v5
+
