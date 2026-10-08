@@ -27,3 +27,4 @@ import android.view.View;
 import java.util.Random;
 
 /**
+ * Dynamic wallpaper: paints a fresh generated gradient scene behind the home screen
