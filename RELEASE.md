@@ -149,3 +149,4 @@ git merge upstream/main --no-edit
 ## Smart-TV / Projector Changes (landscape build)
 
 See `CLAUDE.md` for build steps and details. Deliverable: `Square-landscape.apk`.
+
