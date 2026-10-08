@@ -205,6 +205,7 @@
             android:icon="@drawable/ic_widget"
             android:name="com.example.square.MyPickWidgetActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:label="@string/icon"
             android:icon="@drawable/ic_icon"
