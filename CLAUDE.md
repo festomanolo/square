@@ -12,3 +12,4 @@ Square Home launcher (decompiled, renamed `com.example.square`) adapted to run a
 
 ## Build and install
 
+1. `apktool d -o dec Square-modified.apk` (apktool 2.10.0, use the jar from GitHub; no brew on this machine).
