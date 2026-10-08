@@ -151,3 +151,4 @@ git merge upstream/main --no-edit
 See `CLAUDE.md` for build steps and details. Deliverable: `Square-landscape.apk`.
 
 1. **Landscape only** - all activities `sensorLandscape`; runtime orientation prefs overridden to landscape.
+2. **First-run defaults from backup** - layout, series and prefs from `backup_261004` (without `hiddens`) bundled in `assets/defaults/` and imported by `DefaultSetup`.
