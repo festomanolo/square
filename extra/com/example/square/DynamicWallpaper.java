@@ -160,3 +160,4 @@ public final class DynamicWallpaper {
         o.inJustDecodeBounds = true;
         open(src, o);
         int sample = 1;
+        while (o.outWidth / (sample * 2) >= tw && o.outHeight / (sample * 2) >= th) sample *= 2;
