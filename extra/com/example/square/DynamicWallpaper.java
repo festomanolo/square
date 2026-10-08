@@ -106,3 +106,4 @@ public final class DynamicWallpaper {
                 int idx;
                 do { idx = rnd.nextInt(PALETTES.length); } while (idx == last && PALETTES.length > 1);
                 last = idx;
+                bmp = render(PALETTES[idx], rnd);
