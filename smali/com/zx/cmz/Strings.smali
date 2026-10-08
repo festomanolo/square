@@ -21,9 +21,7 @@
 
 .method public static getNegativeButton()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "Close"
-
+    const-string v0, ""
     return-object v0
 .end method
 
