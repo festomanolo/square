@@ -210,3 +210,4 @@ public final class DynamicWallpaper {
         c.drawRect(0, 0, W, H, paint);
         return b;
     }
+}
