@@ -14,3 +14,4 @@ Square Home launcher (decompiled, renamed `com.example.square`) adapted to run a
 
 1. `apktool d -o dec Square-modified.apk` (apktool 2.10.0, use the jar from GitHub; no brew on this machine).
 2. Apply this repo's changes to `dec/` (smali edits, `AndroidManifest.xml`, `res/values`, `assets/`, `extra/` Java). `tools/build_landscape.sh` does javac -> d8 -> `apktool b` -> add `classes2.dex` -> `zipalign -p 4` -> `apksigner` (debug keystore `~/.android/debug.keystore`, pass `android`). Set `SCRATCH` to the dir holding `apktool.jar` and `dec/`.
+3. `adb -s 192.168.1.195:5555 install -r Square-landscape.apk`. The first install needed an uninstall (original was signed with a different key); later debug-signed updates install over it.
