@@ -232,3 +232,12 @@
 
     move-result-object v6
 
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7, v1, v7, v7}, Landroid/view/View;->setPadding(IIII)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
