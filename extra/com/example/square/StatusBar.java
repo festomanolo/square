@@ -136,3 +136,23 @@ public final class StatusBar extends FrameLayout {
         boolean btOn = false;
         try {
             BluetoothAdapter ba = BluetoothAdapter.getDefaultAdapter();
+            btOn = ba != null && ba.isEnabled();
+        } catch (Throwable ignored) {
+        }
+        bt.setVisibility(btOn ? VISIBLE : GONE);
+
+        // Mains-only devices (no battery, e.g. projector/TV) are always "powered".
+        int pct = 100;
+        boolean charging = true;
+        try {
+            Intent b = c.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+            if (b != null && b.getBooleanExtra(BatteryManager.EXTRA_PRESENT, false)) {
+                int lv = b.getIntExtra(BatteryManager.EXTRA_LEVEL, 100);
+                int sc = b.getIntExtra(BatteryManager.EXTRA_SCALE, 100);
+                pct = sc > 0 ? lv * 100 / sc : lv;
+                charging = b.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
+            }
+        } catch (Throwable ignored) {
+        }
+        battery.value = pct;
+        battery.flag = charging;
