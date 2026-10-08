@@ -35,3 +35,4 @@ public final class DynamicWallpaper {
     static final String PREF = "dynamicWallpaper";
     static final long INTERVAL_MS = 60_000L;
     private static final int W = 640, H = 360;
+
