@@ -9,17 +9,13 @@
 
 .method public static getIconName()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "avatar.png"
-
+    const-string v0, ""
     return-object v0
 .end method
 
 .method public static getMessage()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "Endless Modded Apps & Games, All in One Place. Get LITEAPKs App Store Now"
-
+    const-string v0, ""
     return-object v0
 .end method
 
