@@ -54,3 +54,4 @@ public final class DynamicWallpaper {
     private Drawable original;
     private Drawable current;
     private int last = -1;
+    private boolean running;
