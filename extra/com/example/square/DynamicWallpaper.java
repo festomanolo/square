@@ -32,3 +32,4 @@ import java.util.Random;
  * "dynamicWallpaper" preference (on by default).
  */
 public final class DynamicWallpaper {
+    static final String PREF = "dynamicWallpaper";
