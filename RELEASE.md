@@ -153,3 +153,4 @@ See `CLAUDE.md` for build steps and details. Deliverable: `Square-landscape.apk`
 1. **Landscape only** - all activities `sensorLandscape`; runtime orientation prefs overridden to landscape.
 2. **First-run defaults from backup** - layout, series and prefs from `backup_261004` (without `hiddens`) bundled in `assets/defaults/` and imported by `DefaultSetup`.
 3. **iOS-style status bar** - time/date plus Ethernet, Bluetooth, 3-level Wi-Fi and power/charging icons (`extra/.../StatusBar.java`).
+4. **Dynamic wallpaper** - new switch in Wallpaper settings, on by default, changes every 1 minute using images from the `wallpaper` folder (external files dir or bundled `wallpaper/`), generated gradients as fallback.
