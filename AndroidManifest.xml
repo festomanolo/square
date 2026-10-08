@@ -103,6 +103,7 @@
             android:name="android.max_aspect"
             android:value="2.1"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar.Wallpaper"
             android:name="com.example.square.MainActivity"
             android:exported="true"
