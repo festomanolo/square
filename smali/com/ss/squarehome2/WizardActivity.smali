@@ -334,6 +334,8 @@
 
     move-result p1
 
+    const/4 p1, 0x6
+
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_24
