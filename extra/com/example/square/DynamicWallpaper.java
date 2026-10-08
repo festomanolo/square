@@ -103,3 +103,4 @@ public final class DynamicWallpaper {
             if (!"2".equals(sp.getString("wallpaper", null))) sp.edit().putString("wallpaper", "2").apply();
             Bitmap bmp = pickFolderImage();
             if (bmp == null) {
+                int idx;
