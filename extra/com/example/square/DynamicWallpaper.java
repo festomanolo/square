@@ -134,3 +134,4 @@ public final class DynamicWallpaper {
     private Bitmap pickFolderImage() {
         try {
             List<String> names = new ArrayList<>();   // "f:<path>" or "a:<asset>"
+            File dir = activity.getExternalFilesDir("wallpaper");
