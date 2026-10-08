@@ -164,3 +164,4 @@ public final class DynamicWallpaper {
         o = new BitmapFactory.Options();
         o.inSampleSize = sample;
         Bitmap in = open(src, o);
+        if (in == null) return null;
