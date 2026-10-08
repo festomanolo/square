@@ -132,3 +132,4 @@ public final class DynamicWallpaper {
      * Returns null when there are none, so the caller falls back to generated art.
      */
     private Bitmap pickFolderImage() {
+        try {
