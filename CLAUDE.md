@@ -21,3 +21,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 
 ## Changes made (all verified on the projector)
 
+1. **Landscape lock**: `android:screenOrientation="sensorLandscape"` on all 23 activities, and every `setRequestedOrientation(Lib2.g(...))` call in `MainActivity` and `WizardActivity` forces `0x6` (orientation is chosen at runtime from prefs, so the manifest alone is not enough).
