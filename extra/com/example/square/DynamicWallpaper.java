@@ -124,3 +124,4 @@ public final class DynamicWallpaper {
         m.invoke(queue, wp, -1, Boolean.TRUE);
     }
 
+    private String lastImage;
