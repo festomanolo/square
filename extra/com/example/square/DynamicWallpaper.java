@@ -202,3 +202,4 @@ public final class DynamicWallpaper {
                     new int[]{Color.argb(170, Color.red(col), Color.green(col), Color.blue(col)),
                               Color.argb(0, Color.red(col), Color.green(col), Color.blue(col))},
                     null, Shader.TileMode.CLAMP));
+            c.drawRect(0, 0, W, H, paint);
