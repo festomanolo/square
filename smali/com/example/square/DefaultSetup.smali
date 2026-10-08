@@ -148,3 +148,12 @@
 
     return-void
 .end method
+
+# iOS-style status bar overlay: time on the left, date on the right.
+.method public static b(Landroid/app/Activity;)V
+    .registers 9
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
