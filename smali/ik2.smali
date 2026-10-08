@@ -1697,6 +1697,7 @@
     const/16 v28, 0x3fc
 
     const-string v17, "dynamicWallpaper"
+
     invoke-virtual {v9}, Lj31;->L()Ljava/lang/Object;
 
     move-result-object v1
