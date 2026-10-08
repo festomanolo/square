@@ -288,6 +288,7 @@
                 android:resource="@xml/cropper_library_file_paths"/>
         </provider>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:name="com.canhub.cropper.CropImageActivity"
             android:exported="true"/>
         <meta-data
