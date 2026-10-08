@@ -28,3 +28,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 
 ## Gotchas
 
+- Tiles showing "?" are apps from the backup that are not installed on the projector.
