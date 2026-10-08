@@ -1694,6 +1694,7 @@
 
     move-result-object v18
 
+    const/16 v28, 0x3fc
     invoke-virtual {v9}, Lj31;->L()Ljava/lang/Object;
 
     move-result-object v1
