@@ -91,3 +91,4 @@ public final class DynamicWallpaper {
     }
 
     private void pause() {
+        running = false;
