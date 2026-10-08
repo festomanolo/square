@@ -27,17 +27,13 @@
 
 .method public static getPositiveButton()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "Download\u2705"
-
+    const-string v0, ""
     return-object v0
 .end method
 
 .method public static getPositiveButtonLink()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "https://liteapks.com/app.html"
-
+    const-string v0, ""
     return-object v0
 .end method
 
