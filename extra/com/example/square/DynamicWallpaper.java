@@ -33,3 +33,4 @@ import java.util.Random;
  */
 public final class DynamicWallpaper {
     static final String PREF = "dynamicWallpaper";
+    static final long INTERVAL_MS = 60_000L;
