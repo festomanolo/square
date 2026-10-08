@@ -31,3 +31,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 - Tiles showing "?" are apps from the backup that are not installed on the projector.
 - `com.ss.squarehome2` (original app) and `com.ww.launcher` are also installed on the device. Check `dumpsys activity top` to see which one is actually in front before judging a screenshot.
 - Settings UI is Jetpack Compose in obfuscated smali. Add a simple switch by cloning the `scrollWallpaper` `Lxw0;->d(...)` block.
+- Do not commit without being asked.
