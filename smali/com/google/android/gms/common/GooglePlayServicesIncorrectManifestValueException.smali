@@ -1,0 +1,3 @@
+###### Class com.google.android.gms.common.GooglePlayServicesIncorrectManifestValueException (com.google.android.gms.common.GooglePlayServicesIncorrectManifestValueException)
+.class public final Lcom/google/android/gms/common/GooglePlayServicesIncorrectManifestValueException;
+.super Lcom/google/android/gms/common/GooglePlayServicesManifestException;
