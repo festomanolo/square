@@ -213,3 +213,30 @@
         <activity
             android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
+            android:name="com.example.square.CropImageActivity"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:name="com.example.square.ApplyThemeActivity"
+            android:exported="true"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="com.example.square.ACTION_APPLY_ICONPACK"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:name="com.example.square.ConfirmPinActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.square.ConfirmPinActivity"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.content.pm.action.CONFIRM_PIN_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.example.square.DummyActivity"
+            android:excludeFromRecents="true"/>
