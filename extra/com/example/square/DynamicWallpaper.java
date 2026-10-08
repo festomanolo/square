@@ -99,3 +99,4 @@ public final class DynamicWallpaper {
         try {
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
             if (!sp.getBoolean(PREF, true)) return;
+            // The app only paints its own wallpaper layer in "App wallpaper" mode (2).
