@@ -159,3 +159,4 @@ public final class DynamicWallpaper {
         BitmapFactory.Options o = new BitmapFactory.Options();
         o.inJustDecodeBounds = true;
         open(src, o);
+        int sample = 1;
