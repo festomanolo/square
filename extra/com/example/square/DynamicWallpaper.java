@@ -28,3 +28,4 @@ import java.util.Random;
 
 /**
  * Dynamic wallpaper: paints a fresh generated gradient scene behind the home screen
+ * and cross-fades to a new one every {@link #INTERVAL_MS}. Toggled by the
