@@ -123,6 +123,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/home_options"
             android:icon="@mipmap/ic_prefs"
