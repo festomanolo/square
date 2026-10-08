@@ -128,3 +128,4 @@ public final class DynamicWallpaper {
 
     /**
      * Picks the next image from the "wallpaper" folder: first the app's external files dir
+     * (adb push into .../files/wallpaper), then the images bundled in assets/wallpaper.
