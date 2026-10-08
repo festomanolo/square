@@ -94,3 +94,4 @@ public final class DynamicWallpaper {
         running = false;
         handler.removeCallbacks(tick);
     }
+
