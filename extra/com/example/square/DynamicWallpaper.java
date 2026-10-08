@@ -192,3 +192,4 @@ public final class DynamicWallpaper {
         Canvas c = new Canvas(b);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setShader(new LinearGradient(0, 0, W * 0.3f, H, p[0], p[1], Shader.TileMode.CLAMP));
+        c.drawRect(0, 0, W, H, paint);
