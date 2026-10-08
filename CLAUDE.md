@@ -17,3 +17,4 @@ Square Home launcher (decompiled, renamed `com.example.square`) adapted to run a
 3. `adb -s 192.168.1.195:5555 install -r Square-landscape.apk`. The first install needed an uninstall (original was signed with a different key); later debug-signed updates install over it.
 4. Launch: `am start -n com.example.square/com.example.square.MainActivity`. Screenshot: `adb exec-out screencap -p`.
 
+apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts attributes on one line in the manifest. Regexes must allow for that. The harmless `./unknown/DebugProbesKt.bin` error when building from the repo root can be ignored.
