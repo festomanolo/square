@@ -176,3 +176,4 @@ public final class DynamicWallpaper {
         Paint dim = new Paint();
         dim.setColor(Color.argb(80, 0, 0, 0));   // keep white tile labels readable
         c.drawRect(0, 0, tw, th, dim);
+        in.recycle();
