@@ -154,3 +154,4 @@ public final class DynamicWallpaper {
         return n.endsWith(".jpg") || n.endsWith(".jpeg") || n.endsWith(".png") || n.endsWith(".webp") || n.endsWith(".bmp");
     }
 
+    private Bitmap decode(String src) throws Exception {
