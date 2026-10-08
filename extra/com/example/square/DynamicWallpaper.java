@@ -84,3 +84,4 @@ public final class DynamicWallpaper {
         if (!sp.contains(PREF)) sp.edit().putBoolean(PREF, true).apply();
     }
 
+    private void resume() {
