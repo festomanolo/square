@@ -148,3 +148,134 @@
 
     return-void
 .end method
+
+# iOS-style status bar overlay: time on the left, date on the right.
+.method public static b(Landroid/app/Activity;)V
+    .registers 9
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v1, 0x41e00000    # 28.0f
+
+    mul-float/2addr v1, v0
+
+    float-to-int v1, v1
+
+    const/high16 v2, 0x41c00000    # 24.0f
+
+    mul-float/2addr v2, v0
+
+    float-to-int v2, v2
+
+    new-instance v3, Landroid/widget/FrameLayout;
+
+    invoke-direct {v3, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    const v4, 0x73000000
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
+
+    const-string v4, "h:mm"
+
+    const-string v5, "H:mm"
+
+    const v6, 0x800013
+
+    invoke-static {p0, v4, v5, v6, v2}, Lcom/example/square/DefaultSetup;->c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;II)Landroid/view/View;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    const-string v4, "EEE, MMM d"
+
+    const v6, 0x800015
+
+    invoke-static {p0, v4, v4, v6, v2}, Lcom/example/square/DefaultSetup;->c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;II)Landroid/view/View;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    new-instance v4, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v5, -0x1
+
+    const/16 v6, 0x30
+
+    invoke-direct {v4, v5, v1, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/view/ViewGroup;
+
+    invoke-virtual {v5, v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    const v6, 0x1020002
+
+    invoke-virtual {p0, v6}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7, v1, v7, v7}, Landroid/view/View;->setPadding(IIII)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
+.method private static c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;II)Landroid/view/View;
+    .registers 9
+
+    new-instance v0, Landroid/widget/TextClock;
+
+    invoke-direct {v0, p0}, Landroid/widget/TextClock;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextClock;->setFormat12Hour(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0, p2}, Landroid/widget/TextClock;->setFormat24Hour(Ljava/lang/CharSequence;)V
+
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const/high16 v1, 0x41600000    # 14.0f
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
+
+    sget-object v1, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v2, -0x2
+
+    invoke-direct {v1, v2, v2, p3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p4, v2, p4, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    return-object v0
+.end method
