@@ -1700,6 +1700,7 @@
 
     const/16 v21, 0x0
 
+    const/16 v22, 0x0
     invoke-virtual {v9}, Lj31;->L()Ljava/lang/Object;
 
     move-result-object v1
