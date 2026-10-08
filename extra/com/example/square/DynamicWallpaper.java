@@ -118,3 +118,4 @@ public final class DynamicWallpaper {
         java.lang.reflect.Field f = activity.getClass().getDeclaredField("v0");
         f.setAccessible(true);
         Object queue = f.get(activity);
+        Class<?> task = Class.forName("c13");
