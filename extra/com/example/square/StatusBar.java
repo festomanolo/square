@@ -1,0 +1,258 @@
+package com.example.square;
+
+import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.os.BatteryManager;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextClock;
+import android.widget.TextView;
+
+/** iOS-style status bar overlay: time/date left; ethernet, Bluetooth, 3-level Wi-Fi and power icons right. */
+public final class StatusBar extends FrameLayout {
+    private static final int WIFI = 0, BT = 1, BATTERY = 2, ETHERNET = 3;
+
+    private final Handler handler = new Handler(Looper.getMainLooper());
+    private final Icon wifi, bt, battery, ethernet;
+    private final Runnable tick = new Runnable() {
+        @Override public void run() {
+            refresh();
+            handler.postDelayed(this, 2000);
+        }
+    };
+
+    public static void install(Activity a) {
+        try {
+            float d = a.getResources().getDisplayMetrics().density;
+            int h = (int) (46 * d);
+            ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
+            StatusBar bar = new StatusBar(a, d);
+            decor.addView(bar, new FrameLayout.LayoutParams(-1, h, Gravity.TOP));
+            a.findViewById(android.R.id.content).setPadding(0, h, 0, 0);
+        } catch (Throwable ignored) {
+        }
+    }
+
+    private StatusBar(Context c, float d) {
+        super(c);
+        setBackgroundColor(0xB0000000);
+        int pad = (int) (28 * d);
+
+        LinearLayout left = new LinearLayout(c);
+        left.setOrientation(LinearLayout.HORIZONTAL);
+        left.setGravity(Gravity.CENTER_VERTICAL);
+        left.addView(clock(c, "h:mm", "H:mm", 24, 1f));
+        TextView gap = new TextView(c);
+        gap.setWidth((int) (16 * d));
+        left.addView(gap);
+        left.addView(clock(c, "EEE, MMM d", "EEE, MMM d", 17, 0.7f));
+        LayoutParams lp = new LayoutParams(-2, -1, Gravity.START | Gravity.CENTER_VERTICAL);
+        lp.leftMargin = pad;
+        addView(left, lp);
+
+        LinearLayout right = new LinearLayout(c);
+        right.setOrientation(LinearLayout.HORIZONTAL);
+        right.setGravity(Gravity.CENTER_VERTICAL);
+        ethernet = new Icon(c, ETHERNET);
+        bt = new Icon(c, BT);
+        wifi = new Icon(c, WIFI);
+        battery = new Icon(c, BATTERY);
+        Icon[] icons = {ethernet, bt, wifi, battery};
+        for (Icon i : icons) {
+            LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(
+                    (int) ((i.type == BATTERY ? 40 : 30) * d), (int) (30 * d));
+            ip.leftMargin = (int) (14 * d);
+            right.addView(i, ip);
+        }
+        LayoutParams rp = new LayoutParams(-2, -1, Gravity.END | Gravity.CENTER_VERTICAL);
+        rp.rightMargin = pad;
+        addView(right, rp);
+    }
+
+    private static TextClock clock(Context c, String f12, String f24, int sp, float alpha) {
+        TextClock t = new TextClock(c);
+        t.setFormat12Hour(f12);
+        t.setFormat24Hour(f24);
+        t.setTextColor(0xFFFFFFFF);
+        t.setAlpha(alpha);
+        t.setTextSize(sp);
+        t.setTypeface(Typeface.DEFAULT_BOLD);
+        return t;
+    }
+
+    @Override protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        handler.post(tick);
+    }
+
+    @Override protected void onDetachedFromWindow() {
+        handler.removeCallbacks(tick);
+        super.onDetachedFromWindow();
+    }
+
+    private void refresh() {
+        Context c = getContext();
+        boolean wifiOn = false, eth = false;
+        int level = 3;
+        try {
+            ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+            Network n = cm.getActiveNetwork();
+            NetworkCapabilities nc = n == null ? null : cm.getNetworkCapabilities(n);
+            if (nc != null) {
+                wifiOn = nc.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
+                eth = nc.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET);
+            }
+            if (wifiOn) {
+                WifiManager wm = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                WifiInfo wi = wm.getConnectionInfo();
+                if (wi != null && wi.getRssi() > -127) {
+                    level = WifiManager.calculateSignalLevel(wi.getRssi(), 4) ; // 0..3
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+        wifi.setVisibility(wifiOn ? VISIBLE : GONE);
+        wifi.value = Math.max(0, Math.min(3, level));
+        ethernet.setVisibility(eth ? VISIBLE : GONE);
+
+        boolean btOn = false;
+        try {
+            BluetoothAdapter ba = BluetoothAdapter.getDefaultAdapter();
+            btOn = ba != null && ba.isEnabled();
+        } catch (Throwable ignored) {
+        }
+        bt.setVisibility(btOn ? VISIBLE : GONE);
+
+        // Mains-only devices (no battery, e.g. projector/TV) are always "powered".
+        int pct = 100;
+        boolean charging = true;
+        try {
+            Intent b = c.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+            if (b != null && b.getBooleanExtra(BatteryManager.EXTRA_PRESENT, false)) {
+                int lv = b.getIntExtra(BatteryManager.EXTRA_LEVEL, 100);
+                int sc = b.getIntExtra(BatteryManager.EXTRA_SCALE, 100);
+                pct = sc > 0 ? lv * 100 / sc : lv;
+                charging = b.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
+            }
+        } catch (Throwable ignored) {
+        }
+        battery.value = pct;
+        battery.flag = charging;
+        for (Icon i : new Icon[]{wifi, bt, battery, ethernet}) i.invalidate();
+    }
+
+    private static final class Icon extends View {
+        final int type;
+        int value = 3;
+        boolean flag;
+        final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        final Path path = new Path();
+
+        Icon(Context c, int type) {
+            super(c);
+            this.type = type;
+        }
+
+        @Override protected void onDraw(Canvas cv) {
+            float w = getWidth(), h = getHeight();
+            p.setColor(0xFFFFFFFF);
+            switch (type) {
+                case WIFI: drawWifi(cv, w, h); break;
+                case BT: drawBt(cv, w, h); break;
+                case BATTERY: drawBattery(cv, w, h); break;
+                default: drawEthernet(cv, w, h); break;
+            }
+        }
+
+        private void drawWifi(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h * 0.88f, u = h / 100f;
+            p.setStyle(Paint.Style.FILL);
+            p.setAlpha(255);
+            cv.drawCircle(cx, cy - 4 * u, 6 * u, p);
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(8 * u);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            float[] radii = {26 * u, 46 * u, 66 * u};
+            for (int i = 0; i < 3; i++) {
+                p.setAlpha(value > i ? 255 : 80);
+                RectF r = new RectF(cx - radii[i], cy - 4 * u - radii[i], cx + radii[i], cy - 4 * u + radii[i]);
+                cv.drawArc(r, 225, 90, false, p);
+            }
+            p.setAlpha(255);
+        }
+
+        private void drawBt(Canvas cv, float w, float h) {
+            float x0 = w / 2 - h * 0.25f, y0 = h * 0.05f, s = h * 0.9f, k = s * 0.5f;
+            path.reset();
+            path.moveTo(x0 + 0.05f * k, y0 + 0.30f * s);
+            path.lineTo(x0 + 0.95f * k, y0 + 0.70f * s);
+            path.lineTo(x0 + 0.50f * k, y0 + 1.00f * s);
+            path.lineTo(x0 + 0.50f * k, y0);
+            path.lineTo(x0 + 0.95f * k, y0 + 0.30f * s);
+            path.lineTo(x0 + 0.05f * k, y0 + 0.70f * s);
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.09f);
+            p.setStrokeJoin(Paint.Join.ROUND);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            cv.drawPath(path, p);
+        }
+
+        private void drawBattery(Canvas cv, float w, float h) {
+            float bw = w * 0.88f, bh = h * 0.56f, top = (h - bh) / 2;
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.06f);
+            p.setAlpha(150);
+            cv.drawRoundRect(new RectF(1, top, bw, top + bh), bh * 0.28f, bh * 0.28f, p);
+            p.setStyle(Paint.Style.FILL);
+            cv.drawRoundRect(new RectF(bw + 2, h * 0.42f, w - 1, h * 0.58f), 3, 3, p);
+            p.setColor(flag ? 0xFF30D158 : (value <= 20 ? 0xFFFF453A : 0xFFFFFFFF));
+            p.setAlpha(255);
+            float inset = h * 0.07f, fw = (bw - 2 * inset) * Math.max(0.05f, value / 100f);
+            cv.drawRoundRect(new RectF(1 + inset, top + inset, 1 + inset + fw, top + bh - inset),
+                    bh * 0.18f, bh * 0.18f, p);
+            if (flag) {
+                float cx = bw / 2, u = bh / 10f;
+                p.setColor(0xFF000000);
+                path.reset();
+                path.moveTo(cx + 1 * u, top + 0.5f * u);
+                path.lineTo(cx - 2.6f * u, top + 5.4f * u);
+                path.lineTo(cx - 0.2f * u, top + 5.4f * u);
+                path.lineTo(cx - 1 * u, top + 9.5f * u);
+                path.lineTo(cx + 2.6f * u, top + 4.4f * u);
+                path.lineTo(cx + 0.2f * u, top + 4.4f * u);
+                path.close();
+                cv.drawPath(path, p);
+            }
+        }
+
+        private void drawEthernet(Canvas cv, float w, float h) {
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.08f);
+            RectF r = new RectF(w * 0.12f, h * 0.2f, w * 0.88f, h * 0.7f);
+            cv.drawRoundRect(r, 3, 3, p);
+            for (int i = 1; i <= 3; i++) {
+                float x = w * 0.12f + (w * 0.76f) * i / 4f;
+                cv.drawLine(x, h * 0.42f, x, h * 0.7f, p);
+            }
+            cv.drawLine(w * 0.5f, h * 0.7f, w * 0.5f, h * 0.88f, p);
+        }
+    }
+}

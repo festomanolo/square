@@ -10435,6 +10435,8 @@
 
     invoke-virtual {v1, v0}, Lyf;->setContentView(I)V
 
+    invoke-static/range {v1 .. v1}, Lcom/example/square/StatusBar;->install(Landroid/app/Activity;)V
+
     const/16 v0, 0x1a
 
     if-eq v10, v0, :cond_4ef
