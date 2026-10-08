@@ -179,3 +179,4 @@ public final class DynamicWallpaper {
         in.recycle();
         return out;
     }
+
