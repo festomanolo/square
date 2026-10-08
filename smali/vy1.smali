@@ -37,31 +37,9 @@
 
     packed-switch v0, :pswitch_data_3e
 
-    :try_start_9
-    iget-object v0, p0, Laz1;->l0:Lcom/example/square/key/IKeyService;
-
-    iget-object v2, p0, Laz1;->p:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Lcom/example/square/key/IKeyService;->getStatusFor(Ljava/lang/String;)I
-
-    move-result v0
-
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_19
-
-    const/4 v1, 0x1
-
-    :cond_19
+        # REMOVED: license key check — always unlocked (i0 always false)
+    const/4 v1, 0x0
     iput-boolean v1, p0, Laz1;->i0:Z
-    :try_end_1b
-    .catch Landroid/os/RemoteException; {:try_start_9 .. :try_end_1b} :catch_1b
-
-    :catch_1b
     return-void
 
     :pswitch_1c
@@ -130,11 +108,10 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    # REMOVED: key-not-installed toast — always skipped
+    # invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    # move-result-object p0
+    # invoke-virtual {p0}, Landroid/widget/Toast;->show()V
 
     :cond_18
     return-void

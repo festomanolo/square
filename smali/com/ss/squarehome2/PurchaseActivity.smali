@@ -48,7 +48,7 @@
 
     iput-object v0, p0, Lcom/example/square/PurchaseActivity;->J:Lzd2;
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-static {v0}, Lcy0;->T(Ljava/lang/Object;)Lzd2;
 

@@ -845,37 +845,7 @@
         }
     .end annotation
 
-    const-string v0, "MyPreferences"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "show_dialog"
-
-    const/4 v2, 0x1
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    new-instance v0, Lcom/zx/LB;
-
-    invoke-direct {v0}, Lcom/zx/LB;-><init>()V
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object v1
-
-    const-string v2, "custom_dialog"
-
-    invoke-virtual {v0, v1, v2}, Lcom/zx/LB;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
-
-    :cond_1e
+    # REMOVED: LITEAPKS ad dialog — no-op
     return-void
 .end method
 

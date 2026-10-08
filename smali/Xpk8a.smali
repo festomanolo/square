@@ -26,41 +26,8 @@
 .end method
 
 .method public static StartGame(Landroid/content/Context;)V
-    .registers 3
-
-    sget-boolean v0, LXpk8a;->isToastShown:Z
-
-    if-nez v0, :cond_18
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v1, LXpk8a$1;
-
-    invoke-direct {v1, p0}, LXpk8a$1;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    const/4 v0, 0x1
-
-    sput-boolean v0, LXpk8a;->isToastShown:Z
-
-    :cond_18
-    new-instance v0, Ljava/lang/Thread;
-
-    new-instance v1, LXpk8a$2;
-
-    invoke-direct {v1, p0}, LXpk8a$2;-><init>(Landroid/content/Context;)V
-
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
-
+    .registers 1
+    # REMOVED: 9mod.com update check
     return-void
 .end method
 
