@@ -187,3 +187,4 @@ public final class DynamicWallpaper {
         }
     }
 
+    static Bitmap render(int[] p, Random r) {
