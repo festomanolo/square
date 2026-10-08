@@ -79,3 +79,4 @@ public final class DynamicWallpaper {
     private DynamicWallpaper(Activity a) {
         activity = a;
         original = a.getWindow().getDecorView().getBackground();
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(a);
