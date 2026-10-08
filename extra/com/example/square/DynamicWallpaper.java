@@ -110,3 +110,4 @@ public final class DynamicWallpaper {
             }
             show(bmp);
         } catch (Throwable ignored) {
+        }
