@@ -121,3 +121,4 @@ public final class DynamicWallpaper {
         Class<?> task = Class.forName("c13");
         Object wp = Class.forName("ur").getConstructor(Bitmap.class).newInstance(bmp);
         java.lang.reflect.Method m = queue.getClass().getMethod("a", task, int.class, boolean.class);
+        m.invoke(queue, wp, -1, Boolean.TRUE);
