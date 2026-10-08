@@ -185,3 +185,12 @@
     invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
 
     const-string v4, "h:mm"
+
+    const-string v5, "H:mm"
+
+    const v6, 0x800013
+
+    invoke-static {p0, v4, v5, v6, v2}, Lcom/example/square/DefaultSetup;->c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;II)Landroid/view/View;
+
+    move-result-object v4
+
