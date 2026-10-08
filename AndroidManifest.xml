@@ -368,6 +368,7 @@
             android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
             android:exported="false"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/Theme.PlayCore.Transparent"
             android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
             android:exported="false"
