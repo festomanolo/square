@@ -38,3 +38,4 @@ public final class DynamicWallpaper {
 
     // {base top, base bottom, blob1, blob2, blob3}
     private static final int[][] PALETTES = {
+        {0xFF050B1F, 0xFF0B3D5C, 0xFF00B3FF, 0xFF7B61FF, 0xFF00E0C6},
