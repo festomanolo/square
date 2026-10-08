@@ -47,3 +47,4 @@ public final class DynamicWallpaper {
         {0xFF14041F, 0xFF3A0F55, 0xFFE040FB, 0xFF536DFE, 0xFFFF80AB},
         {0xFF06121C, 0xFF17394F, 0xFF64B5F6, 0xFF26C6DA, 0xFFF48FB1},
     };
+
