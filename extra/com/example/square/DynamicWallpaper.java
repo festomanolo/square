@@ -209,3 +209,4 @@ public final class DynamicWallpaper {
         paint.setColor(Color.argb(70, 0, 0, 0));
         c.drawRect(0, 0, W, H, paint);
         return b;
+    }
