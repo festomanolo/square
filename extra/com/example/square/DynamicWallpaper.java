@@ -66,3 +66,4 @@ public final class DynamicWallpaper {
     public static void start(final Activity a) {
         try {
             final DynamicWallpaper w = new DynamicWallpaper(a);
+            final View decor = a.getWindow().getDecorView();
