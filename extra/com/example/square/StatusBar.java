@@ -117,3 +117,22 @@ public final class StatusBar extends FrameLayout {
             Network n = cm.getActiveNetwork();
             NetworkCapabilities nc = n == null ? null : cm.getNetworkCapabilities(n);
             if (nc != null) {
+                wifiOn = nc.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
+                eth = nc.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET);
+            }
+            if (wifiOn) {
+                WifiManager wm = (WifiManager) c.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                WifiInfo wi = wm.getConnectionInfo();
+                if (wi != null && wi.getRssi() > -127) {
+                    level = WifiManager.calculateSignalLevel(wi.getRssi(), 4) ; // 0..3
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+        wifi.setVisibility(wifiOn ? VISIBLE : GONE);
+        wifi.value = Math.max(0, Math.min(3, level));
+        ethernet.setVisibility(eth ? VISIBLE : GONE);
+
+        boolean btOn = false;
+        try {
+            BluetoothAdapter ba = BluetoothAdapter.getDefaultAdapter();
