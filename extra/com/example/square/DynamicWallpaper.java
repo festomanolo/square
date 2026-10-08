@@ -175,3 +175,4 @@ public final class DynamicWallpaper {
         c.drawBitmap(in, from, new Rect(0, 0, tw, th), new Paint(Paint.FILTER_BITMAP_FLAG));
         Paint dim = new Paint();
         dim.setColor(Color.argb(80, 0, 0, 0));   // keep white tile labels readable
+        c.drawRect(0, 0, tw, th, dim);
