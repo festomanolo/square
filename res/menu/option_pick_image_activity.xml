@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_action_folder_open"
+        android:id="@+id/menuImport"
+        android:title="@string/import_folder"
+        app:showAsAction="withText|always"/>
+    <item
+        android:icon="@drawable/ic_action_sort"
+        android:id="@+id/menuSort"
+        android:title="@string/sort_by"
+        app:showAsAction="withText|always">
+        <menu>
+            <item
+                android:id="@+id/menuSortByName"
+                android:title="@string/sort_by_filename"/>
+            <item
+                android:id="@+id/menuSortByRecentlyAdded"
+                android:title="@string/sort_by_recently_added"/>
+            <item
+                android:id="@+id/menuSortByFileSize"
+                android:title="@string/sort_by_file_size"/>
+        </menu>
+    </item>
+</menu>
