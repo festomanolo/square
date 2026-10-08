@@ -108,3 +108,4 @@ public final class DynamicWallpaper {
                 last = idx;
                 bmp = render(PALETTES[idx], rnd);
             }
+            show(bmp);
