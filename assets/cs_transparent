@@ -1,0 +1,36 @@
+{
+bg: [
+    "#c02196F3",
+    "#c0FF9800",
+    "#c0009688",
+    "#c0F44336",
+    "#c0FBC02D",
+    "#c03F51B5",
+    "#c0E91E63",
+    "#c04CAF50",
+    "#c0673AB7",
+    "#c0424242",
+    "#c09E9E9E",
+    "#c0F5F5F5",
+    "#c0000000",
+    "#60000000",
+    "#00000000"
+],
+fg: [
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#030303",
+    "#030303",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF"
+]
+}
