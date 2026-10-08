@@ -241,3 +241,12 @@
     :catch_0
     return-void
 .end method
+
+.method private static c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;II)Landroid/view/View;
+    .registers 9
+
+    new-instance v0, Landroid/widget/TextClock;
+
+    invoke-direct {v0, p0}, Landroid/widget/TextClock;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextClock;->setFormat12Hour(Ljava/lang/CharSequence;)V
