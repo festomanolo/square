@@ -123,3 +123,4 @@ public final class DynamicWallpaper {
         java.lang.reflect.Method m = queue.getClass().getMethod("a", task, int.class, boolean.class);
         m.invoke(queue, wp, -1, Boolean.TRUE);
     }
+
