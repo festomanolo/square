@@ -80,3 +80,4 @@ public final class DynamicWallpaper {
         activity = a;
         original = a.getWindow().getDecorView().getBackground();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(a);
+        // On by default; written explicitly so the settings switch reflects it.
