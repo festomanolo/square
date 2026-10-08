@@ -108,11 +108,10 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    # REMOVED: key-not-installed toast — always skipped
+    # invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    # move-result-object p0
+    # invoke-virtual {p0}, Landroid/widget/Toast;->show()V
 
     :cond_18
     return-void
