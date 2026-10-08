@@ -216,3 +216,23 @@ public final class StatusBar extends FrameLayout {
         }
 
         private void drawBattery(Canvas cv, float w, float h) {
+            float bw = w * 0.88f, bh = h * 0.56f, top = (h - bh) / 2;
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.06f);
+            p.setAlpha(150);
+            cv.drawRoundRect(new RectF(1, top, bw, top + bh), bh * 0.28f, bh * 0.28f, p);
+            p.setStyle(Paint.Style.FILL);
+            cv.drawRoundRect(new RectF(bw + 2, h * 0.42f, w - 1, h * 0.58f), 3, 3, p);
+            p.setColor(flag ? 0xFF30D158 : (value <= 20 ? 0xFFFF453A : 0xFFFFFFFF));
+            p.setAlpha(255);
+            float inset = h * 0.07f, fw = (bw - 2 * inset) * Math.max(0.05f, value / 100f);
+            cv.drawRoundRect(new RectF(1 + inset, top + inset, 1 + inset + fw, top + bh - inset),
+                    bh * 0.18f, bh * 0.18f, p);
+            if (flag) {
+                float cx = bw / 2, u = bh / 10f;
+                p.setColor(0xFF000000);
+                path.reset();
+                path.moveTo(cx + 1 * u, top + 0.5f * u);
+                path.lineTo(cx - 2.6f * u, top + 5.4f * u);
+                path.lineTo(cx - 0.2f * u, top + 5.4f * u);
+                path.lineTo(cx - 1 * u, top + 9.5f * u);
