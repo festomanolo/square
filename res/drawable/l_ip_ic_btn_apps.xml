@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/l_kit_blue"/>
+    <foreground>
+        <layer-list>
+            <item
+                android:drawable="@drawable/l_ip_ic_apps"
+                android:left="@dimen/l_ip_adaptive_inner"
+                android:top="@dimen/l_ip_adaptive_inner"
+                android:right="@dimen/l_ip_adaptive_inner"
+                android:bottom="@dimen/l_ip_adaptive_inner"/>
+        </layer-list>
+    </foreground>
+</adaptive-icon>

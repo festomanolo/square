@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="108dp"
+    android:width="108dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1080">
+    <group
+        android:pivotX="250"
+        android:pivotY="250"
+        android:scaleX="0.85"
+        android:scaleY="0.85">
+        <path
+            android:pathData="M160,100H580A60,60 0,0 1,640 160V340A60,60 0,0 1,580 400H160A60,60 0,0 1,100 340V160A60,60 0,0 1,160 100Z"
+            android:strokeColor="#fff"
+            android:strokeWidth="100"
+            android:strokeLineJoin="round"/>
+    </group>
+    <group
+        android:pivotX="850"
+        android:pivotY="250"
+        android:scaleX="0.85"
+        android:scaleY="0.85">
+        <path
+            android:pathData="M740,100H920A60,60 0,0 1,980 160V340A60,60 0,0 1,920 400H740A60,60 0,0 1,680 340V160A60,60 0,0 1,740 100Z"
+            android:strokeColor="#fff"
+            android:strokeWidth="100"
+            android:strokeLineJoin="round"/>
+    </group>
+    <group
+        android:pivotX="250"
+        android:pivotY="850"
+        android:scaleX="0.85"
+        android:scaleY="0.85">
+        <path
+            android:pathData="M160,440H340A60,60 0,0 1,400 500V920A60,60 0,0 1,340 980H160A60,60 0,0 1,100 920V500A60,60 0,0 1,160 440Z"
+            android:strokeColor="#fff"
+            android:strokeWidth="100"
+            android:strokeLineJoin="round"/>
+    </group>
+    <group
+        android:pivotX="750"
+        android:pivotY="800"
+        android:scaleX="0.85"
+        android:scaleY="0.85">
+        <path
+            android:pathData="M935,741c1,-8 2,-17 2,-26s-1,-18 -2,-26l57,-45c5,-4 6,-11 3,-17l-54,-94c-3,-6 -11,-8 -17,-6l-68,27c-14,-11 -30,-20 -46,-27l-10,-72c-1,-6 -6,-11 -13,-11h-109c-7,0 -13,5 -13,11l-10,72c-17,7 -32,16 -46,27l-68,-27c-6,-2 -13,0 -17,6l-54,94c-3,6 -2,13 3,17l57,45c-1,9 -2,18 -2,26s1,18 2,26l-57,45c-5,4 -6,11 -3,17l54,94c3,6 11,8 17,6l68,-27c14,11 30,20 46,27l10,72c1,6 6,11 13,11h109c7,0 13,-5 13,-11l10,-72c17,-7 32,-16 46,-27l68,27c6,2 13,0 17,-6l54,-94c3,-6 2,-13 -3,-17l-57,-45z"
+            android:strokeColor="#fff"
+            android:strokeWidth="100"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"/>
+        <path
+            android:fillColor="#fff"
+            android:pathData="M734,715m-95,0a95,95 0,1 1,190 0a95,95 0,1 1,-190 0"/>
+    </group>
+</vector>

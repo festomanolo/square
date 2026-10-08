@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/bg_menu_btn_0"
+        android:left="@dimen/btn_padding_outer"
+        android:top="@dimen/btn_padding_outer"
+        android:right="@dimen/btn_padding_outer"
+        android:bottom="@dimen/btn_padding_outer"/>
+    <item
+        android:drawable="@drawable/ic_home_1"
+        android:left="@dimen/btn_padding_inner"
+        android:top="@dimen/btn_padding_inner"
+        android:right="@dimen/btn_padding_inner"
+        android:bottom="@dimen/btn_padding_inner"/>
+</layer-list>
