@@ -60,3 +60,4 @@ public final class DynamicWallpaper {
         @Override public void run() {
             apply();
             handler.postDelayed(this, INTERVAL_MS);
+        }
