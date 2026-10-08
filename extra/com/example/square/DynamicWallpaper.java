@@ -127,3 +127,4 @@ public final class DynamicWallpaper {
     private String lastImage;
 
     /**
+     * Picks the next image from the "wallpaper" folder: first the app's external files dir
