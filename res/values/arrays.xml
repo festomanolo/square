@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="auto_rotate_entries">
+        <item>@string/auto_rotate_keep</item>
+        <item>@string/auto_rotate_on</item>
+        <item>@string/auto_rotate_off</item>
+    </array>
+    <array name="banner_entries">
+        <item>@string/banner_auto</item>
+        <item>@string/banner_on</item>
+        <item>@string/banner_off</item>
+    </array>
+    <array name="basic_tag_ids">
+        <item>7</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+        <item>app_folder</item>
+        <item>hidden</item>
+    </array>
+    <array name="basic_tag_ids_old">
+        <item>app_folder</item>
+        <item>hidden</item>
+    </array>
+    <array name="basic_tags">
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>@string/app_folder</item>
+        <item>@string/hidden_items</item>
+    </array>
+    <array name="basic_tags_old">
+        <item>@string/app_folder</item>
+        <item>@string/hidden_items</item>
+    </array>
+    <array name="color_set_entries">
+        <item>@string/colors_from_wallpaper</item>
+        <item>@string/color_set_vivid</item>
+        <item>@string/color_set_pastel</item>
+        <item>@string/color_set_dark</item>
+        <item>@string/color_set_transparent</item>
+        <item>@string/color_set_red</item>
+        <item>@string/color_set_pink</item>
+        <item>@string/color_set_purple</item>
+        <item>@string/color_set_indigo</item>
+        <item>@string/color_set_blue</item>
+        <item>@string/color_set_teal</item>
+        <item>@string/color_set_green</item>
+        <item>@string/color_set_lime</item>
+        <item>@string/color_set_yellow</item>
+        <item>@string/color_set_orange</item>
+        <item>@string/color_set_brown</item>
+        <item>@string/color_set_grey</item>
+    </array>
+    <array name="color_set_entry_values">
+        <item>from_wallpaper</item>
+        <item>cs_vivid</item>
+        <item>cs_pastel</item>
+        <item>cs_dark</item>
+        <item>cs_transparent</item>
+        <item>cs_red</item>
+        <item>cs_pink</item>
+        <item>cs_purple</item>
+        <item>cs_indigo</item>
+        <item>cs_blue</item>
+        <item>cs_teal</item>
+        <item>cs_green</item>
+        <item>cs_lime</item>
+        <item>cs_yellow</item>
+        <item>cs_orange</item>
+        <item>cs_brown</item>
+        <item>cs_grey</item>
+    </array>
+    <array name="cube_rotation_entries">
+        <item>@string/both</item>
+        <item>@string/horizontal</item>
+        <item>@string/vertical</item>
+    </array>
+    <array name="enter_animation_entries">
+        <item>@string/system_default</item>
+        <item>@string/animation_off</item>
+        <item>@string/fast</item>
+        <item>@string/spring_up</item>
+        <item>@string/reflection</item>
+    </array>
+    <array name="enter_animation_entry_values">
+        <item>0</item>
+        <item>3</item>
+        <item>4</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+    <array name="label_visibility_entries">
+        <item>@string/visible_when_enough</item>
+        <item>@string/always_visible</item>
+        <item>@string/invisible</item>
+    </array>
+    <array name="label_visibility_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+    <array name="launch_animation_entries">
+        <item>@string/system_default</item>
+        <item>@string/animation_off</item>
+        <item>@string/fast</item>
+        <item>@string/fly</item>
+        <item>@string/fill_up</item>
+        <item>@string/fill_up_black_out</item>
+        <item>@string/all_rise_up</item>
+        <item>@string/sink_down</item>
+    </array>
+    <array name="launch_animation_entry_values">
+        <item>0</item>
+        <item>6</item>
+        <item>7</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </array>
+    <array name="menu_add_entries">
+        <item>@string/application</item>
+        <item>@string/shortcut</item>
+        <item>@string/launcher_action</item>
+        <item>@string/widget</item>
+        <item>@string/divider</item>
+        <item>@string/cube</item>
+        <item>@string/tile_group</item>
+        <item>@string/app_drawer</item>
+        <item>@string/contacts</item>
+    </array>
+    <array name="menu_add_on_cube_entries">
+        <item>@string/application</item>
+        <item>@string/shortcut</item>
+        <item>@string/launcher_action</item>
+        <item>@string/widget</item>
+        <item>@string/tile_group</item>
+        <item>@string/app_drawer</item>
+        <item>@string/contacts</item>
+    </array>
+    <array name="menu_add_on_cube_with_paste_entries">
+        <item>@android:string/paste</item>
+        <item>@string/application</item>
+        <item>@string/shortcut</item>
+        <item>@string/launcher_action</item>
+        <item>@string/widget</item>
+        <item>@string/tile_group</item>
+        <item>@string/app_drawer</item>
+        <item>@string/contacts</item>
+    </array>
+    <array name="menu_add_with_paste_entries">
+        <item>@android:string/paste</item>
+        <item>@string/application</item>
+        <item>@string/shortcut</item>
+        <item>@string/launcher_action</item>
+        <item>@string/widget</item>
+        <item>@string/divider</item>
+        <item>@string/cube</item>
+        <item>@string/tile_group</item>
+        <item>@string/app_drawer</item>
+        <item>@string/contacts</item>
+    </array>
+    <array name="menu_appdrawer_temp_sort_entries">
+        <item>@string/text_default</item>
+        <item>@string/by_name</item>
+        <item>@string/recently_installed</item>
+        <item>@string/recently_updated</item>
+    </array>
+    <array name="menu_application_options_entries">
+        <item>@string/icon</item>
+        <item>@string/label</item>
+    </array>
+    <array name="menu_bar_gravity_entries">
+        <item>@string/left</item>
+        <item>@string/center</item>
+        <item>@string/right</item>
+    </array>
+    <array name="menu_bar_gravity_entry_values">
+        <item>3</item>
+        <item>1</item>
+        <item>5</item>
+    </array>
+    <array name="menu_contacts_sort_entries">
+        <item>@string/contact_by_name</item>
+        <item>@string/contact_by_frequency</item>
+        <item>@string/contact_by_latest</item>
+    </array>
+    <array name="menu_launcher_action_entries">
+        <item>@string/do_nothing</item>
+        <item>@string/expand_noti_panel</item>
+        <item>@string/expand_settings_panel</item>
+        <item>@string/toggle_lock</item>
+        <item>@string/open_page_manager</item>
+        <item>@string/open_menu</item>
+        <item>@string/go_to_home</item>
+        <item>@string/show_appdrawer</item>
+        <item>@string/show_contacts</item>
+        <item>@string/app_search</item>
+        <item>@string/contact_search</item>
+        <item>@string/quick_scroll_app_drawer</item>
+        <item>@string/quick_scroll_contacts</item>
+        <item>@string/search</item>
+        <item>@string/open_preferences</item>
+        <item>@string/open_recent_apps</item>
+        <item>@string/screen_lock</item>
+        <item>@string/power_dialog</item>
+        <item>@string/change_daily_wallpaper</item>
+        <item>@string/restart_home</item>
+    </array>
+    <array name="menu_main_menu_entries">
+        <item>@string/home_options</item>
+        <item>@string/system_settings</item>
+        <item>@string/wallpaper</item>
+        <item>@string/lock</item>
+        <item>@string/backup_center</item>
+        <item>@string/reset</item>
+        <item>@string/about</item>
+    </array>
+    <array name="menu_pick_icon_image_entries">
+        <item>@string/text_default</item>
+        <item>@string/icon_pack</item>
+        <item>@string/image</item>
+    </array>
+    <array name="menu_pick_target_entries">
+        <item>@string/application</item>
+        <item>@string/shortcut</item>
+        <item>@string/launcher_action</item>
+        <item>@string/app_drawer</item>
+        <item>@string/contacts</item>
+    </array>
+    <array name="menu_pick_target_with_default_entries">
+        <item>@string/text_default</item>
+        <item>@string/application</item>
+        <item>@string/shortcut</item>
+        <item>@string/launcher_action</item>
+    </array>
+    <array name="menu_pick_tile_background_entries">
+        <item>@string/color</item>
+        <item>@string/image</item>
+    </array>
+    <array name="menu_pick_widget_entries">
+        <item>@string/app_widget</item>
+        <item>@string/blank</item>
+        <item>@string/text</item>
+        <item>@string/clock</item>
+        <item>@string/analog_clock</item>
+        <item>@string/calendar</item>
+        <item>@string/event_calendar</item>
+        <item>@string/checklist</item>
+        <item>@string/live_contacts</item>
+        <item>@string/system_monitor</item>
+        <item>@string/ram_circle</item>
+        <item>@string/storage_circle</item>
+        <item>@string/sdcard_circle</item>
+        <item>@string/battery_circle</item>
+        <item>@string/photo_slide</item>
+        <item>@string/compass</item>
+        <item>@string/flashlight</item>
+        <item>@string/rss_reader</item>
+    </array>
+    <array name="menu_resize_entries">
+        <item>@string/small</item>
+        <item>@string/wide</item>
+        <item>@string/large</item>
+        <item>@string/customized</item>
+    </array>
+    <array name="menu_resize_with_half_entries">
+        <item>@string/tiny</item>
+        <item>@string/half</item>
+        <item>@string/small</item>
+        <item>@string/wide</item>
+        <item>@string/large</item>
+        <item>@string/customized</item>
+    </array>
+    <array name="menu_tile_appwidget_options_entries">
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/margins</item>
+        <item>@string/scale</item>
+        <item>@string/opacity</item>
+        <item>@string/configure_widget</item>
+        <item>@string/extra_options</item>
+    </array>
+    <array name="menu_tile_appwidget_options_no_configure_entries">
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/margins</item>
+        <item>@string/scale</item>
+        <item>@string/opacity</item>
+        <item>@string/extra_options</item>
+    </array>
+    <array name="menu_tile_checklist_entries">
+        <item>@string/style</item>
+        <item>@string/list_items</item>
+        <item>@string/extra_options</item>
+    </array>
+    <array name="menu_tile_compass_options_entries">
+        <item>@string/tap_action</item>
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/launch_options</item>
+        <item>@string/compass_skin</item>
+    </array>
+    <array name="menu_tile_divider_options_entries">
+        <item>@string/style</item>
+        <item>@string/label</item>
+    </array>
+    <array name="menu_tile_flashlight_options_entries">
+        <item>@string/style</item>
+        <item>@string/icon_off</item>
+        <item>@string/icon_on</item>
+        <item>@string/label</item>
+    </array>
+    <array name="menu_tile_general_options_entries">
+        <item>@string/tap_action</item>
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/icon</item>
+        <item>@string/label</item>
+        <item>@string/full_image</item>
+        <item>@string/launch_options</item>
+        <item>@string/extra_options</item>
+    </array>
+    <array name="menu_tile_group_options_entries">
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/icon</item>
+        <item>@string/label</item>
+        <item>@string/full_image</item>
+        <item>@string/extra_options</item>
+    </array>
+    <array name="menu_tile_label_options_entries">
+        <item>@string/tap_action</item>
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/text</item>
+        <item>@string/image</item>
+        <item>@string/typeface</item>
+        <item>@string/text_size</item>
+        <item>@string/text_alignment</item>
+        <item>@string/margins</item>
+    </array>
+    <array name="menu_tile_photoshow_options_entries">
+        <item>@string/tap_action</item>
+        <item>@string/long_click_action</item>
+        <item>@string/launch_options</item>
+        <item>@string/image_folder</item>
+        <item>@string/extra_options</item>
+    </array>
+    <array name="menu_tile_rss_options_entries">
+        <item>@string/style</item>
+        <item>@string/rss_feed_urls</item>
+    </array>
+    <array name="menu_tile_targetable_widget_options_entries">
+        <item>@string/tap_action</item>
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/launch_options</item>
+        <item>@string/extra_options</item>
+    </array>
+    <array name="menu_tile_widget_circle_options_entries">
+        <item>@string/tap_action</item>
+        <item>@string/long_click_action</item>
+        <item>@string/style</item>
+        <item>@string/launch_options</item>
+    </array>
+    <array name="screen_orientation_entries">
+        <item>@string/portrait</item>
+        <item>@string/landscape</item>
+        <item>@string/same_to_system_setting</item>
+    </array>
+    <array name="screen_orientation_entry_values">
+        <item>7</item>
+        <item>6</item>
+        <item>-1</item>
+    </array>
+    <array name="shake_sensitivity_entries">
+        <item>@string/less_sensitive</item>
+        <item>@string/text_default</item>
+        <item>@string/more_sensitive</item>
+    </array>
+    <array name="shake_sensitivity_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+    <array name="sort_by_entries">
+        <item>@string/smart</item>
+        <item>@string/user_defined</item>
+        <item>@string/by_name</item>
+    </array>
+    <array name="sort_by_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+    <array name="sort_in_folder_entries">
+        <item>@string/user_defined</item>
+        <item>@string/by_name</item>
+    </array>
+    <array name="sort_in_folder_entry_values">
+        <item>1</item>
+        <item>2</item>
+    </array>
+    <array name="text_alignment_entries">
+        <item>@string/align_left</item>
+        <item>@string/align_center</item>
+        <item>@string/align_right</item>
+    </array>
+    <array name="text_alignment_entry_values">
+        <item>1</item>
+        <item>0</item>
+        <item>2</item>
+    </array>
+    <array name="theme_entries">
+        <item>@string/light_theme</item>
+        <item>@string/dark_theme</item>
+        <item>@string/system_default</item>
+    </array>
+    <array name="theme_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>0</item>
+    </array>
+    <array name="tile_background_effect_entries">
+        <item>@string/disabled</item>
+        <item>@string/blurred</item>
+        <item>@string/blurred_inverse</item>
+        <item>@string/hollow</item>
+        <item>@string/grayscale</item>
+        <item>@string/grayscale_inverse</item>
+        <item>@string/refraction</item>
+    </array>
+    <array name="tile_background_effect_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>2</item>
+        <item>3</item>
+        <item>6</item>
+        <item>4</item>
+    </array>
+    <array name="tile_text_shadow_entries">
+        <item>@string/none</item>
+        <item>@string/embossed</item>
+        <item>@string/engraved</item>
+    </array>
+    <array name="tile_text_shadow_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+    <array name="wallpaper_entries">
+        <item>@string/no_wallpaper</item>
+        <item>@string/system_wallpaper</item>
+        <item>@string/app_wallpaper</item>
+    </array>
+    <array name="wallpaper_entry_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+</resources>
