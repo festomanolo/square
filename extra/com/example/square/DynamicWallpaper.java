@@ -186,3 +186,4 @@ public final class DynamicWallpaper {
             return BitmapFactory.decodeStream(is, null, o);
         }
     }
+
