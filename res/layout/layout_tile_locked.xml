@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp100"
+    android:layout_height="@dimen/dp100">
+    <TextView
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnError"
+        android:layout_gravity="end"
+        android:id="@+id/viewLocked"
+        android:background="@drawable/bg_pro_badge_error"
+        android:paddingLeft="6dp"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="4dp"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRO"/>
+</FrameLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/buttonInfo"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="14dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_lightbulb"
+        android:contentDescription="information"
+        app:tint="?attr/colorOnSurface"/>
+    <CheckBox
+        android:layout_gravity="center"
+        android:id="@android:id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.square.ImageItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.square.view.RoundedFrameLayout
+        android:id="@+id/layoutImage"
+        android:background="@drawable/l_kit_bg_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"/>
+    </com.example.square.view.RoundedFrameLayout>
+    <TextView
+        android:textSize="12dp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:id="@+id/text"
+        android:background="@drawable/l_kit_bg_item_label"
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"/>
+    <ImageView
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@null"/>
+</com.example.square.ImageItemView>

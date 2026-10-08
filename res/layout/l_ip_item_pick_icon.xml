@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/icon"
+        android:layout_width="@dimen/l_ip_icon_size"
+        android:layout_height="@dimen/l_ip_icon_size"
+        android:layout_margin="@dimen/l_ip_icon_padding"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/text"
+        android:layout_width="@dimen/l_ip_icon_size"
+        android:layout_height="@dimen/l_ip_icon_size"
+        android:text="A"
+        android:textAllCaps="true"/>
+</FrameLayout>

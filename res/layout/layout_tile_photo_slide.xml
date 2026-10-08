@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp100"
+    android:layout_height="@dimen/dp100">
+    <TextView
+        android:textAppearance="@android:style/TextAppearance.Small"
+        android:textColor="#ffffffff"
+        android:gravity="center"
+        android:id="@+id/textToDo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:shadowColor="#80000000"
+        android:shadowRadius="3"/>
+    <com.example.square.view.AnimateFrameLayout
+        android:id="@+id/animateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.example.square.view.MarqueeImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.example.square.view.MarqueeImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.example.square.view.AnimateFrameLayout>
+</FrameLayout>

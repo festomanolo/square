@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:id="@+id/textTitle"
+        android:background="@drawable/l_kit_bg_title"
+        android:padding="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/l_kit_popupmenu_title_layout_margin"
+        android:textAllCaps="true"
+        android:layout_marginStart="@dimen/l_kit_popupmenu_title_layout_margin"
+        android:layout_marginEnd="@dimen/l_kit_popupmenu_title_layout_margin"/>
+    <FrameLayout
+        android:id="@+id/frameContent"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:requiresFadingEdge="vertical">
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:id="@android:id/message"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>

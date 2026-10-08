@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/l_kit_ripple_rect"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="normal"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tag_item_height"
+        android:layout_marginRight="@dimen/tag_item_height"
+        android:text="Group Name"
+        android:lines="1"
+        android:layout_centerVertical="true"
+        android:fontFamily="sans"/>
+    <ImageView
+        android:layout_gravity="right"
+        android:id="@+id/btnShow"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="@dimen/menu_button_padding_large"
+        android:layout_width="@dimen/menu_button_size"
+        android:layout_height="@dimen/tag_item_height"
+        android:src="@drawable/ic_visibility"/>
+</FrameLayout>

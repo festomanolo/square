@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.square.RoundedFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#50ffff00"
+    android:layout_width="@dimen/dp100"
+    android:layout_height="@dimen/dp100">
+    <TextView
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/icon"
+        android:paddingBottom="2.5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textScaleX="1.2"
+        android:fontFamily="sans"
+        android:textAlignment="center"/>
+    <com.example.square.ContactPhotoView
+        android:id="@+id/photoView"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/text_normal"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_gravity="bottom|center_horizontal"
+        android:id="@+id/textLabel"
+        android:paddingLeft="@dimen/tile_padding"
+        android:paddingRight="@dimen/tile_padding"
+        android:paddingBottom="@dimen/tile_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text"
+        android:lines="1"/>
+</com.example.square.RoundedFrameLayout>

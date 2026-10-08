@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#00a5ff"
+    android:layout_width="@dimen/dp100"
+    android:layout_height="@dimen/dp100">
+    <ImageView
+        android:id="@+id/imageCompass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"/>
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/text_normal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/textNoSensor"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_sensor"/>
+    <TextView
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnError"
+        android:layout_gravity="end"
+        android:id="@+id/viewLocked"
+        android:background="@drawable/bg_pro_badge_error"
+        android:paddingLeft="6dp"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="4dp"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRO"/>
+</FrameLayout>

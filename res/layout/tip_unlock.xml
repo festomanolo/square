@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.square.view.TipLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/frame"
+        android:background="@drawable/bg_tip_text"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_centerInParent="true"
+        android:elevation="8dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="12dp"
+            android:src="@drawable/ic_lightbulb"
+            app:tint="?attr/colorPrimary"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/ic_locked"
+            android:layout_centerHorizontal="true"
+            app:tint="?android:attr/textColorPrimary"/>
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center_horizontal"
+            android:id="@+id/textView2"
+            android:padding="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/tip_unlock"
+            android:layout_below="@+id/icon"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnClose"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/menu_button_padding_large"
+            android:layout_width="@dimen/menu_button_size"
+            android:layout_height="@dimen/menu_button_size"
+            android:src="@drawable/ic_cancel"
+            android:layout_alignParentEnd="true"
+            app:tint="?android:attr/textColorPrimary"/>
+    </RelativeLayout>
+</com.example.square.view.TipLayout>
