@@ -156,3 +156,23 @@ public final class StatusBar extends FrameLayout {
         }
         battery.value = pct;
         battery.flag = charging;
+        for (Icon i : new Icon[]{wifi, bt, battery, ethernet}) i.invalidate();
+    }
+
+    private static final class Icon extends View {
+        final int type;
+        int value = 3;
+        boolean flag;
+        final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+        final Path path = new Path();
+
+        Icon(Context c, int type) {
+            super(c);
+            this.type = type;
+        }
+
+        @Override protected void onDraw(Canvas cv) {
+            float w = getWidth(), h = getHeight();
+            p.setColor(0xFFFFFFFF);
+            switch (type) {
+                case WIFI: drawWifi(cv, w, h); break;
