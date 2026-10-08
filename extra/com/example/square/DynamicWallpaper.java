@@ -147,3 +147,4 @@ public final class DynamicWallpaper {
         } catch (Throwable t) {
             return null;
         }
+    }
