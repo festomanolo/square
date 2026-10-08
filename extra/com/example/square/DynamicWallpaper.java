@@ -31,3 +31,4 @@ import java.util.Random;
  * and cross-fades to a new one every {@link #INTERVAL_MS}. Toggled by the
  * "dynamicWallpaper" preference (on by default).
  */
+public final class DynamicWallpaper {
