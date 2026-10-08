@@ -145,3 +145,4 @@ git merge upstream/main --no-edit
 - To use different backup, modify `Application.java` or use a symlink
 - All changes are reversible by reverting to original `com.ss.squarehome2` code
 
+
