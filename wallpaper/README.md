@@ -1,0 +1,1 @@
+Put wallpaper images here (.jpg, .jpeg, .png, .webp, ideally 1280x720 or larger). They are bundled into the APK and cycled every minute. If this folder has no images the app draws generated gradients.
