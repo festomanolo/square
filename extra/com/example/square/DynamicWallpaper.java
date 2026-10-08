@@ -83,3 +83,4 @@ public final class DynamicWallpaper {
         // On by default; written explicitly so the settings switch reflects it.
         if (!sp.contains(PREF)) sp.edit().putBoolean(PREF, true).apply();
     }
+
