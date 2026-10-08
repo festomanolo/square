@@ -18,3 +18,4 @@ Square Home launcher (decompiled, renamed `com.example.square`) adapted to run a
 4. Launch: `am start -n com.example.square/com.example.square.MainActivity`. Screenshot: `adb exec-out screencap -p`.
 
 apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts attributes on one line in the manifest. Regexes must allow for that. The harmless `./unknown/DebugProbesKt.bin` error when building from the repo root can be ignored.
+
