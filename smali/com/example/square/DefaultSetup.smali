@@ -250,3 +250,13 @@
     invoke-direct {v0, p0}, Landroid/widget/TextClock;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {v0, p1}, Landroid/widget/TextClock;->setFormat12Hour(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0, p2}, Landroid/widget/TextClock;->setFormat24Hour(Ljava/lang/CharSequence;)V
+
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const/high16 v1, 0x41600000    # 14.0f
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
