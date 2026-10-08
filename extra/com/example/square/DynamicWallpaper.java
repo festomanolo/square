@@ -52,3 +52,4 @@ public final class DynamicWallpaper {
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final Random rnd = new Random();
     private Drawable original;
+    private Drawable current;
