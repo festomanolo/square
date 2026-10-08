@@ -156,3 +156,4 @@ public final class DynamicWallpaper {
 
     private Bitmap decode(String src) throws Exception {
         final int tw = 1280, th = 720;
+        BitmapFactory.Options o = new BitmapFactory.Options();
