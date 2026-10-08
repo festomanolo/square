@@ -153,3 +153,4 @@ public final class DynamicWallpaper {
         n = n.toLowerCase();
         return n.endsWith(".jpg") || n.endsWith(".jpeg") || n.endsWith(".png") || n.endsWith(".webp") || n.endsWith(".bmp");
     }
+
