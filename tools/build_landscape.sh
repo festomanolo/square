@@ -2,3 +2,4 @@ set -e
 S=${SCRATCH:?set SCRATCH to a work dir containing apktool.jar and dec/ (decoded Square-modified.apk)}
 SDK=~/Library/Android/sdk; BT=$SDK/build-tools/36.1.0; R=/Volumes/MacX/projects/Square
 rm -rf $S/jc && mkdir -p $S/jc/cls $S/jc/dex
+javac --release 8 -cp $SDK/platforms/android-35/android.jar -d $S/jc/cls $R/extra/com/example/square/*.java 2>&1 | grep -v "^Note\|warning" || true
