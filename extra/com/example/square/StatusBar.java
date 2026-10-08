@@ -236,3 +236,23 @@ public final class StatusBar extends FrameLayout {
                 path.lineTo(cx - 2.6f * u, top + 5.4f * u);
                 path.lineTo(cx - 0.2f * u, top + 5.4f * u);
                 path.lineTo(cx - 1 * u, top + 9.5f * u);
+                path.lineTo(cx + 2.6f * u, top + 4.4f * u);
+                path.lineTo(cx + 0.2f * u, top + 4.4f * u);
+                path.close();
+                cv.drawPath(path, p);
+            }
+        }
+
+        private void drawEthernet(Canvas cv, float w, float h) {
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.08f);
+            RectF r = new RectF(w * 0.12f, h * 0.2f, w * 0.88f, h * 0.7f);
+            cv.drawRoundRect(r, 3, 3, p);
+            for (int i = 1; i <= 3; i++) {
+                float x = w * 0.12f + (w * 0.76f) * i / 4f;
+                cv.drawLine(x, h * 0.42f, x, h * 0.7f, p);
+            }
+            cv.drawLine(w * 0.5f, h * 0.7f, w * 0.5f, h * 0.88f, p);
+        }
+    }
+}
