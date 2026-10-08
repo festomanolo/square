@@ -90,3 +90,4 @@ public final class DynamicWallpaper {
         handler.post(tick);
     }
 
+    private void pause() {
