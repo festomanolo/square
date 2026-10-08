@@ -6136,6 +6136,7 @@
     <public type="string" name="yearly_text1" id="0x7f1203fe" />
     <public type="string" name="yearly_text2" id="0x7f1203ff" />
     <public type="string" name="zipping" id="0x7f120400" />
+    <public type="string" name="dynamic_wallpaper" id="0x7f120401" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f130000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f130001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f130002" />
