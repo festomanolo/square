@@ -185,6 +185,7 @@
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.PickApplicationActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.PickShortcutActivity"/>
         <activity
