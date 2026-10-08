@@ -63,3 +63,4 @@ public final class DynamicWallpaper {
         }
     };
 
+    public static void start(final Activity a) {
