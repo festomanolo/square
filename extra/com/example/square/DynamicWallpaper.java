@@ -104,3 +104,4 @@ public final class DynamicWallpaper {
             Bitmap bmp = pickFolderImage();
             if (bmp == null) {
                 int idx;
+                do { idx = rnd.nextInt(PALETTES.length); } while (idx == last && PALETTES.length > 1);
