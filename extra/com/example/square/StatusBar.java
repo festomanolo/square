@@ -196,3 +196,23 @@ public final class StatusBar extends FrameLayout {
                 RectF r = new RectF(cx - radii[i], cy - 4 * u - radii[i], cx + radii[i], cy - 4 * u + radii[i]);
                 cv.drawArc(r, 225, 90, false, p);
             }
+            p.setAlpha(255);
+        }
+
+        private void drawBt(Canvas cv, float w, float h) {
+            float x0 = w / 2 - h * 0.25f, y0 = h * 0.05f, s = h * 0.9f, k = s * 0.5f;
+            path.reset();
+            path.moveTo(x0 + 0.05f * k, y0 + 0.30f * s);
+            path.lineTo(x0 + 0.95f * k, y0 + 0.70f * s);
+            path.lineTo(x0 + 0.50f * k, y0 + 1.00f * s);
+            path.lineTo(x0 + 0.50f * k, y0);
+            path.lineTo(x0 + 0.95f * k, y0 + 0.30f * s);
+            path.lineTo(x0 + 0.05f * k, y0 + 0.70f * s);
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.09f);
+            p.setStrokeJoin(Paint.Join.ROUND);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            cv.drawPath(path, p);
+        }
+
+        private void drawBattery(Canvas cv, float w, float h) {
