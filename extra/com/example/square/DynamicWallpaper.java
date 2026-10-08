@@ -109,3 +109,4 @@ public final class DynamicWallpaper {
                 bmp = render(PALETTES[idx], rnd);
             }
             show(bmp);
+        } catch (Throwable ignored) {
