@@ -97,3 +97,23 @@ public final class StatusBar extends FrameLayout {
         t.setTypeface(Typeface.DEFAULT_BOLD);
         return t;
     }
+
+    @Override protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        handler.post(tick);
+    }
+
+    @Override protected void onDetachedFromWindow() {
+        handler.removeCallbacks(tick);
+        super.onDetachedFromWindow();
+    }
+
+    private void refresh() {
+        Context c = getContext();
+        boolean wifiOn = false, eth = false;
+        int level = 3;
+        try {
+            ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+            Network n = cm.getActiveNetwork();
+            NetworkCapabilities nc = n == null ? null : cm.getNetworkCapabilities(n);
+            if (nc != null) {
