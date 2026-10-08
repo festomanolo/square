@@ -148,3 +148,4 @@ public final class DynamicWallpaper {
             return null;
         }
     }
+
