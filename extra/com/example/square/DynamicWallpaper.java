@@ -86,3 +86,4 @@ public final class DynamicWallpaper {
 
     private void resume() {
         if (running) return;
+        running = true;
