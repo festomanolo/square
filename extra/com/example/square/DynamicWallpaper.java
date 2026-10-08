@@ -131,3 +131,4 @@ public final class DynamicWallpaper {
      * (adb push into .../files/wallpaper), then the images bundled in assets/wallpaper.
      * Returns null when there are none, so the caller falls back to generated art.
      */
+    private Bitmap pickFolderImage() {
