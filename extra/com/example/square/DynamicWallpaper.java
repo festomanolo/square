@@ -89,3 +89,4 @@ public final class DynamicWallpaper {
         running = true;
         handler.post(tick);
     }
+
