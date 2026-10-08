@@ -98,3 +98,4 @@ public final class DynamicWallpaper {
     private void apply() {
         try {
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
+            if (!sp.getBoolean(PREF, true)) return;
