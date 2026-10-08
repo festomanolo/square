@@ -57,3 +57,4 @@ public final class DynamicWallpaper {
     private boolean running;
 
     private final Runnable tick = new Runnable() {
+        @Override public void run() {
