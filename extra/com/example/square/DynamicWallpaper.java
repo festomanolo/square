@@ -200,3 +200,4 @@ public final class DynamicWallpaper {
             int col = p[2 + i];
             paint.setShader(new RadialGradient(x, y, rad,
                     new int[]{Color.argb(170, Color.red(col), Color.green(col), Color.blue(col)),
+                              Color.argb(0, Color.red(col), Color.green(col), Color.blue(col))},
