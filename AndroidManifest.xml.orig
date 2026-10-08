@@ -186,3 +186,30 @@
             android:name="com.example.square.PickApplicationActivity"/>
         <activity
             android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:name="com.example.square.PickShortcutActivity"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:label="@string/image"
+            android:name="com.example.square.PickImageActivity"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:label="@string/typeface"
+            android:name="com.example.square.PickTypefaceActivity"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:label="@string/app_widget"
+            android:icon="@drawable/ic_widget"
+            android:name="com.example.square.MyPickWidgetActivity"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:label="@string/icon"
+            android:icon="@drawable/ic_icon"
+            android:name="com.example.square.MyPickIconActivity"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.NoActionBar"
