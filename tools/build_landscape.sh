@@ -8,3 +8,4 @@ rm -rf $S/dec/assets/wallpaper; mkdir -p $S/dec/assets/wallpaper; cp $R/wallpape
 cd $S/dec && java -jar $S/apktool.jar b . -o $S/new-unsigned.apk 2>&1 | grep -v "^I:" || true
 cd $S/jc/dex && cp classes.dex classes2.dex && zip -q $S/new-unsigned.apk classes2.dex && cd $S
 $BT/zipalign -f -p 4 new-unsigned.apk new-aligned.apk && rm -f square-landscape.apk
+$BT/apksigner sign --ks ~/.android/debug.keystore --ks-pass pass:android --key-pass pass:android --out square-landscape.apk new-aligned.apk 2>&1 | grep -v WARN || true
