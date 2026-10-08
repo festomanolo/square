@@ -50,3 +50,4 @@ public final class DynamicWallpaper {
 
     private final Activity activity;
     private final Handler handler = new Handler(Looper.getMainLooper());
+    private final Random rnd = new Random();
