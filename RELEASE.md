@@ -150,3 +150,4 @@ git merge upstream/main --no-edit
 
 See `CLAUDE.md` for build steps and details. Deliverable: `Square-landscape.apk`.
 
+1. **Landscape only** - all activities `sensorLandscape`; runtime orientation prefs overridden to landscape.
