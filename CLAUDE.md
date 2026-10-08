@@ -11,3 +11,4 @@ Square Home launcher (decompiled, renamed `com.example.square`) adapted to run a
 - Obfuscated names are stable for this APK only (`ib2`, `mu3`, `d13`, `ur`, `ik2`, `xw0`...). Do not assume they match upstream Square Home.
 
 ## Build and install
+
