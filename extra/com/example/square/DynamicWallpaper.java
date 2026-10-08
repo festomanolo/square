@@ -75,3 +75,4 @@ public final class DynamicWallpaper {
         } catch (Throwable ignored) {
         }
     }
+
