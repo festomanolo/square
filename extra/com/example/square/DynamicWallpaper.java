@@ -162,3 +162,4 @@ public final class DynamicWallpaper {
         int sample = 1;
         while (o.outWidth / (sample * 2) >= tw && o.outHeight / (sample * 2) >= th) sample *= 2;
         o = new BitmapFactory.Options();
+        o.inSampleSize = sample;
