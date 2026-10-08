@@ -135,3 +135,4 @@ public final class DynamicWallpaper {
         try {
             List<String> names = new ArrayList<>();   // "f:<path>" or "a:<asset>"
             File dir = activity.getExternalFilesDir("wallpaper");
+            File[] files = dir == null ? null : dir.listFiles();
