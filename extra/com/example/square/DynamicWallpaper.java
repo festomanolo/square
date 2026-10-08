@@ -196,3 +196,4 @@ public final class DynamicWallpaper {
         for (int i = 0; i < 3; i++) {
             float x = W * (0.1f + 0.8f * r.nextFloat());
             float y = H * (0.1f + 0.8f * r.nextFloat());
+            float rad = H * (0.7f + 0.6f * r.nextFloat());
