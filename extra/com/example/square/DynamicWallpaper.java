@@ -37,3 +37,4 @@ public final class DynamicWallpaper {
     private static final int W = 640, H = 360;
 
     // {base top, base bottom, blob1, blob2, blob3}
+    private static final int[][] PALETTES = {
