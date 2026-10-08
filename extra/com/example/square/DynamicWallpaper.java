@@ -204,3 +204,4 @@ public final class DynamicWallpaper {
                     null, Shader.TileMode.CLAMP));
             c.drawRect(0, 0, W, H, paint);
         }
+        // Keep it dark enough for white tile labels.
