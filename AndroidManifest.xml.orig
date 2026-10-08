@@ -159,3 +159,30 @@
             android:label="@string/purchase"
             android:name="com.example.square.PurchaseActivity"
             android:excludeFromRecents="true"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/backup_center"
+            android:icon="@drawable/ic_backup"
+            android:name="com.example.square.BackupManagementActivity"
+            android:configChanges="screenSize|orientation"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/app_folder"
+            android:icon="@drawable/ic_folder"
+            android:name="com.example.square.EditAppFolderActivity"
+            android:exported="true"
+            android:configChanges="screenSize|orientation|mnc|mcc">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="com.example.square.appFolder"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:name="com.example.square.PickApplicationActivity"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
