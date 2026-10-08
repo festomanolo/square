@@ -185,3 +185,4 @@ public final class DynamicWallpaper {
         try (InputStream is = activity.getAssets().open(src.substring(2))) {
             return BitmapFactory.decodeStream(is, null, o);
         }
+    }
