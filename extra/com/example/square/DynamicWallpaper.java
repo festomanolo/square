@@ -180,3 +180,4 @@ public final class DynamicWallpaper {
         return out;
     }
 
+    private Bitmap open(String src, BitmapFactory.Options o) throws Exception {
