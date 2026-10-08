@@ -295,6 +295,7 @@
             android:name="com.google.android.play.billingclient.version"
             android:value="9.1.0"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.android.billingclient.api.ProxyBillingActivity"
             android:exported="false"
