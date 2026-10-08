@@ -165,3 +165,4 @@ public final class DynamicWallpaper {
         o.inSampleSize = sample;
         Bitmap in = open(src, o);
         if (in == null) return null;
+        // center-crop to 16:9
