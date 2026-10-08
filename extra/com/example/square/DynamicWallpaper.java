@@ -62,3 +62,4 @@ public final class DynamicWallpaper {
             handler.postDelayed(this, INTERVAL_MS);
         }
     };
+
