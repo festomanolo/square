@@ -1,0 +1,23 @@
+# apktool build output
+build/
+
+# Temporary scripts
+split_smali.py
+rename_ss.py
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Binary blobs that are regenerated from sources
+*.bin
+*.prof
+*.profm
+
+# The sources/ folder is a read-only Java decompilation mirror (not compiled)
+# and resources/ is a mirror of what was extracted — res/ is the canonical copy
+sources/
+resources/
