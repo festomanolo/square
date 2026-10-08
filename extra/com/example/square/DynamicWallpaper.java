@@ -188,3 +188,4 @@ public final class DynamicWallpaper {
     }
 
     static Bitmap render(int[] p, Random r) {
+        Bitmap b = Bitmap.createBitmap(W, H, Bitmap.Config.ARGB_8888);
