@@ -77,3 +77,23 @@ public final class StatusBar extends FrameLayout {
         battery = new Icon(c, BATTERY);
         Icon[] icons = {ethernet, bt, wifi, battery};
         for (Icon i : icons) {
+            LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(
+                    (int) ((i.type == BATTERY ? 40 : 30) * d), (int) (30 * d));
+            ip.leftMargin = (int) (14 * d);
+            right.addView(i, ip);
+        }
+        LayoutParams rp = new LayoutParams(-2, -1, Gravity.END | Gravity.CENTER_VERTICAL);
+        rp.rightMargin = pad;
+        addView(right, rp);
+    }
+
+    private static TextClock clock(Context c, String f12, String f24, int sp, float alpha) {
+        TextClock t = new TextClock(c);
+        t.setFormat12Hour(f12);
+        t.setFormat24Hour(f24);
+        t.setTextColor(0xFFFFFFFF);
+        t.setAlpha(alpha);
+        t.setTextSize(sp);
+        t.setTypeface(Typeface.DEFAULT_BOLD);
+        return t;
+    }
