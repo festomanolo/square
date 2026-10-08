@@ -73,3 +73,4 @@ public final class DynamicWallpaper {
             });
             if (decor.isAttachedToWindow()) w.resume();
         } catch (Throwable ignored) {
+        }
