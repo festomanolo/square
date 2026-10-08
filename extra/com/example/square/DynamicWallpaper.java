@@ -56,3 +56,4 @@ public final class DynamicWallpaper {
     private int last = -1;
     private boolean running;
 
+    private final Runnable tick = new Runnable() {
