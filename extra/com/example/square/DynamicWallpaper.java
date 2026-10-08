@@ -117,3 +117,4 @@ public final class DynamicWallpaper {
     private void show(Bitmap bmp) throws Exception {
         java.lang.reflect.Field f = activity.getClass().getDeclaredField("v0");
         f.setAccessible(true);
+        Object queue = f.get(activity);
