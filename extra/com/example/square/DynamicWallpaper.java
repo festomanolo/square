@@ -143,3 +143,4 @@ public final class DynamicWallpaper {
             String pick;
             do { pick = names.get(rnd.nextInt(names.size())); } while (names.size() > 1 && pick.equals(lastImage));
             lastImage = pick;
+            return decode(pick);
