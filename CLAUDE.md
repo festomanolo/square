@@ -27,3 +27,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 4. **Dynamic wallpaper** (`extra/.../DynamicWallpaper.java`, started from `StatusBar.install`): changes every 60s (`INTERVAL_MS`), on by default. Image sources, in order: `<externalFilesDir>/wallpaper/` (push with `adb push x.jpg /sdcard/Android/data/com.example.square/files/wallpaper/`), images in `assets/wallpaper/` (copied from the repo `wallpaper/` folder at build time), then generated gradient scenes. It forces pref `wallpaper`="2" (App wallpaper) and hands the bitmap to the app's own wallpaper queue by reflection (`MainActivity.v0` -> `d13.a(ur(bitmap), -1, true)`), the same path the Daily wallpaper uses. A window-background approach does not work: the app paints over it. Toggle: **"Dynamic wallpaper (changes every minute)"** switch in the Wallpaper settings (`smali/ik2.smali`, pref `dynamicWallpaper`; string `dynamic_wallpaper` id `0x7f120401`).
 
 ## Gotchas
+
