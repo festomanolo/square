@@ -40,10 +40,6 @@
         # REMOVED: license key check — always unlocked (i0 always false)
     const/4 v1, 0x0
     iput-boolean v1, p0, Laz1;->i0:Z
-    :try_end_1b
-    .catch Landroid/os/RemoteException; {:try_start_9 .. :try_end_1b} :catch_1b
-
-    :catch_1b
     return-void
 
     :pswitch_1c
