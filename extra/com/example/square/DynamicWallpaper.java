@@ -152,3 +152,4 @@ public final class DynamicWallpaper {
     private static boolean isImage(String n) {
         n = n.toLowerCase();
         return n.endsWith(".jpg") || n.endsWith(".jpeg") || n.endsWith(".png") || n.endsWith(".webp") || n.endsWith(".bmp");
+    }
