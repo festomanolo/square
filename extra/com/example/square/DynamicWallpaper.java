@@ -178,3 +178,4 @@ public final class DynamicWallpaper {
         c.drawRect(0, 0, tw, th, dim);
         in.recycle();
         return out;
+    }
