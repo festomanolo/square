@@ -125,3 +125,4 @@ public final class DynamicWallpaper {
     }
 
     private String lastImage;
+
