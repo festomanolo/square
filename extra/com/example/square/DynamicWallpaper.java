@@ -181,3 +181,4 @@ public final class DynamicWallpaper {
     }
 
     private Bitmap open(String src, BitmapFactory.Options o) throws Exception {
+        if (src.startsWith("f:")) return BitmapFactory.decodeFile(src.substring(2), o);
