@@ -57,3 +57,23 @@ public final class StatusBar extends FrameLayout {
         int pad = (int) (28 * d);
 
         LinearLayout left = new LinearLayout(c);
+        left.setOrientation(LinearLayout.HORIZONTAL);
+        left.setGravity(Gravity.CENTER_VERTICAL);
+        left.addView(clock(c, "h:mm", "H:mm", 24, 1f));
+        TextView gap = new TextView(c);
+        gap.setWidth((int) (16 * d));
+        left.addView(gap);
+        left.addView(clock(c, "EEE, MMM d", "EEE, MMM d", 17, 0.7f));
+        LayoutParams lp = new LayoutParams(-2, -1, Gravity.START | Gravity.CENTER_VERTICAL);
+        lp.leftMargin = pad;
+        addView(left, lp);
+
+        LinearLayout right = new LinearLayout(c);
+        right.setOrientation(LinearLayout.HORIZONTAL);
+        right.setGravity(Gravity.CENTER_VERTICAL);
+        ethernet = new Icon(c, ETHERNET);
+        bt = new Icon(c, BT);
+        wifi = new Icon(c, WIFI);
+        battery = new Icon(c, BATTERY);
+        Icon[] icons = {ethernet, bt, wifi, battery};
+        for (Icon i : icons) {
