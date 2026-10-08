@@ -12900,6 +12900,8 @@
 
     move-result p1
 
+    const/4 p1, 0x6
+
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
     :try_end_63
     .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_63} :catch_2e4
