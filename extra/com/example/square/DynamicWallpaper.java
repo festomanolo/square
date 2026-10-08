@@ -140,3 +140,4 @@ public final class DynamicWallpaper {
             String[] assets = activity.getAssets().list("wallpaper");
             if (assets != null) for (String n : assets) if (isImage(n)) names.add("a:wallpaper/" + n);
             if (names.isEmpty()) return null;
+            String pick;
