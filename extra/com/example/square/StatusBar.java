@@ -176,3 +176,23 @@ public final class StatusBar extends FrameLayout {
             p.setColor(0xFFFFFFFF);
             switch (type) {
                 case WIFI: drawWifi(cv, w, h); break;
+                case BT: drawBt(cv, w, h); break;
+                case BATTERY: drawBattery(cv, w, h); break;
+                default: drawEthernet(cv, w, h); break;
+            }
+        }
+
+        private void drawWifi(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h * 0.88f, u = h / 100f;
+            p.setStyle(Paint.Style.FILL);
+            p.setAlpha(255);
+            cv.drawCircle(cx, cy - 4 * u, 6 * u, p);
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(8 * u);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            float[] radii = {26 * u, 46 * u, 66 * u};
+            for (int i = 0; i < 3; i++) {
+                p.setAlpha(value > i ? 255 : 80);
+                RectF r = new RectF(cx - radii[i], cy - 4 * u - radii[i], cx + radii[i], cy - 4 * u + radii[i]);
+                cv.drawArc(r, 225, 90, false, p);
+            }
