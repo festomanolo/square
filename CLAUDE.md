@@ -8,3 +8,4 @@ Square Home launcher (decompiled, renamed `com.example.square`) adapted to run a
 - `Square-modified.apk` is the base APK (unsigned). `Square-landscape.apk` is the current deliverable (debug-signed).
 - `extra/` holds **plain Java** that is compiled with `javac` + `d8` and added to the APK as `classes2.dex` (apktool cannot build Java). Not part of `smali/`.
 - `assets/defaults/` is the bundled first-run default setup (prefs, series, layout). `wallpaper/` holds images for the dynamic wallpaper.
+- Obfuscated names are stable for this APK only (`ib2`, `mu3`, `d13`, `ur`, `ik2`, `xw0`...). Do not assume they match upstream Square Home.
