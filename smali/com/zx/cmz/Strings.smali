@@ -45,16 +45,12 @@
 
 .method public static getSwitch()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "Don\'t show again"
-
+    const-string v0, ""
     return-object v0
 .end method
 
 .method public static getTitle()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "LITEAPKS"
-
+    const-string v0, ""
     return-object v0
 .end method
