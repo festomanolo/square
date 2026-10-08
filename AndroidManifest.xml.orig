@@ -267,3 +267,30 @@
         </service>
         <receiver
             android:name="com.example.square.MainActivity.DeviceAdmin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:enabled="@bool/lower_than_pie"
+            android:exported="true"
+            android:description="@string/enable_this_to_lock">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/policies"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="com.canhub.cropper.CropFileProvider"
+            android:exported="false"
+            android:authorities="com.example.square.cropper.fileprovider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/cropper_library_file_paths"/>
+        </provider>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:name="com.canhub.cropper.CropImageActivity"
+            android:exported="true"/>
+        <meta-data
+            android:name="com.google.android.play.billingclient.version"
+            android:value="9.1.0"/>
