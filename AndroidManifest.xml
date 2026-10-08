@@ -199,6 +199,7 @@
             android:label="@string/typeface"
             android:name="com.example.square.PickTypefaceActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:label="@string/app_widget"
             android:icon="@drawable/ic_widget"
