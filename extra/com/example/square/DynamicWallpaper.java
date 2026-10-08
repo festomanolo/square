@@ -194,3 +194,4 @@ public final class DynamicWallpaper {
         paint.setShader(new LinearGradient(0, 0, W * 0.3f, H, p[0], p[1], Shader.TileMode.CLAMP));
         c.drawRect(0, 0, W, H, paint);
         for (int i = 0; i < 3; i++) {
+            float x = W * (0.1f + 0.8f * r.nextFloat());
