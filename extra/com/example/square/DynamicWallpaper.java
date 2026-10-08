@@ -59,3 +59,4 @@ public final class DynamicWallpaper {
     private final Runnable tick = new Runnable() {
         @Override public void run() {
             apply();
+            handler.postDelayed(this, INTERVAL_MS);
