@@ -215,6 +215,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:name="com.example.square.CropImageActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.ApplyThemeActivity"
             android:exported="true"
