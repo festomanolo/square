@@ -71,3 +71,4 @@ public final class DynamicWallpaper {
                 @Override public void onViewAttachedToWindow(View v) { w.resume(); }
                 @Override public void onViewDetachedFromWindow(View v) { w.pause(); }
             });
+            if (decor.isAttachedToWindow()) w.resume();
