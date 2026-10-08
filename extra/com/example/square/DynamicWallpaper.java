@@ -53,3 +53,4 @@ public final class DynamicWallpaper {
     private final Random rnd = new Random();
     private Drawable original;
     private Drawable current;
+    private int last = -1;
