@@ -37,3 +37,23 @@ public final class StatusBar extends FrameLayout {
             refresh();
             handler.postDelayed(this, 2000);
         }
+    };
+
+    public static void install(Activity a) {
+        try {
+            float d = a.getResources().getDisplayMetrics().density;
+            int h = (int) (46 * d);
+            ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
+            StatusBar bar = new StatusBar(a, d);
+            decor.addView(bar, new FrameLayout.LayoutParams(-1, h, Gravity.TOP));
+            a.findViewById(android.R.id.content).setPadding(0, h, 0, 0);
+        } catch (Throwable ignored) {
+        }
+    }
+
+    private StatusBar(Context c, float d) {
+        super(c);
+        setBackgroundColor(0xB0000000);
+        int pad = (int) (28 * d);
+
+        LinearLayout left = new LinearLayout(c);
