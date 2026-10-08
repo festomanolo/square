@@ -10443,6 +10443,8 @@
 
     move-result v2
 
+    const/4 v2, 0x6
+
     invoke-virtual {v1, v2}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_4f7
