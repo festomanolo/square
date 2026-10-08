@@ -254,6 +254,7 @@
     <string name="download_widget">Download widget</string>
     <string name="drag_to_resize">Drag this button to resize.</string>
     <string name="duplicate_tag_names">This category name already exists.</string>
+    <string name="dynamic_wallpaper">Dynamic wallpaper (changes every minute)</string>
     <string name="dynamic_color_scheme">Dynamic color scheme</string>
     <string name="dynamic_color_scheme_summary">Applies the system color scheme to the app UI.</string>
     <string name="edge_gestures">Edge Gestures</string>
