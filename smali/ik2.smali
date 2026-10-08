@@ -1692,6 +1692,7 @@
 
     invoke-static {v1, v9}, Ljz0;->L(ILj31;)Ljava/lang/String;
 
+    move-result-object v18
     invoke-virtual {v9}, Lj31;->L()Ljava/lang/Object;
 
     move-result-object v1
