@@ -24,3 +24,4 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.view.View;
 
+import java.util.Random;
