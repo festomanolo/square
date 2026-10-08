@@ -140,6 +140,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:name="com.example.square.WizardActivity"/>
         <activity
