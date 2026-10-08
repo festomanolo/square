@@ -39,9 +39,7 @@
 
 .method public static getSubtitle()Ljava/lang/String;
     .registers 1
-
-    const-string v0, "Safest and Fastest"
-
+    const-string v0, ""
     return-object v0
 .end method
 
