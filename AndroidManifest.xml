@@ -144,6 +144,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:name="com.example.square.WizardActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:name="com.example.square.SetWallpaperActivity"
             android:exported="true">
