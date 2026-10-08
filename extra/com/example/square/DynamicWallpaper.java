@@ -36,3 +36,4 @@ public final class DynamicWallpaper {
     static final long INTERVAL_MS = 60_000L;
     private static final int W = 640, H = 360;
 
+    // {base top, base bottom, blob1, blob2, blob3}
