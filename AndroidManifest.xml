@@ -154,6 +154,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/purchase"
             android:name="com.example.square.PurchaseActivity"
