@@ -152,3 +152,4 @@ See `CLAUDE.md` for build steps and details. Deliverable: `Square-landscape.apk`
 
 1. **Landscape only** - all activities `sensorLandscape`; runtime orientation prefs overridden to landscape.
 2. **First-run defaults from backup** - layout, series and prefs from `backup_261004` (without `hiddens`) bundled in `assets/defaults/` and imported by `DefaultSetup`.
+3. **iOS-style status bar** - time/date plus Ethernet, Bluetooth, 3-level Wi-Fi and power/charging icons (`extra/.../StatusBar.java`).
