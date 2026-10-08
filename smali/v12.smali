@@ -1,0 +1,2483 @@
+###### Class defpackage.v12 (v12)
+.class public final Lv12;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public a:[J
+
+.field public b:[Ljava/lang/Object;
+
+.field public c:[Ljava/lang/Object;
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+
+# direct methods
+.method public synthetic constructor <init>()V
+    .registers 2
+
+    const/4 v0, 0x6
+
+    invoke-direct {p0, v0}, Lv12;-><init>(I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v0, Lxw2;->a:[J
+
+    iput-object v0, p0, Lv12;->a:[J
+
+    sget-object v0, Lzi1;->h:[Ljava/lang/Object;
+
+    iput-object v0, p0, Lv12;->b:[Ljava/lang/Object;
+
+    iput-object v0, p0, Lv12;->c:[Ljava/lang/Object;
+
+    if-ltz p1, :cond_11
+
+    const/4 v0, 0x1
+
+    goto :goto_13
+
+    :cond_11
+    const/4 v0, 0x1
+
+    const/4 v0, 0x0
+
+    :goto_13
+    if-eqz v0, :cond_1d
+
+    invoke-static {p1}, Lxw2;->d(I)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lv12;->h(I)V
+
+    return-void
+
+    :cond_1d
+    const-string p0, "Capacity must be a positive value."
+
+    invoke-static {p0}, Lf;->j(Ljava/lang/String;)V
+
+    const/4 p0, 0x1
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .registers 11
+
+    const/4 v0, 0x1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lv12;->e:I
+
+    iget-object v1, p0, Lv12;->a:[J
+
+    sget-object v2, Lxw2;->a:[J
+
+    if-eq v1, v2, :cond_26
+
+    const-wide v2, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    invoke-static {v1, v2, v3}, Lll;->Y([JJ)V
+
+    iget-object v1, p0, Lv12;->a:[J
+
+    iget v2, p0, Lv12;->d:I
+
+    shr-int/lit8 v3, v2, 0x3
+
+    and-int/lit8 v2, v2, 0x7
+
+    shl-int/lit8 v2, v2, 0x3
+
+    aget-wide v4, v1, v3
+
+    const-wide/16 v6, 0xff
+
+    shl-long/2addr v6, v2
+
+    not-long v8, v6
+
+    and-long/2addr v4, v8
+
+    or-long/2addr v4, v6
+
+    aput-wide v4, v1, v3
+
+    :cond_26
+    iget-object v1, p0, Lv12;->c:[Ljava/lang/Object;
+
+    iget v2, p0, Lv12;->d:I
+
+    invoke-static {v1, v0, v2}, Lll;->X([Ljava/lang/Object;II)V
+
+    iget-object v1, p0, Lv12;->b:[Ljava/lang/Object;
+
+    iget v2, p0, Lv12;->d:I
+
+    invoke-static {v1, v0, v2}, Lll;->X([Ljava/lang/Object;II)V
+
+    iget v0, p0, Lv12;->d:I
+
+    invoke-static {v0}, Lxw2;->a(I)I
+
+    move-result v0
+
+    iget v1, p0, Lv12;->e:I
+
+    sub-int/2addr v0, v1
+
+    iput v0, p0, Lv12;->f:I
+
+    return-void
+.end method
+
+.method public final b(Ljava/lang/Object;)Z
+    .registers 19
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    const/4 v2, 0x1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_d
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    goto :goto_e
+
+    :cond_d
+    move v3, v2
+
+    :goto_e
+    const v4, -0x3361d2af    # -8.293031E7f
+
+    mul-int/2addr v3, v4
+
+    shl-int/lit8 v4, v3, 0x10
+
+    xor-int/2addr v3, v4
+
+    and-int/lit8 v4, v3, 0x7f
+
+    iget v5, v0, Lv12;->d:I
+
+    ushr-int/lit8 v3, v3, 0x7
+
+    and-int/2addr v3, v5
+
+    move v6, v2
+
+    :goto_1d
+    iget-object v7, v0, Lv12;->a:[J
+
+    shr-int/lit8 v8, v3, 0x3
+
+    and-int/lit8 v9, v3, 0x7
+
+    shl-int/lit8 v9, v9, 0x3
+
+    aget-wide v10, v7, v8
+
+    ushr-long/2addr v10, v9
+
+    const/4 v12, 0x1
+
+    add-int/2addr v8, v12
+
+    aget-wide v13, v7, v8
+
+    rsub-int/lit8 v7, v9, 0x40
+
+    shl-long v7, v13, v7
+
+    int-to-long v13, v9
+
+    neg-long v13, v13
+
+    const/16 v9, 0x3f
+
+    shr-long/2addr v13, v9
+
+    and-long/2addr v7, v13
+
+    or-long/2addr v7, v10
+
+    int-to-long v9, v4
+
+    const-wide v13, 0x101010101010101L
+
+    mul-long/2addr v9, v13
+
+    xor-long/2addr v9, v7
+
+    sub-long v13, v9, v13
+
+    not-long v9, v9
+
+    and-long/2addr v9, v13
+
+    const-wide v13, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v9, v13
+
+    :goto_49
+    const-wide/16 v15, 0x0
+
+    cmp-long v11, v9, v15
+
+    if-eqz v11, :cond_68
+
+    invoke-static {v9, v10}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    move-result v11
+
+    shr-int/lit8 v11, v11, 0x3
+
+    add-int/2addr v11, v3
+
+    and-int/2addr v11, v5
+
+    iget-object v15, v0, Lv12;->b:[Ljava/lang/Object;
+
+    aget-object v15, v15, v11
+
+    invoke-static {v15, v1}, Lvf1;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v15
+
+    if-eqz v15, :cond_62
+
+    goto :goto_72
+
+    :cond_62
+    const-wide/16 v15, 0x1
+
+    sub-long v15, v9, v15
+
+    and-long/2addr v9, v15
+
+    goto :goto_49
+
+    :cond_68
+    not-long v9, v7
+
+    const/4 v11, 0x6
+
+    shl-long/2addr v9, v11
+
+    and-long/2addr v7, v9
+
+    and-long/2addr v7, v13
+
+    cmp-long v7, v7, v15
+
+    if-eqz v7, :cond_76
+
+    const/4 v11, -0x1
+
+    :goto_72
+    if-ltz v11, :cond_75
+
+    return v12
+
+    :cond_75
+    return v2
+
+    :cond_76
+    add-int/lit8 v6, v6, 0x8
+
+    add-int/2addr v3, v6
+
+    and-int/2addr v3, v5
+
+    goto :goto_1d
+.end method
+
+.method public final c(Ljava/lang/Object;)Z
+    .registers 19
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    const/4 v2, 0x1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_d
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    goto :goto_e
+
+    :cond_d
+    move v3, v2
+
+    :goto_e
+    const v4, -0x3361d2af    # -8.293031E7f
+
+    mul-int/2addr v3, v4
+
+    shl-int/lit8 v4, v3, 0x10
+
+    xor-int/2addr v3, v4
+
+    and-int/lit8 v4, v3, 0x7f
+
+    iget v5, v0, Lv12;->d:I
+
+    ushr-int/lit8 v3, v3, 0x7
+
+    and-int/2addr v3, v5
+
+    move v6, v2
+
+    :goto_1d
+    iget-object v7, v0, Lv12;->a:[J
+
+    shr-int/lit8 v8, v3, 0x3
+
+    and-int/lit8 v9, v3, 0x7
+
+    shl-int/lit8 v9, v9, 0x3
+
+    aget-wide v10, v7, v8
+
+    ushr-long/2addr v10, v9
+
+    const/4 v12, 0x1
+
+    add-int/2addr v8, v12
+
+    aget-wide v13, v7, v8
+
+    rsub-int/lit8 v7, v9, 0x40
+
+    shl-long v7, v13, v7
+
+    int-to-long v13, v9
+
+    neg-long v13, v13
+
+    const/16 v9, 0x3f
+
+    shr-long/2addr v13, v9
+
+    and-long/2addr v7, v13
+
+    or-long/2addr v7, v10
+
+    int-to-long v9, v4
+
+    const-wide v13, 0x101010101010101L
+
+    mul-long/2addr v9, v13
+
+    xor-long/2addr v9, v7
+
+    sub-long v13, v9, v13
+
+    not-long v9, v9
+
+    and-long/2addr v9, v13
+
+    const-wide v13, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v9, v13
+
+    :goto_49
+    const-wide/16 v15, 0x0
+
+    cmp-long v11, v9, v15
+
+    if-eqz v11, :cond_68
+
+    invoke-static {v9, v10}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    move-result v11
+
+    shr-int/lit8 v11, v11, 0x3
+
+    add-int/2addr v11, v3
+
+    and-int/2addr v11, v5
+
+    iget-object v15, v0, Lv12;->b:[Ljava/lang/Object;
+
+    aget-object v15, v15, v11
+
+    invoke-static {v15, v1}, Lvf1;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v15
+
+    if-eqz v15, :cond_62
+
+    goto :goto_72
+
+    :cond_62
+    const-wide/16 v15, 0x1
+
+    sub-long v15, v9, v15
+
+    and-long/2addr v9, v15
+
+    goto :goto_49
+
+    :cond_68
+    not-long v9, v7
+
+    const/4 v11, 0x6
+
+    shl-long/2addr v9, v11
+
+    and-long/2addr v7, v9
+
+    and-long/2addr v7, v13
+
+    cmp-long v7, v7, v15
+
+    if-eqz v7, :cond_76
+
+    const/4 v11, -0x1
+
+    :goto_72
+    if-ltz v11, :cond_75
+
+    return v12
+
+    :cond_75
+    return v2
+
+    :cond_76
+    add-int/lit8 v6, v6, 0x8
+
+    add-int/2addr v3, v6
+
+    and-int/2addr v3, v5
+
+    goto :goto_1d
+.end method
+
+.method public final d(Ljava/lang/Object;)Z
+    .registers 15
+
+    iget-object v0, p0, Lv12;->c:[Ljava/lang/Object;
+
+    iget-object p0, p0, Lv12;->a:[J
+
+    array-length v1, p0
+
+    add-int/lit8 v1, v1, -0x2
+
+    const/4 v2, 0x1
+
+    const/4 v2, 0x0
+
+    if-ltz v1, :cond_49
+
+    move v3, v2
+
+    :goto_c
+    aget-wide v4, p0, v3
+
+    not-long v6, v4
+
+    const/4 v8, 0x7
+
+    shl-long/2addr v6, v8
+
+    and-long/2addr v6, v4
+
+    const-wide v8, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v6, v8
+
+    cmp-long v6, v6, v8
+
+    if-eqz v6, :cond_44
+
+    sub-int v6, v3, v1
+
+    not-int v6, v6
+
+    ushr-int/lit8 v6, v6, 0x1f
+
+    const/16 v7, 0x8
+
+    rsub-int/lit8 v6, v6, 0x8
+
+    move v8, v2
+
+    :goto_26
+    if-ge v8, v6, :cond_42
+
+    const-wide/16 v9, 0xff
+
+    and-long/2addr v9, v4
+
+    const-wide/16 v11, 0x80
+
+    cmp-long v9, v9, v11
+
+    if-gez v9, :cond_3e
+
+    shl-int/lit8 v9, v3, 0x3
+
+    add-int/2addr v9, v8
+
+    aget-object v9, v0, v9
+
+    invoke-static {p1, v9}, Lvf1;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_3e
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_3e
+    shr-long/2addr v4, v7
+
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_26
+
+    :cond_42
+    if-ne v6, v7, :cond_49
+
+    :cond_44
+    if-eq v3, v1, :cond_49
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_c
+
+    :cond_49
+    return v2
+.end method
+
+.method public final e(I)I
+    .registers 11
+
+    iget v0, p0, Lv12;->d:I
+
+    and-int/2addr p1, v0
+
+    const/4 v1, 0x1
+
+    const/4 v1, 0x0
+
+    :goto_5
+    iget-object v2, p0, Lv12;->a:[J
+
+    shr-int/lit8 v3, p1, 0x3
+
+    and-int/lit8 v4, p1, 0x7
+
+    shl-int/lit8 v4, v4, 0x3
+
+    aget-wide v5, v2, v3
+
+    ushr-long/2addr v5, v4
+
+    add-int/lit8 v3, v3, 0x1
+
+    aget-wide v7, v2, v3
+
+    rsub-int/lit8 v2, v4, 0x40
+
+    shl-long v2, v7, v2
+
+    int-to-long v7, v4
+
+    neg-long v7, v7
+
+    const/16 v4, 0x3f
+
+    shr-long/2addr v7, v4
+
+    and-long/2addr v2, v7
+
+    or-long/2addr v2, v5
+
+    not-long v4, v2
+
+    const/4 v6, 0x7
+
+    shl-long/2addr v4, v6
+
+    and-long/2addr v2, v4
+
+    const-wide v4, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v2, v4
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v4, v2, v4
+
+    if-eqz v4, :cond_39
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    move-result p0
+
+    shr-int/lit8 p0, p0, 0x3
+
+    add-int/2addr p1, p0
+
+    and-int p0, p1, v0
+
+    return p0
+
+    :cond_39
+    add-int/lit8 v1, v1, 0x8
+
+    add-int/2addr p1, v1
+
+    and-int/2addr p1, v0
+
+    goto :goto_5
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 19
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v0, :cond_8
+
+    return v2
+
+    :cond_8
+    instance-of v3, v1, Lv12;
+
+    const/4 v4, 0x1
+
+    const/4 v4, 0x0
+
+    if-nez v3, :cond_f
+
+    return v4
+
+    :cond_f
+    check-cast v1, Lv12;
+
+    iget v3, v1, Lv12;->e:I
+
+    iget v5, v0, Lv12;->e:I
+
+    if-eq v3, v5, :cond_18
+
+    return v4
+
+    :cond_18
+    iget-object v3, v0, Lv12;->b:[Ljava/lang/Object;
+
+    iget-object v5, v0, Lv12;->c:[Ljava/lang/Object;
+
+    iget-object v0, v0, Lv12;->a:[J
+
+    array-length v6, v0
+
+    add-int/lit8 v6, v6, -0x2
+
+    if-ltz v6, :cond_75
+
+    move v7, v4
+
+    :goto_24
+    aget-wide v8, v0, v7
+
+    not-long v10, v8
+
+    const/4 v12, 0x7
+
+    shl-long/2addr v10, v12
+
+    and-long/2addr v10, v8
+
+    const-wide v12, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v10, v12
+
+    cmp-long v10, v10, v12
+
+    if-eqz v10, :cond_70
+
+    sub-int v10, v7, v6
+
+    not-int v10, v10
+
+    ushr-int/lit8 v10, v10, 0x1f
+
+    const/16 v11, 0x8
+
+    rsub-int/lit8 v10, v10, 0x8
+
+    move v12, v4
+
+    :goto_3e
+    if-ge v12, v10, :cond_6e
+
+    const-wide/16 v13, 0xff
+
+    and-long/2addr v13, v8
+
+    const-wide/16 v15, 0x80
+
+    cmp-long v13, v13, v15
+
+    if-gez v13, :cond_6a
+
+    shl-int/lit8 v13, v7, 0x3
+
+    add-int/2addr v13, v12
+
+    aget-object v14, v3, v13
+
+    aget-object v13, v5, v13
+
+    if-nez v13, :cond_5f
+
+    invoke-virtual {v1, v14}, Lv12;->g(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v13
+
+    if-nez v13, :cond_5e
+
+    invoke-virtual {v1, v14}, Lv12;->c(Ljava/lang/Object;)Z
+
+    move-result v13
+
+    if-nez v13, :cond_6a
+
+    :cond_5e
+    return v4
+
+    :cond_5f
+    invoke-virtual {v1, v14}, Lv12;->g(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v13
+
+    if-nez v13, :cond_6a
+
+    return v4
+
+    :cond_6a
+    shr-long/2addr v8, v11
+
+    add-int/lit8 v12, v12, 0x1
+
+    goto :goto_3e
+
+    :cond_6e
+    if-ne v10, v11, :cond_75
+
+    :cond_70
+    if-eq v7, v6, :cond_75
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_24
+
+    :cond_75
+    return v2
+.end method
+
+.method public final f(Ljava/lang/Object;)I
+    .registers 33
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    if-eqz v1, :cond_b
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    goto :goto_d
+
+    :cond_b
+    const/4 v3, 0x1
+
+    const/4 v3, 0x0
+
+    :goto_d
+    const v4, -0x3361d2af    # -8.293031E7f
+
+    mul-int/2addr v3, v4
+
+    shl-int/lit8 v5, v3, 0x10
+
+    xor-int/2addr v3, v5
+
+    ushr-int/lit8 v5, v3, 0x7
+
+    and-int/lit8 v3, v3, 0x7f
+
+    iget v6, v0, Lv12;->d:I
+
+    and-int v7, v5, v6
+
+    const/4 v8, 0x1
+
+    const/4 v8, 0x0
+
+    :goto_1e
+    iget-object v9, v0, Lv12;->a:[J
+
+    shr-int/lit8 v10, v7, 0x3
+
+    and-int/lit8 v11, v7, 0x7
+
+    shl-int/lit8 v11, v11, 0x3
+
+    aget-wide v12, v9, v10
+
+    ushr-long/2addr v12, v11
+
+    const/4 v14, 0x1
+
+    add-int/2addr v10, v14
+
+    aget-wide v15, v9, v10
+
+    rsub-int/lit8 v9, v11, 0x40
+
+    shl-long v9, v15, v9
+
+    move/from16 v16, v14
+
+    int-to-long v14, v11
+
+    neg-long v14, v14
+
+    const/16 v11, 0x3f
+
+    shr-long/2addr v14, v11
+
+    and-long/2addr v9, v14
+
+    or-long/2addr v9, v12
+
+    int-to-long v11, v3
+
+    const-wide v13, 0x101010101010101L
+
+    mul-long v17, v11, v13
+
+    move/from16 v19, v3
+
+    const/4 v15, 0x1
+
+    const/4 v15, 0x0
+
+    xor-long v2, v9, v17
+
+    sub-long v13, v2, v13
+
+    not-long v2, v2
+
+    and-long/2addr v2, v13
+
+    const-wide v13, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v2, v13
+
+    :goto_52
+    const-wide/16 v17, 0x0
+
+    cmp-long v20, v2, v17
+
+    if-eqz v20, :cond_78
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    move-result v17
+
+    shr-int/lit8 v17, v17, 0x3
+
+    add-int v17, v7, v17
+
+    and-int v17, v17, v6
+
+    move/from16 v20, v4
+
+    iget-object v4, v0, Lv12;->b:[Ljava/lang/Object;
+
+    aget-object v4, v4, v17
+
+    invoke-static {v4, v1}, Lvf1;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6f
+
+    return v17
+
+    :cond_6f
+    const-wide/16 v17, 0x1
+
+    sub-long v17, v2, v17
+
+    and-long v2, v2, v17
+
+    move/from16 v4, v20
+
+    goto :goto_52
+
+    :cond_78
+    move/from16 v20, v4
+
+    not-long v2, v9
+
+    const/4 v4, 0x6
+
+    shl-long/2addr v2, v4
+
+    and-long/2addr v2, v9
+
+    and-long/2addr v2, v13
+
+    cmp-long v2, v2, v17
+
+    const/16 v3, 0x8
+
+    if-eqz v2, :cond_29f
+
+    invoke-virtual {v0, v5}, Lv12;->e(I)I
+
+    move-result v1
+
+    iget v2, v0, Lv12;->f:I
+
+    const-wide/16 v8, 0xff
+
+    if-nez v2, :cond_a3
+
+    iget-object v2, v0, Lv12;->a:[J
+
+    shr-int/lit8 v10, v1, 0x3
+
+    aget-wide v17, v2, v10
+
+    and-int/lit8 v2, v1, 0x7
+
+    shl-int/lit8 v2, v2, 0x3
+
+    shr-long v17, v17, v2
+
+    and-long v17, v17, v8
+
+    const-wide/16 v21, 0xfe
+
+    cmp-long v2, v17, v21
+
+    if-nez v2, :cond_ad
+
+    :cond_a3
+    move-wide/from16 v25, v8
+
+    move-wide/from16 v23, v11
+
+    const/16 p1, 0x7
+
+    const-wide/16 v18, 0x80
+
+    goto/16 :goto_269
+
+    :cond_ad
+    iget v1, v0, Lv12;->d:I
+
+    if-le v1, v3, :cond_1ec
+
+    iget v2, v0, Lv12;->e:I
+
+    move v10, v3
+
+    const/16 p1, 0x7
+
+    int-to-long v3, v2
+
+    const-wide/16 v17, 0x20
+
+    mul-long v3, v3, v17
+
+    int-to-long v1, v1
+
+    const-wide/16 v17, 0x19
+
+    mul-long v1, v1, v17
+
+    invoke-static {v3, v4, v1, v2}, Ljava/lang/Long;->compareUnsigned(JJ)I
+
+    move-result v1
+
+    if-gtz v1, :cond_1e5
+
+    iget-object v1, v0, Lv12;->a:[J
+
+    iget v2, v0, Lv12;->d:I
+
+    iget-object v3, v0, Lv12;->b:[Ljava/lang/Object;
+
+    iget-object v4, v0, Lv12;->c:[Ljava/lang/Object;
+
+    add-int/lit8 v17, v2, 0x7
+
+    const-wide/16 v18, 0x80
+
+    shr-int/lit8 v6, v17, 0x3
+
+    move v7, v15
+
+    :goto_d5
+    if-ge v7, v6, :cond_f4
+
+    aget-wide v23, v1, v7
+
+    move-wide/from16 v25, v8
+
+    and-long v8, v23, v13
+
+    move-wide/from16 v23, v11
+
+    move v12, v10
+
+    not-long v10, v8
+
+    ushr-long v8, v8, p1
+
+    add-long/2addr v10, v8
+
+    const-wide v8, -0x101010101010102L
+
+    and-long/2addr v8, v10
+
+    aput-wide v8, v1, v7
+
+    add-int/lit8 v7, v7, 0x1
+
+    move v10, v12
+
+    move-wide/from16 v11, v23
+
+    move-wide/from16 v8, v25
+
+    goto :goto_d5
+
+    :cond_f4
+    move-wide/from16 v25, v8
+
+    move-wide/from16 v23, v11
+
+    move v12, v10
+
+    invoke-static {v1}, Lll;->c0([J)I
+
+    move-result v6
+
+    add-int/lit8 v7, v6, -0x1
+
+    aget-wide v8, v1, v7
+
+    const-wide v10, 0xffffffffffffffL
+
+    and-long/2addr v8, v10
+
+    const-wide/high16 v10, -0x100000000000000L
+
+    or-long/2addr v8, v10
+
+    aput-wide v8, v1, v7
+
+    aget-wide v7, v1, v15
+
+    aput-wide v7, v1, v6
+
+    move v6, v15
+
+    :goto_111
+    if-eq v6, v2, :cond_1d8
+
+    shr-int/lit8 v7, v6, 0x3
+
+    aget-wide v8, v1, v7
+
+    and-int/lit8 v10, v6, 0x7
+
+    shl-int/lit8 v10, v10, 0x3
+
+    shr-long/2addr v8, v10
+
+    and-long v8, v8, v25
+
+    cmp-long v11, v8, v18
+
+    if-nez v11, :cond_125
+
+    :goto_122
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_111
+
+    :cond_125
+    cmp-long v8, v8, v21
+
+    if-eqz v8, :cond_12a
+
+    goto :goto_122
+
+    :cond_12a
+    aget-object v8, v3, v6
+
+    if-eqz v8, :cond_133
+
+    invoke-virtual {v8}, Ljava/lang/Object;->hashCode()I
+
+    move-result v8
+
+    goto :goto_134
+
+    :cond_133
+    move v8, v15
+
+    :goto_134
+    mul-int v8, v8, v20
+
+    shl-int/lit8 v9, v8, 0x10
+
+    xor-int/2addr v8, v9
+
+    ushr-int/lit8 v9, v8, 0x7
+
+    invoke-virtual {v0, v9}, Lv12;->e(I)I
+
+    move-result v11
+
+    and-int/2addr v9, v2
+
+    sub-int v13, v11, v9
+
+    and-int/2addr v13, v2
+
+    div-int/2addr v13, v12
+
+    sub-int v9, v6, v9
+
+    and-int/2addr v9, v2
+
+    div-int/2addr v9, v12
+
+    if-ne v13, v9, :cond_168
+
+    and-int/lit8 v8, v8, 0x7f
+
+    int-to-long v8, v8
+
+    aget-wide v13, v1, v7
+
+    move/from16 v17, v12
+
+    move-wide/from16 v27, v13
+
+    shl-long v12, v25, v10
+
+    not-long v11, v12
+
+    and-long v11, v27, v11
+
+    shl-long/2addr v8, v10
+
+    or-long/2addr v8, v11
+
+    aput-wide v8, v1, v7
+
+    array-length v7, v1
+
+    add-int/lit8 v7, v7, -0x1
+
+    aget-wide v8, v1, v15
+
+    aput-wide v8, v1, v7
+
+    add-int/lit8 v6, v6, 0x1
+
+    move/from16 v12, v17
+
+    goto :goto_111
+
+    :cond_168
+    move/from16 v17, v12
+
+    shr-int/lit8 v9, v11, 0x3
+
+    aget-wide v12, v1, v9
+
+    and-int/lit8 v14, v11, 0x7
+
+    shl-int/lit8 v14, v14, 0x3
+
+    shr-long v27, v12, v14
+
+    and-long v27, v27, v25
+
+    cmp-long v27, v27, v18
+
+    if-nez v27, :cond_1a6
+
+    and-int/lit8 v8, v8, 0x7f
+
+    move/from16 v27, v2
+
+    move-object/from16 v28, v3
+
+    int-to-long v2, v8
+
+    move-wide/from16 v29, v2
+
+    shl-long v2, v25, v14
+
+    not-long v2, v2
+
+    and-long/2addr v2, v12
+
+    shl-long v12, v29, v14
+
+    or-long/2addr v2, v12
+
+    aput-wide v2, v1, v9
+
+    aget-wide v2, v1, v7
+
+    shl-long v8, v25, v10
+
+    not-long v8, v8
+
+    and-long/2addr v2, v8
+
+    shl-long v8, v18, v10
+
+    or-long/2addr v2, v8
+
+    aput-wide v2, v1, v7
+
+    aget-object v2, v28, v6
+
+    aput-object v2, v28, v11
+
+    const/4 v2, 0x1
+
+    const/4 v2, 0x0
+
+    aput-object v2, v28, v6
+
+    aget-object v3, v4, v6
+
+    aput-object v3, v4, v11
+
+    aput-object v2, v4, v6
+
+    goto :goto_1c7
+
+    :cond_1a6
+    move/from16 v27, v2
+
+    move-object/from16 v28, v3
+
+    and-int/lit8 v2, v8, 0x7f
+
+    int-to-long v2, v2
+
+    shl-long v7, v25, v14
+
+    not-long v7, v7
+
+    and-long/2addr v7, v12
+
+    shl-long/2addr v2, v14
+
+    or-long/2addr v2, v7
+
+    aput-wide v2, v1, v9
+
+    aget-object v2, v28, v11
+
+    aget-object v3, v28, v6
+
+    aput-object v3, v28, v11
+
+    aput-object v2, v28, v6
+
+    aget-object v2, v4, v11
+
+    aget-object v3, v4, v6
+
+    aput-object v3, v4, v11
+
+    aput-object v2, v4, v6
+
+    add-int/lit8 v6, v6, -0x1
+
+    :goto_1c7
+    array-length v2, v1
+
+    add-int/lit8 v2, v2, -0x1
+
+    aget-wide v7, v1, v15
+
+    aput-wide v7, v1, v2
+
+    add-int/lit8 v6, v6, 0x1
+
+    move/from16 v12, v17
+
+    move/from16 v2, v27
+
+    move-object/from16 v3, v28
+
+    goto/16 :goto_111
+
+    :cond_1d8
+    iget v1, v0, Lv12;->d:I
+
+    invoke-static {v1}, Lxw2;->a(I)I
+
+    move-result v1
+
+    iget v2, v0, Lv12;->e:I
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lv12;->f:I
+
+    goto/16 :goto_265
+
+    :cond_1e5
+    :goto_1e5
+    move-wide/from16 v25, v8
+
+    move-wide/from16 v23, v11
+
+    const-wide/16 v18, 0x80
+
+    goto :goto_1ef
+
+    :cond_1ec
+    const/16 p1, 0x7
+
+    goto :goto_1e5
+
+    :goto_1ef
+    iget v1, v0, Lv12;->d:I
+
+    invoke-static {v1}, Lxw2;->b(I)I
+
+    move-result v1
+
+    iget-object v2, v0, Lv12;->a:[J
+
+    iget-object v3, v0, Lv12;->b:[Ljava/lang/Object;
+
+    iget-object v4, v0, Lv12;->c:[Ljava/lang/Object;
+
+    iget v6, v0, Lv12;->d:I
+
+    invoke-virtual {v0, v1}, Lv12;->h(I)V
+
+    iget-object v1, v0, Lv12;->a:[J
+
+    iget-object v7, v0, Lv12;->b:[Ljava/lang/Object;
+
+    iget-object v8, v0, Lv12;->c:[Ljava/lang/Object;
+
+    iget v9, v0, Lv12;->d:I
+
+    move v10, v15
+
+    :goto_209
+    if-ge v10, v6, :cond_265
+
+    shr-int/lit8 v11, v10, 0x3
+
+    aget-wide v11, v2, v11
+
+    and-int/lit8 v13, v10, 0x7
+
+    shl-int/lit8 v13, v13, 0x3
+
+    shr-long/2addr v11, v13
+
+    and-long v11, v11, v25
+
+    cmp-long v11, v11, v18
+
+    if-gez v11, :cond_25c
+
+    aget-object v11, v3, v10
+
+    if-eqz v11, :cond_223
+
+    invoke-virtual {v11}, Ljava/lang/Object;->hashCode()I
+
+    move-result v12
+
+    goto :goto_224
+
+    :cond_223
+    move v12, v15
+
+    :goto_224
+    mul-int v12, v12, v20
+
+    shl-int/lit8 v13, v12, 0x10
+
+    xor-int/2addr v12, v13
+
+    ushr-int/lit8 v13, v12, 0x7
+
+    invoke-virtual {v0, v13}, Lv12;->e(I)I
+
+    move-result v13
+
+    and-int/lit8 v12, v12, 0x7f
+
+    move-object/from16 v17, v1
+
+    move-object v14, v2
+
+    int-to-long v1, v12
+
+    shr-int/lit8 v12, v13, 0x3
+
+    and-int/lit8 v21, v13, 0x7
+
+    shl-int/lit8 v21, v21, 0x3
+
+    aget-wide v27, v17, v12
+
+    move-wide/from16 v29, v1
+
+    shl-long v1, v25, v21
+
+    not-long v1, v1
+
+    and-long v1, v27, v1
+
+    shl-long v21, v29, v21
+
+    or-long v1, v1, v21
+
+    aput-wide v1, v17, v12
+
+    add-int/lit8 v12, v13, -0x7
+
+    and-int/2addr v12, v9
+
+    and-int/lit8 v21, v9, 0x7
+
+    add-int v12, v12, v21
+
+    shr-int/lit8 v12, v12, 0x3
+
+    aput-wide v1, v17, v12
+
+    aput-object v11, v7, v13
+
+    aget-object v1, v4, v10
+
+    aput-object v1, v8, v13
+
+    goto :goto_25f
+
+    :cond_25c
+    move-object/from16 v17, v1
+
+    move-object v14, v2
+
+    :goto_25f
+    add-int/lit8 v10, v10, 0x1
+
+    move-object v2, v14
+
+    move-object/from16 v1, v17
+
+    goto :goto_209
+
+    :cond_265
+    :goto_265
+    invoke-virtual {v0, v5}, Lv12;->e(I)I
+
+    move-result v1
+
+    :goto_269
+    iget v2, v0, Lv12;->e:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, v0, Lv12;->e:I
+
+    iget v2, v0, Lv12;->f:I
+
+    iget-object v3, v0, Lv12;->a:[J
+
+    shr-int/lit8 v4, v1, 0x3
+
+    aget-wide v5, v3, v4
+
+    and-int/lit8 v7, v1, 0x7
+
+    shl-int/lit8 v7, v7, 0x3
+
+    shr-long v8, v5, v7
+
+    and-long v8, v8, v25
+
+    cmp-long v8, v8, v18
+
+    if-nez v8, :cond_285
+
+    move/from16 v15, v16
+
+    :cond_285
+    sub-int/2addr v2, v15
+
+    iput v2, v0, Lv12;->f:I
+
+    iget v0, v0, Lv12;->d:I
+
+    shl-long v8, v25, v7
+
+    not-long v8, v8
+
+    and-long/2addr v5, v8
+
+    shl-long v7, v23, v7
+
+    or-long/2addr v5, v7
+
+    aput-wide v5, v3, v4
+
+    add-int/lit8 v2, v1, -0x7
+
+    and-int/2addr v2, v0
+
+    and-int/lit8 v0, v0, 0x7
+
+    add-int/2addr v2, v0
+
+    shr-int/lit8 v0, v2, 0x3
+
+    aput-wide v5, v3, v0
+
+    not-int v0, v1
+
+    return v0
+
+    :cond_29f
+    move/from16 v17, v3
+
+    add-int/lit8 v8, v8, 0x8
+
+    add-int/2addr v7, v8
+
+    and-int/2addr v7, v6
+
+    move/from16 v3, v19
+
+    move/from16 v4, v20
+
+    goto/16 :goto_1e
+.end method
+
+.method public final g(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 15
+
+    const/4 v0, 0x1
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_9
+
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    goto :goto_a
+
+    :cond_9
+    move v1, v0
+
+    :goto_a
+    const v2, -0x3361d2af    # -8.293031E7f
+
+    mul-int/2addr v1, v2
+
+    shl-int/lit8 v2, v1, 0x10
+
+    xor-int/2addr v1, v2
+
+    and-int/lit8 v2, v1, 0x7f
+
+    iget v3, p0, Lv12;->d:I
+
+    ushr-int/lit8 v1, v1, 0x7
+
+    :goto_17
+    and-int/2addr v1, v3
+
+    iget-object v4, p0, Lv12;->a:[J
+
+    shr-int/lit8 v5, v1, 0x3
+
+    and-int/lit8 v6, v1, 0x7
+
+    shl-int/lit8 v6, v6, 0x3
+
+    aget-wide v7, v4, v5
+
+    ushr-long/2addr v7, v6
+
+    add-int/lit8 v5, v5, 0x1
+
+    aget-wide v9, v4, v5
+
+    rsub-int/lit8 v4, v6, 0x40
+
+    shl-long v4, v9, v4
+
+    int-to-long v9, v6
+
+    neg-long v9, v9
+
+    const/16 v6, 0x3f
+
+    shr-long/2addr v9, v6
+
+    and-long/2addr v4, v9
+
+    or-long/2addr v4, v7
+
+    int-to-long v6, v2
+
+    const-wide v8, 0x101010101010101L
+
+    mul-long/2addr v6, v8
+
+    xor-long/2addr v6, v4
+
+    sub-long v8, v6, v8
+
+    not-long v6, v6
+
+    and-long/2addr v6, v8
+
+    const-wide v8, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v6, v8
+
+    :goto_44
+    const-wide/16 v10, 0x0
+
+    cmp-long v12, v6, v10
+
+    if-eqz v12, :cond_63
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    move-result v10
+
+    shr-int/lit8 v10, v10, 0x3
+
+    add-int/2addr v10, v1
+
+    and-int/2addr v10, v3
+
+    iget-object v11, p0, Lv12;->b:[Ljava/lang/Object;
+
+    aget-object v11, v11, v10
+
+    invoke-static {v11, p1}, Lvf1;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_5d
+
+    goto :goto_6d
+
+    :cond_5d
+    const-wide/16 v10, 0x1
+
+    sub-long v10, v6, v10
+
+    and-long/2addr v6, v10
+
+    goto :goto_44
+
+    :cond_63
+    not-long v6, v4
+
+    const/4 v12, 0x6
+
+    shl-long/2addr v6, v12
+
+    and-long/2addr v4, v6
+
+    and-long/2addr v4, v8
+
+    cmp-long v4, v4, v10
+
+    if-eqz v4, :cond_77
+
+    const/4 v10, -0x1
+
+    :goto_6d
+    if-ltz v10, :cond_74
+
+    iget-object p0, p0, Lv12;->c:[Ljava/lang/Object;
+
+    aget-object p0, p0, v10
+
+    return-object p0
+
+    :cond_74
+    const/4 p0, 0x1
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_77
+    add-int/lit8 v0, v0, 0x8
+
+    add-int/2addr v1, v0
+
+    goto :goto_17
+.end method
+
+.method public final h(I)V
+    .registers 12
+
+    sget-object v0, Lzi1;->h:[Ljava/lang/Object;
+
+    const/4 v1, 0x1
+
+    const/4 v1, 0x0
+
+    if-lez p1, :cond_10
+
+    invoke-static {p1}, Lxw2;->c(I)I
+
+    move-result p1
+
+    const/4 v2, 0x7
+
+    invoke-static {v2, p1}, Ljava/lang/Math;->max(II)I
+
+    move-result p1
+
+    goto :goto_11
+
+    :cond_10
+    move p1, v1
+
+    :goto_11
+    iput p1, p0, Lv12;->d:I
+
+    if-nez p1, :cond_18
+
+    sget-object v1, Lxw2;->a:[J
+
+    goto :goto_39
+
+    :cond_18
+    add-int/lit8 v2, p1, 0xf
+
+    and-int/lit8 v2, v2, -0x8
+
+    shr-int/lit8 v2, v2, 0x3
+
+    new-array v3, v2, [J
+
+    const-wide v4, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    invoke-static {v3, v1, v2, v4, v5}, Ljava/util/Arrays;->fill([JIIJ)V
+
+    shr-int/lit8 v1, p1, 0x3
+
+    and-int/lit8 v2, p1, 0x7
+
+    shl-int/lit8 v2, v2, 0x3
+
+    aget-wide v4, v3, v1
+
+    const-wide/16 v6, 0xff
+
+    shl-long/2addr v6, v2
+
+    not-long v8, v6
+
+    and-long/2addr v4, v8
+
+    or-long/2addr v4, v6
+
+    aput-wide v4, v3, v1
+
+    move-object v1, v3
+
+    :goto_39
+    iput-object v1, p0, Lv12;->a:[J
+
+    iget v1, p0, Lv12;->d:I
+
+    invoke-static {v1}, Lxw2;->a(I)I
+
+    move-result v1
+
+    iget v2, p0, Lv12;->e:I
+
+    sub-int/2addr v1, v2
+
+    iput v1, p0, Lv12;->f:I
+
+    if-nez p1, :cond_4a
+
+    move-object v1, v0
+
+    goto :goto_4c
+
+    :cond_4a
+    new-array v1, p1, [Ljava/lang/Object;
+
+    :goto_4c
+    iput-object v1, p0, Lv12;->b:[Ljava/lang/Object;
+
+    if-nez p1, :cond_51
+
+    goto :goto_53
+
+    :cond_51
+    new-array v0, p1, [Ljava/lang/Object;
+
+    :goto_53
+    iput-object v0, p0, Lv12;->c:[Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final hashCode()I
+    .registers 16
+
+    iget-object v0, p0, Lv12;->b:[Ljava/lang/Object;
+
+    iget-object v1, p0, Lv12;->c:[Ljava/lang/Object;
+
+    iget-object p0, p0, Lv12;->a:[J
+
+    array-length v2, p0
+
+    add-int/lit8 v2, v2, -0x2
+
+    const/4 v3, 0x1
+
+    const/4 v3, 0x0
+
+    if-ltz v2, :cond_5b
+
+    move v4, v3
+
+    move v5, v4
+
+    :goto_f
+    aget-wide v6, p0, v4
+
+    not-long v8, v6
+
+    const/4 v10, 0x7
+
+    shl-long/2addr v8, v10
+
+    and-long/2addr v8, v6
+
+    const-wide v10, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v8, v10
+
+    cmp-long v8, v8, v10
+
+    if-eqz v8, :cond_55
+
+    sub-int v8, v4, v2
+
+    not-int v8, v8
+
+    ushr-int/lit8 v8, v8, 0x1f
+
+    const/16 v9, 0x8
+
+    rsub-int/lit8 v8, v8, 0x8
+
+    move v10, v3
+
+    :goto_29
+    if-ge v10, v8, :cond_51
+
+    const-wide/16 v11, 0xff
+
+    and-long/2addr v11, v6
+
+    const-wide/16 v13, 0x80
+
+    cmp-long v11, v11, v13
+
+    if-gez v11, :cond_4d
+
+    shl-int/lit8 v11, v4, 0x3
+
+    add-int/2addr v11, v10
+
+    aget-object v12, v0, v11
+
+    aget-object v11, v1, v11
+
+    if-eqz v12, :cond_42
+
+    invoke-virtual {v12}, Ljava/lang/Object;->hashCode()I
+
+    move-result v12
+
+    goto :goto_43
+
+    :cond_42
+    move v12, v3
+
+    :goto_43
+    if-eqz v11, :cond_4a
+
+    invoke-virtual {v11}, Ljava/lang/Object;->hashCode()I
+
+    move-result v11
+
+    goto :goto_4b
+
+    :cond_4a
+    move v11, v3
+
+    :goto_4b
+    xor-int/2addr v11, v12
+
+    add-int/2addr v5, v11
+
+    :cond_4d
+    shr-long/2addr v6, v9
+
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_29
+
+    :cond_51
+    if-ne v8, v9, :cond_54
+
+    goto :goto_55
+
+    :cond_54
+    return v5
+
+    :cond_55
+    :goto_55
+    if-eq v4, v2, :cond_5a
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_f
+
+    :cond_5a
+    return v5
+
+    :cond_5b
+    return v3
+.end method
+
+.method public final i()Z
+    .registers 1
+
+    iget p0, p0, Lv12;->e:I
+
+    if-nez p0, :cond_6
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_6
+    const/4 p0, 0x1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final j()Z
+    .registers 1
+
+    iget p0, p0, Lv12;->e:I
+
+    if-eqz p0, :cond_6
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_6
+    const/4 p0, 0x1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final k(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 15
+
+    const/4 v0, 0x1
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_9
+
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    goto :goto_a
+
+    :cond_9
+    move v1, v0
+
+    :goto_a
+    const v2, -0x3361d2af    # -8.293031E7f
+
+    mul-int/2addr v1, v2
+
+    shl-int/lit8 v2, v1, 0x10
+
+    xor-int/2addr v1, v2
+
+    and-int/lit8 v2, v1, 0x7f
+
+    iget v3, p0, Lv12;->d:I
+
+    ushr-int/lit8 v1, v1, 0x7
+
+    :goto_17
+    and-int/2addr v1, v3
+
+    iget-object v4, p0, Lv12;->a:[J
+
+    shr-int/lit8 v5, v1, 0x3
+
+    and-int/lit8 v6, v1, 0x7
+
+    shl-int/lit8 v6, v6, 0x3
+
+    aget-wide v7, v4, v5
+
+    ushr-long/2addr v7, v6
+
+    add-int/lit8 v5, v5, 0x1
+
+    aget-wide v9, v4, v5
+
+    rsub-int/lit8 v4, v6, 0x40
+
+    shl-long v4, v9, v4
+
+    int-to-long v9, v6
+
+    neg-long v9, v9
+
+    const/16 v6, 0x3f
+
+    shr-long/2addr v9, v6
+
+    and-long/2addr v4, v9
+
+    or-long/2addr v4, v7
+
+    int-to-long v6, v2
+
+    const-wide v8, 0x101010101010101L
+
+    mul-long/2addr v6, v8
+
+    xor-long/2addr v6, v4
+
+    sub-long v8, v6, v8
+
+    not-long v6, v6
+
+    and-long/2addr v6, v8
+
+    const-wide v8, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v6, v8
+
+    :goto_44
+    const-wide/16 v10, 0x0
+
+    cmp-long v12, v6, v10
+
+    if-eqz v12, :cond_63
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    move-result v10
+
+    shr-int/lit8 v10, v10, 0x3
+
+    add-int/2addr v10, v1
+
+    and-int/2addr v10, v3
+
+    iget-object v11, p0, Lv12;->b:[Ljava/lang/Object;
+
+    aget-object v11, v11, v10
+
+    invoke-static {v11, p1}, Lvf1;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_5d
+
+    goto :goto_6d
+
+    :cond_5d
+    const-wide/16 v10, 0x1
+
+    sub-long v10, v6, v10
+
+    and-long/2addr v6, v10
+
+    goto :goto_44
+
+    :cond_63
+    not-long v6, v4
+
+    const/4 v12, 0x6
+
+    shl-long/2addr v6, v12
+
+    and-long/2addr v4, v6
+
+    and-long/2addr v4, v8
+
+    cmp-long v4, v4, v10
+
+    if-eqz v4, :cond_77
+
+    const/4 v10, -0x1
+
+    :goto_6d
+    if-ltz v10, :cond_74
+
+    invoke-virtual {p0, v10}, Lv12;->l(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_74
+    const/4 p0, 0x1
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_77
+    add-int/lit8 v0, v0, 0x8
+
+    add-int/2addr v1, v0
+
+    goto :goto_17
+.end method
+
+.method public final l(I)Ljava/lang/Object;
+    .registers 10
+
+    iget v0, p0, Lv12;->e:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lv12;->e:I
+
+    iget-object v0, p0, Lv12;->a:[J
+
+    iget v1, p0, Lv12;->d:I
+
+    shr-int/lit8 v2, p1, 0x3
+
+    and-int/lit8 v3, p1, 0x7
+
+    shl-int/lit8 v3, v3, 0x3
+
+    aget-wide v4, v0, v2
+
+    const-wide/16 v6, 0xff
+
+    shl-long/2addr v6, v3
+
+    not-long v6, v6
+
+    and-long/2addr v4, v6
+
+    const-wide/16 v6, 0xfe
+
+    shl-long/2addr v6, v3
+
+    or-long v3, v4, v6
+
+    aput-wide v3, v0, v2
+
+    add-int/lit8 v2, p1, -0x7
+
+    and-int/2addr v2, v1
+
+    and-int/lit8 v1, v1, 0x7
+
+    add-int/2addr v2, v1
+
+    shr-int/lit8 v1, v2, 0x3
+
+    aput-wide v3, v0, v1
+
+    iget-object v0, p0, Lv12;->b:[Ljava/lang/Object;
+
+    const/4 v1, 0x1
+
+    const/4 v1, 0x0
+
+    aput-object v1, v0, p1
+
+    iget-object p0, p0, Lv12;->c:[Ljava/lang/Object;
+
+    aget-object v0, p0, p1
+
+    aput-object v1, p0, p1
+
+    return-object v0
+.end method
+
+.method public final m(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 5
+
+    invoke-virtual {p0, p1}, Lv12;->f(Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-gez v0, :cond_7
+
+    not-int v0, v0
+
+    :cond_7
+    iget-object v1, p0, Lv12;->b:[Ljava/lang/Object;
+
+    aput-object p1, v1, v0
+
+    iget-object p0, p0, Lv12;->c:[Ljava/lang/Object;
+
+    aput-object p2, p0, v0
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 19
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0}, Lv12;->i()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b
+
+    const-string v0, "{}"
+
+    return-object v0
+
+    :cond_b
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "{"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, v0, Lv12;->b:[Ljava/lang/Object;
+
+    iget-object v3, v0, Lv12;->c:[Ljava/lang/Object;
+
+    iget-object v4, v0, Lv12;->a:[J
+
+    array-length v5, v4
+
+    add-int/lit8 v5, v5, -0x2
+
+    if-ltz v5, :cond_78
+
+    const/4 v6, 0x1
+
+    const/4 v6, 0x0
+
+    move v7, v6
+
+    move v8, v7
+
+    :goto_21
+    aget-wide v9, v4, v7
+
+    not-long v11, v9
+
+    const/4 v13, 0x7
+
+    shl-long/2addr v11, v13
+
+    and-long/2addr v11, v9
+
+    const-wide v13, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v11, v13
+
+    cmp-long v11, v11, v13
+
+    if-eqz v11, :cond_73
+
+    sub-int v11, v7, v5
+
+    not-int v11, v11
+
+    ushr-int/lit8 v11, v11, 0x1f
+
+    const/16 v12, 0x8
+
+    rsub-int/lit8 v11, v11, 0x8
+
+    move v13, v6
+
+    :goto_3b
+    if-ge v13, v11, :cond_71
+
+    const-wide/16 v14, 0xff
+
+    and-long/2addr v14, v9
+
+    const-wide/16 v16, 0x80
+
+    cmp-long v14, v14, v16
+
+    if-gez v14, :cond_6d
+
+    shl-int/lit8 v14, v7, 0x3
+
+    add-int/2addr v14, v13
+
+    aget-object v15, v2, v14
+
+    aget-object v14, v3, v14
+
+    const-string v16, "(this)"
+
+    if-ne v15, v0, :cond_53
+
+    move-object/from16 v15, v16
+
+    :cond_53
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v15, "="
+
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-ne v14, v0, :cond_5f
+
+    move-object/from16 v14, v16
+
+    :cond_5f
+    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v8, v8, 0x1
+
+    iget v14, v0, Lv12;->e:I
+
+    if-ge v8, v14, :cond_6d
+
+    const-string v14, ", "
+
+    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_6d
+    shr-long/2addr v9, v12
+
+    add-int/lit8 v13, v13, 0x1
+
+    goto :goto_3b
+
+    :cond_71
+    if-ne v11, v12, :cond_78
+
+    :cond_73
+    if-eq v7, v5, :cond_78
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_21
+
+    :cond_78
+    const/16 v0, 0x7d
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method

@@ -1,0 +1,88 @@
+###### Class defpackage.to (to)
+.class public final Lto;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lto;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public final l:Ljava/util/ArrayList;
+
+.field public final m:Ljava/util/ArrayList;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lr3;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lr3;-><init>(I)V
+
+    sput-object v0, Lto;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lto;->l:Ljava/util/ArrayList;
+
+    sget-object v0, Lso;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lto;->m:Ljava/util/ArrayList;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final describeContents()I
+    .registers 1
+
+    const/4 p0, 0x1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
+
+    iget-object p2, p0, Lto;->l:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+
+    iget-object p0, p0, Lto;->m:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+
+    return-void
+.end method
