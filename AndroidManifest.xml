@@ -160,6 +160,7 @@
             android:name="com.example.square.PurchaseActivity"
             android:excludeFromRecents="true"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/backup_center"
             android:icon="@drawable/ic_backup"
