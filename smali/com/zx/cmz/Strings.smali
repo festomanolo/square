@@ -1,4 +1,3 @@
-###### Class com.zx.cmz.Strings (com.zx.cmz.Strings)
 .class public Lcom/zx/cmz/Strings;
 .super Ljava/lang/Object;
 
