@@ -169,3 +169,4 @@ public final class DynamicWallpaper {
         float s = Math.max((float) tw / in.getWidth(), (float) th / in.getHeight());
         int cw = Math.min(in.getWidth(), Math.round(tw / s)), ch = Math.min(in.getHeight(), Math.round(th / s));
         Rect from = new Rect((in.getWidth() - cw) / 2, (in.getHeight() - ch) / 2,
+                (in.getWidth() + cw) / 2, (in.getHeight() + ch) / 2);
