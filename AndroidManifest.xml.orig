@@ -240,3 +240,30 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.example.square.DummyActivity"
             android:excludeFromRecents="true"/>
+        <activity
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.Translucent"
+            android:name="com.example.square.WallpaperAndEffectActivity"
+            android:excludeFromRecents="true"/>
+        <service
+            android:name="com.example.square.counter.NotiListener"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.example.square.utils.MyAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:enabled="@bool/kitkat_or_higher"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibilityservice"/>
+        </service>
+        <receiver
+            android:name="com.example.square.MainActivity.DeviceAdmin"
