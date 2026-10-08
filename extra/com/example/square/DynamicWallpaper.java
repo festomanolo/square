@@ -206,3 +206,4 @@ public final class DynamicWallpaper {
         }
         // Keep it dark enough for white tile labels.
         paint.setShader(null);
+        paint.setColor(Color.argb(70, 0, 0, 0));
