@@ -171,3 +171,4 @@ public final class DynamicWallpaper {
         Rect from = new Rect((in.getWidth() - cw) / 2, (in.getHeight() - ch) / 2,
                 (in.getWidth() + cw) / 2, (in.getHeight() + ch) / 2);
         Bitmap out = Bitmap.createBitmap(tw, th, Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(out);
