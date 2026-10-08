@@ -166,3 +166,13 @@
 
     const/high16 v1, 0x41e00000    # 28.0f
 
+    mul-float/2addr v1, v0
+
+    float-to-int v1, v1
+
+    const/high16 v2, 0x41c00000    # 24.0f
+
+    mul-float/2addr v2, v0
+
+    float-to-int v2, v2
+
