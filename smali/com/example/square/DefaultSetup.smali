@@ -269,3 +269,13 @@
 
     const/4 v2, -0x2
 
+    invoke-direct {v1, v2, v2, p3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p4, v2, p4, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    return-object v0
+.end method
