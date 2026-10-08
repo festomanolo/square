@@ -88,3 +88,4 @@ public final class DynamicWallpaper {
         if (running) return;
         running = true;
         handler.post(tick);
+    }
