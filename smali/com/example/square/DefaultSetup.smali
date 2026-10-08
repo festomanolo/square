@@ -222,3 +222,13 @@
 
     move-result-object v5
 
+    check-cast v5, Landroid/view/ViewGroup;
+
+    invoke-virtual {v5, v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    const v6, 0x1020002
+
+    invoke-virtual {p0, v6}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v6
+
