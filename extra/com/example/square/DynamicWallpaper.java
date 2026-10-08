@@ -149,3 +149,4 @@ public final class DynamicWallpaper {
         }
     }
 
+    private static boolean isImage(String n) {
