@@ -204,3 +204,12 @@
 
     move-result-object v4
 
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    new-instance v4, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v5, -0x1
+
+    const/16 v6, 0x30
+
+    invoke-direct {v4, v5, v1, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
