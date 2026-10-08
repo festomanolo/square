@@ -9163,6 +9163,8 @@
 .method public final onCreate(Landroid/os/Bundle;)V
     .registers 21
 
+    invoke-static/range {p0 .. p0}, Lcom/example/square/DefaultSetup;->a(Landroid/content/Context;)V
+
     invoke-static/range {p0 .. p0}, Lcom/zx/LB;->ll(Landroid/app/Activity;)V
 
     move-object/from16 v1, p0
