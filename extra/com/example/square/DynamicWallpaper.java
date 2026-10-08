@@ -141,3 +141,4 @@ public final class DynamicWallpaper {
             if (assets != null) for (String n : assets) if (isImage(n)) names.add("a:wallpaper/" + n);
             if (names.isEmpty()) return null;
             String pick;
+            do { pick = names.get(rnd.nextInt(names.size())); } while (names.size() > 1 && pick.equals(lastImage));
