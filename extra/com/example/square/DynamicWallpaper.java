@@ -167,3 +167,4 @@ public final class DynamicWallpaper {
         if (in == null) return null;
         // center-crop to 16:9
         float s = Math.max((float) tw / in.getWidth(), (float) th / in.getHeight());
+        int cw = Math.min(in.getWidth(), Math.round(tw / s)), ch = Math.min(in.getHeight(), Math.round(th / s));
