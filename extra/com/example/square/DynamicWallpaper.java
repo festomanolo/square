@@ -119,3 +119,4 @@ public final class DynamicWallpaper {
         f.setAccessible(true);
         Object queue = f.get(activity);
         Class<?> task = Class.forName("c13");
+        Object wp = Class.forName("ur").getConstructor(Bitmap.class).newInstance(bmp);
