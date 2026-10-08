@@ -10443,6 +10443,8 @@
 
     move-result v2
 
+    const/4 v2, 0x6
+
     invoke-virtual {v1, v2}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_4f7
@@ -10454,6 +10456,8 @@
     invoke-static {v0, v1, v14}, Lib2;->g(ILandroid/content/Context;Ljava/lang/String;)I
 
     move-result v2
+
+    const/4 v2, 0x6
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->setRequestedOrientation(I)V
     :try_end_4f7
@@ -12884,6 +12888,8 @@
 
     move-result p1
 
+    const/4 p1, 0x6
+
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     return-void
@@ -12893,6 +12899,8 @@
     invoke-static {v1, p0, p1}, Lib2;->g(ILandroid/content/Context;Ljava/lang/String;)I
 
     move-result p1
+
+    const/4 p1, 0x6
 
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
     :try_end_63

@@ -103,6 +103,7 @@
             android:name="android.max_aspect"
             android:value="2.1"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar.Wallpaper"
             android:name="com.example.square.MainActivity"
             android:exported="true"
@@ -122,6 +123,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/home_options"
             android:icon="@mipmap/ic_prefs"
@@ -138,9 +140,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:name="com.example.square.WizardActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:name="com.example.square.SetWallpaperActivity"
             android:exported="true">
@@ -150,17 +154,20 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/purchase"
             android:name="com.example.square.PurchaseActivity"
             android:excludeFromRecents="true"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/backup_center"
             android:icon="@drawable/ic_backup"
             android:name="com.example.square.BackupManagementActivity"
             android:configChanges="screenSize|orientation"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/app_folder"
             android:icon="@drawable/ic_folder"
@@ -174,33 +181,41 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.PickApplicationActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.PickShortcutActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:label="@string/image"
             android:name="com.example.square.PickImageActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:label="@string/typeface"
             android:name="com.example.square.PickTypefaceActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:label="@string/app_widget"
             android:icon="@drawable/ic_widget"
             android:name="com.example.square.MyPickWidgetActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:label="@string/icon"
             android:icon="@drawable/ic_icon"
             android:name="com.example.square.MyPickIconActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar"
             android:name="com.example.square.CropImageActivity"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.ApplyThemeActivity"
             android:exported="true"
@@ -210,6 +225,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.ConfirmPinActivity"
             android:exported="true"
@@ -220,10 +236,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.example.square.DummyActivity"
             android:excludeFromRecents="true"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.Translucent"
             android:name="com.example.square.WallpaperAndEffectActivity"
             android:excludeFromRecents="true"/>
@@ -270,22 +288,26 @@
                 android:resource="@xml/cropper_library_file_paths"/>
         </provider>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:name="com.canhub.cropper.CropImageActivity"
             android:exported="true"/>
         <meta-data
             android:name="com.google.android.play.billingclient.version"
             android:value="9.1.0"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.android.billingclient.api.ProxyBillingActivity"
             android:exported="false"
             android:configChanges="screenSize|screenLayout|orientation|keyboardHidden|keyboard"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.android.billingclient.api.ProxyBillingActivityV2"
             android:exported="false"
             android:configChanges="screenSize|screenLayout|orientation|keyboardHidden|keyboard"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"/>
@@ -346,6 +368,7 @@
             android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
             android:exported="false"/>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/Theme.PlayCore.Transparent"
             android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
             android:exported="false"

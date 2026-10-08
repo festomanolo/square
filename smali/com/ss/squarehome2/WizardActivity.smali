@@ -334,6 +334,8 @@
 
     move-result p1
 
+    const/4 p1, 0x6
+
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     goto :goto_24
@@ -343,6 +345,8 @@
     invoke-static {v1, p0, v2}, Lib2;->g(ILandroid/content/Context;Ljava/lang/String;)I
 
     move-result p1
+
+    const/4 p1, 0x6
 
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
     :try_end_24
