@@ -116,3 +116,4 @@ public final class DynamicWallpaper {
     /** Hands the bitmap to the app's own wallpaper task queue (same path the daily wallpaper uses). */
     private void show(Bitmap bmp) throws Exception {
         java.lang.reflect.Field f = activity.getClass().getDeclaredField("v0");
+        f.setAccessible(true);
