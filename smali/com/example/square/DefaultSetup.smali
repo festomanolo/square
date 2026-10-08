@@ -194,3 +194,13 @@
 
     move-result-object v4
 
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    const-string v4, "EEE, MMM d"
+
+    const v6, 0x800015
+
+    invoke-static {p0, v4, v4, v6, v2}, Lcom/example/square/DefaultSetup;->c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;II)Landroid/view/View;
+
+    move-result-object v4
+
