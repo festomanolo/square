@@ -236,6 +236,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="sensorLandscape"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:name="com.example.square.DummyActivity"
             android:excludeFromRecents="true"/>
