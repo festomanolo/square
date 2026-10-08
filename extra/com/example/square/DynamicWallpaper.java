@@ -195,3 +195,4 @@ public final class DynamicWallpaper {
         c.drawRect(0, 0, W, H, paint);
         for (int i = 0; i < 3; i++) {
             float x = W * (0.1f + 0.8f * r.nextFloat());
+            float y = H * (0.1f + 0.8f * r.nextFloat());
