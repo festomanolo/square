@@ -146,3 +146,4 @@ git merge upstream/main --no-edit
 - All changes are reversible by reverting to original `com.ss.squarehome2` code
 
 
+## Smart-TV / Projector Changes (landscape build)
