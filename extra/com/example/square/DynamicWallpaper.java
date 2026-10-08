@@ -96,3 +96,4 @@ public final class DynamicWallpaper {
     }
 
     private void apply() {
+        try {
