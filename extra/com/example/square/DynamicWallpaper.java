@@ -69,3 +69,4 @@ public final class DynamicWallpaper {
             final View decor = a.getWindow().getDecorView();
             decor.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
                 @Override public void onViewAttachedToWindow(View v) { w.resume(); }
+                @Override public void onViewDetachedFromWindow(View v) { w.pause(); }
