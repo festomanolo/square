@@ -22,3 +22,4 @@ import android.graphics.drawable.TransitionDrawable;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
+import android.view.View;
