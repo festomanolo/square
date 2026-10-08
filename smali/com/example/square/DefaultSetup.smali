@@ -176,3 +176,12 @@
 
     float-to-int v2, v2
 
+    new-instance v3, Landroid/widget/FrameLayout;
+
+    invoke-direct {v3, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    const v4, 0x73000000
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
+
+    const-string v4, "h:mm"
