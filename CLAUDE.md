@@ -34,3 +34,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 - Do not commit without being asked.
 
 ## Package rename for the projector (2026-10-09)
+
