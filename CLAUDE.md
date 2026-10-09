@@ -33,3 +33,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 - Settings UI is Jetpack Compose in obfuscated smali. Add a simple switch by cloning the `scrollWallpaper` `Lxw0;->d(...)` block.
 - Do not commit without being asked.
 
+## Package rename for the projector (2026-10-09)
