@@ -35,3 +35,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 
 ## Package rename for the projector (2026-10-09)
 
+- The projector firmware ships `com.example.square` as a **system app** (`/system/app/SquareHome`, other signing key), so debug-signed updates are rejected and `pm uninstall` fails. `Square-landscape-tv.apk` is the same app with manifest package `com.example.squaretv` (also the custom permission and provider authorities; classes keep `com.example.square.*`). Install: `adb install Square-landscape-tv.apk`, launch `am start -n com.example.squaretv/com.example.square.MainActivity`.
