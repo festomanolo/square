@@ -32,3 +32,9 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 - `com.ss.squarehome2` (original app) and `com.ww.launcher` are also installed on the device. Check `dumpsys activity top` to see which one is actually in front before judging a screenshot.
 - Settings UI is Jetpack Compose in obfuscated smali. Add a simple switch by cloning the `scrollWallpaper` `Lxw0;->d(...)` block.
 - Do not commit without being asked.
+
+## Package rename for the projector (2026-10-09)
+
+- The projector firmware ships `com.example.square` as a **system app** (`/system/app/SquareHome`, other signing key), so debug-signed updates are rejected and `pm uninstall` fails. `Square-landscape-tv.apk` is the same app with manifest package `com.example.squaretv` (also the custom permission and provider authorities; classes keep `com.example.square.*`). Install: `adb install Square-landscape-tv.apk`, launch `am start -n com.example.squaretv/com.example.square.MainActivity`.
+- Make it the Home app: `adb shell cmd package set-home-activity com.example.squaretv/com.example.square.MainActivity` (otherwise Home opens the original portrait `com.ss.squarehome2`).
+- `assets/defaults/prefs` now has `tabletMode=true`, `oneHandMode=false`; with the backup's phone values the layout was a 360px column in the middle of the screen. Note: the repo `smali/`/`AndroidManifest.xml` still say `com.example.square`; the rename was done on the decoded APK only.
