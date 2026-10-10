@@ -209,6 +209,7 @@ public final class StatusBar extends FrameLayout {
         Icon(Context c, int type) {
             super(c);
             this.type = type;
+            Mac.focusable(this, Mac.dp(c, 8), 0, 0x44FFFFFF);
         }
 
         @Override protected void onDraw(Canvas cv) {
