@@ -51,6 +51,7 @@ public final class StatusBar extends FrameLayout {
             a.findViewById(android.R.id.content).setPadding(0, h, 0, 0);
             Shelf.install(a);
             Dock.install(a);
+            Nav.install(a);
             DynamicWallpaper.start(a);
         } catch (Throwable ignored) {
         }
