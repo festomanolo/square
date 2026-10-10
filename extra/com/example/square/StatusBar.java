@@ -62,11 +62,19 @@ public final class StatusBar extends FrameLayout {
         LinearLayout left = new LinearLayout(c);
         left.setOrientation(LinearLayout.HORIZONTAL);
         left.setGravity(Gravity.CENTER_VERTICAL);
-        left.addView(clock(c, "h:mm", "H:mm", 24, 1f));
-        TextView gap = new TextView(c);
-        gap.setWidth((int) (16 * d));
-        left.addView(gap);
-        left.addView(clock(c, "EEE, MMM d", "EEE, MMM d", 17, 0.7f));
+        TextView brand = new TextView(c);
+        brand.setText("MANOLO");
+        brand.setTextColor(0xFFFFFFFF);
+        brand.setTextSize(15);
+        brand.setTypeface(Typeface.DEFAULT_BOLD);
+        brand.setLetterSpacing(0.12f);
+        brand.setGravity(Gravity.CENTER);
+        brand.setPadding((int) (10 * d), 0, (int) (10 * d), 0);
+        Mac.focusable(brand, 8 * d, 0, 0x44FFFFFF);
+        brand.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { Mac.settings(c, "about", "android.settings.DEVICE_INFO_SETTINGS"); }
+        });
+        left.addView(brand, new LinearLayout.LayoutParams(-2, (int) (28 * d)));
         LayoutParams lp = new LayoutParams(-2, -1, Gravity.START | Gravity.CENTER_VERTICAL);
         lp.leftMargin = pad;
         addView(left, lp);
