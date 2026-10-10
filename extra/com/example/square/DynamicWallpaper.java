@@ -134,6 +134,12 @@ public final class DynamicWallpaper {
     private Bitmap pickFolderImage() {
         try {
             List<String> names = new ArrayList<>();   // "f:<path>" or "a:<asset>"
+            // 1) the shared "Wallpaper" folder in internal storage (users add pictures there)
+            File shared = new File(android.os.Environment.getExternalStorageDirectory(), "Wallpaper");
+            try { if (!shared.exists()) shared.mkdirs(); } catch (Throwable ignored) {}
+            File[] files = shared.listFiles();
+            if (files != null) for (File x : files) if (isImage(x.getName())) names.add("f:" + x.getPath());
+            // 2) legacy per-app folder
             File dir = activity.getExternalFilesDir("wallpaper");
             File[] files = dir == null ? null : dir.listFiles();
             if (files != null) for (File x : files) if (isImage(x.getName())) names.add("f:" + x.getPath());
