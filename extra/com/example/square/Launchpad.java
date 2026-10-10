@@ -39,6 +39,7 @@ final class Launchpad extends FrameLayout {
     static Launchpad show(Activity a, Dock dock, boolean focusSearch) {
         ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
         Launchpad l = new Launchpad(a, dock);
+        open = l;
         decor.addView(l, new FrameLayout.LayoutParams(-1, -1));
         l.open(focusSearch);
         return l;
