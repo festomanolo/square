@@ -88,7 +88,6 @@
     <uses-permission android:name="com.example.square.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:theme="@style/AppTheme"
         android:label="@string/app_name"
