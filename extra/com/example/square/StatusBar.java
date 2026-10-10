@@ -47,6 +47,8 @@ public final class StatusBar extends FrameLayout {
             StatusBar bar = new StatusBar(a, d);
             decor.addView(bar, new FrameLayout.LayoutParams(-1, h, Gravity.TOP));
             a.findViewById(android.R.id.content).setPadding(0, h, 0, 0);
+            Shelf.install(a);
+            Dock.install(a);
             DynamicWallpaper.start(a);
         } catch (Throwable ignored) {
         }
