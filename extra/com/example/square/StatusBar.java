@@ -26,12 +26,12 @@ import android.widget.LinearLayout;
 import android.widget.TextClock;
 import android.widget.TextView;
 
-/** iOS-style status bar overlay: time/date left; ethernet, Bluetooth, 3-level Wi-Fi and power icons right. */
+/** macOS-style menu bar: MANOLO + clock left; DroidBoost, network, Bluetooth, sound, settings, power right. Every item is clickable. */
 public final class StatusBar extends FrameLayout {
-    private static final int WIFI = 0, BT = 1, BATTERY = 2, ETHERNET = 3;
+    private static final int WIFI = 0, BT = 1, BATTERY = 2, ETHERNET = 3, BOOST = 4, VOLUME = 5, CONTROL = 6;
 
     private final Handler handler = new Handler(Looper.getMainLooper());
-    private final Icon wifi, bt, battery, ethernet;
+    private final Icon wifi, bt, battery, ethernet, boost, volume, control;
     private final Runnable tick = new Runnable() {
         @Override public void run() {
             refresh();
@@ -42,29 +42,39 @@ public final class StatusBar extends FrameLayout {
     public static void install(Activity a) {
         try {
             float d = a.getResources().getDisplayMetrics().density;
-            int h = (int) (46 * d);
+            int h = (int) (34 * d);
             ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
             StatusBar bar = new StatusBar(a, d);
             decor.addView(bar, new FrameLayout.LayoutParams(-1, h, Gravity.TOP));
             a.findViewById(android.R.id.content).setPadding(0, h, 0, 0);
+            Shelf.install(a);
+            Dock.install(a);
             DynamicWallpaper.start(a);
         } catch (Throwable ignored) {
         }
     }
 
-    private StatusBar(Context c, float d) {
+    private StatusBar(final Context c, float d) {
         super(c);
-        setBackgroundColor(0xB0000000);
-        int pad = (int) (28 * d);
+        setBackgroundColor(0xB0101014);
+        int pad = (int) (16 * d);
 
         LinearLayout left = new LinearLayout(c);
         left.setOrientation(LinearLayout.HORIZONTAL);
         left.setGravity(Gravity.CENTER_VERTICAL);
-        left.addView(clock(c, "h:mm", "H:mm", 24, 1f));
-        TextView gap = new TextView(c);
-        gap.setWidth((int) (16 * d));
-        left.addView(gap);
-        left.addView(clock(c, "EEE, MMM d", "EEE, MMM d", 17, 0.7f));
+        TextView brand = new TextView(c);
+        brand.setText("MANOLO");
+        brand.setTextColor(0xFFFFFFFF);
+        brand.setTextSize(15);
+        brand.setTypeface(Typeface.DEFAULT_BOLD);
+        brand.setLetterSpacing(0.12f);
+        brand.setGravity(Gravity.CENTER);
+        brand.setPadding((int) (10 * d), 0, (int) (10 * d), 0);
+        Mac.focusable(brand, 8 * d, 0, 0x44FFFFFF);
+        brand.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { Mac.settings(c, "about", "android.settings.DEVICE_INFO_SETTINGS"); }
+        });
+        left.addView(brand, new LinearLayout.LayoutParams(-2, (int) (28 * d)));
         LayoutParams lp = new LayoutParams(-2, -1, Gravity.START | Gravity.CENTER_VERTICAL);
         lp.leftMargin = pad;
         addView(left, lp);
@@ -72,20 +82,49 @@ public final class StatusBar extends FrameLayout {
         LinearLayout right = new LinearLayout(c);
         right.setOrientation(LinearLayout.HORIZONTAL);
         right.setGravity(Gravity.CENTER_VERTICAL);
+        boost = new Icon(c, BOOST);
         ethernet = new Icon(c, ETHERNET);
         bt = new Icon(c, BT);
         wifi = new Icon(c, WIFI);
+        volume = new Icon(c, VOLUME);
+        control = new Icon(c, CONTROL);
         battery = new Icon(c, BATTERY);
-        Icon[] icons = {ethernet, bt, wifi, battery};
+        boost.setContentDescription("DroidBoost");
+        boost.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { DroidBoost.run(c); }
+        });
+        click(ethernet, "network", "android.settings.WIFI_SETTINGS");
+        click(wifi, "network", "android.settings.WIFI_SETTINGS");
+        click(bt, "bluetooth", "android.settings.BLUETOOTH_SETTINGS");
+        click(volume, "sound", "android.settings.SOUND_SETTINGS");
+        click(control, "general", "android.settings.SETTINGS");
+        click(battery, "about", "android.settings.DEVICE_INFO_SETTINGS");
+        Icon[] icons = {boost, ethernet, bt, wifi, volume, control, battery};
         for (Icon i : icons) {
             LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(
-                    (int) ((i.type == BATTERY ? 40 : 30) * d), (int) (30 * d));
-            ip.leftMargin = (int) (14 * d);
+                    (int) ((i.type == BATTERY ? 38 : 28) * d), (int) (26 * d));
+            ip.leftMargin = (int) (4 * d);
             right.addView(i, ip);
         }
+        TextView clk = clock(c, "EEE MMM d   h:mm a", "EEE MMM d   H:mm", 14, 1f);
+        clk.setGravity(Gravity.CENTER);
+        clk.setPadding((int) (10 * d), 0, (int) (10 * d), 0);
+        Mac.focusable(clk, 8 * d, 0, 0x44FFFFFF);
+        clk.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { Mac.settings(c, "datetime", "android.settings.DATE_SETTINGS"); }
+        });
+        LinearLayout.LayoutParams cp = new LinearLayout.LayoutParams(-2, (int) (26 * d));
+        cp.leftMargin = (int) (6 * d);
+        right.addView(clk, cp);
         LayoutParams rp = new LayoutParams(-2, -1, Gravity.END | Gravity.CENTER_VERTICAL);
         rp.rightMargin = pad;
         addView(right, rp);
+    }
+
+    private static void click(Icon i, final String pane, final String fallback) {
+        i.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { Mac.settings(v.getContext(), pane, fallback); }
+        });
     }
 
     private static TextClock clock(Context c, String f12, String f24, int sp, float alpha) {
@@ -130,8 +169,8 @@ public final class StatusBar extends FrameLayout {
             }
         } catch (Throwable ignored) {
         }
-        wifi.setVisibility(wifiOn ? VISIBLE : GONE);
-        wifi.value = Math.max(0, Math.min(3, level));
+        wifi.setVisibility(eth ? GONE : VISIBLE);
+        wifi.value = wifiOn ? Math.max(0, Math.min(3, level)) : 0;
         ethernet.setVisibility(eth ? VISIBLE : GONE);
 
         boolean btOn = false;
@@ -140,7 +179,7 @@ public final class StatusBar extends FrameLayout {
             btOn = ba != null && ba.isEnabled();
         } catch (Throwable ignored) {
         }
-        bt.setVisibility(btOn ? VISIBLE : GONE);
+        bt.flag = btOn;
 
         // Mains-only devices (no battery, e.g. projector/TV) are always "powered".
         int pct = 100;
@@ -157,7 +196,7 @@ public final class StatusBar extends FrameLayout {
         }
         battery.value = pct;
         battery.flag = charging;
-        for (Icon i : new Icon[]{wifi, bt, battery, ethernet}) i.invalidate();
+        for (Icon i : new Icon[]{wifi, bt, battery, ethernet, boost, volume, control}) i.invalidate();
     }
 
     private static final class Icon extends View {
@@ -170,6 +209,7 @@ public final class StatusBar extends FrameLayout {
         Icon(Context c, int type) {
             super(c);
             this.type = type;
+            Mac.focusable(this, Mac.dp(c, 8), 0, 0x44FFFFFF);
         }
 
         @Override protected void onDraw(Canvas cv) {
@@ -179,6 +219,9 @@ public final class StatusBar extends FrameLayout {
                 case WIFI: drawWifi(cv, w, h); break;
                 case BT: drawBt(cv, w, h); break;
                 case BATTERY: drawBattery(cv, w, h); break;
+                case BOOST: drawBoost(cv, w, h); break;
+                case VOLUME: drawVolume(cv, w, h); break;
+                case CONTROL: drawControl(cv, w, h); break;
                 default: drawEthernet(cv, w, h); break;
             }
         }
@@ -200,7 +243,59 @@ public final class StatusBar extends FrameLayout {
             p.setAlpha(255);
         }
 
+        private void drawBoost(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h / 2, r = h * 0.40f;
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.07f);
+            cv.drawCircle(cx, cy, r, p);
+            p.setStyle(Paint.Style.FILL);
+            float u = r / 5f;
+            path.reset();
+            path.moveTo(cx + 1.2f * u, cy - 3.4f * u);
+            path.lineTo(cx - 2.2f * u, cy + 0.4f * u);
+            path.lineTo(cx - 0.1f * u, cy + 0.4f * u);
+            path.lineTo(cx - 1.2f * u, cy + 3.4f * u);
+            path.lineTo(cx + 2.2f * u, cy - 0.6f * u);
+            path.lineTo(cx + 0.1f * u, cy - 0.6f * u);
+            path.close();
+            cv.drawPath(path, p);
+        }
+
+        private void drawVolume(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h / 2, u = h / 10f;
+            p.setStyle(Paint.Style.FILL);
+            path.reset();
+            path.moveTo(cx - 4 * u, cy - 1.6f * u);
+            path.lineTo(cx - 2 * u, cy - 1.6f * u);
+            path.lineTo(cx + 0.6f * u, cy - 3.6f * u);
+            path.lineTo(cx + 0.6f * u, cy + 3.6f * u);
+            path.lineTo(cx - 2 * u, cy + 1.6f * u);
+            path.lineTo(cx - 4 * u, cy + 1.6f * u);
+            path.close();
+            cv.drawPath(path, p);
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.07f);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            cv.drawArc(new RectF(cx - 1.6f * u, cy - 2.4f * u, cx + 3 * u, cy + 2.4f * u), -45, 90, false, p);
+            cv.drawArc(new RectF(cx - 1.6f * u, cy - 4 * u, cx + 4.6f * u, cy + 4 * u), -45, 90, false, p);
+        }
+
+        private void drawControl(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h / 2, u = h / 10f;
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.07f);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            for (int i = 0; i < 2; i++) {
+                float y = cy + (i == 0 ? -2.2f : 2.2f) * u;
+                cv.drawLine(cx - 4 * u, y, cx + 4 * u, y, p);
+            }
+            p.setStyle(Paint.Style.FILL);
+            cv.drawCircle(cx + 1.6f * u, cy - 2.2f * u, 1.5f * u, p);
+            cv.drawCircle(cx - 1.6f * u, cy + 2.2f * u, 1.5f * u, p);
+        }
+
         private void drawBt(Canvas cv, float w, float h) {
+            p.setAlpha(flag ? 255 : 110);
             float x0 = w / 2 - h * 0.25f, y0 = h * 0.05f, s = h * 0.9f, k = s * 0.5f;
             path.reset();
             path.moveTo(x0 + 0.05f * k, y0 + 0.30f * s);
