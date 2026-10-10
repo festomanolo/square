@@ -143,8 +143,11 @@ public final class DynamicWallpaper {
             File dir = activity.getExternalFilesDir("wallpaper");
             files = dir == null ? null : dir.listFiles();
             if (files != null) for (File x : files) if (isImage(x.getName())) names.add("f:" + x.getPath());
-            String[] assets = activity.getAssets().list("wallpaper");
-            if (assets != null) for (String n : assets) if (isImage(n)) names.add("a:wallpaper/" + n);
+            // 3) bundled images are only used when the user's folder is empty
+            if (names.isEmpty()) {
+                String[] assets = activity.getAssets().list("wallpaper");
+                if (assets != null) for (String n : assets) if (isImage(n)) names.add("a:wallpaper/" + n);
+            }
             if (names.isEmpty()) return null;
             String pick;
             do { pick = names.get(rnd.nextInt(names.size())); } while (names.size() > 1 && pick.equals(lastImage));
