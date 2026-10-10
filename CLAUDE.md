@@ -47,3 +47,4 @@ Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modi
 - **Injected modder code (LITEAPKS / 9MOD.COM), present in every shipped APK but never called** (no `invoke` of either entry point in the dex):
   - `Xpk8a` (`smali/Xpk8a*.smali`): GET `https://update.9mod.com/<pkg>.txt`, shows a "Update Available" dialog that can force-exit the app. `StartGame` is stubbed to `return-void` in the repo smali (f468fdd) but `Xpk8a$2` still contains the URL.
   - `īi/ïi/pk` (`pk.process(Context)`): "Update Found" popup, base URL `https://afmod.com/`, strings hidden as float arrays (char = float*4). Never invoked.
+  - Both would run in the **original** modded APK; if another phone got that APK (not ours), they can fire. Safe cleanup: delete `smali/Xpk8a*.smali` and `smali/īi/`.
