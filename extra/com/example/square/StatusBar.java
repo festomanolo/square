@@ -243,6 +243,57 @@ public final class StatusBar extends FrameLayout {
             p.setAlpha(255);
         }
 
+        private void drawBoost(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h / 2, r = h * 0.40f;
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.07f);
+            cv.drawCircle(cx, cy, r, p);
+            p.setStyle(Paint.Style.FILL);
+            float u = r / 5f;
+            path.reset();
+            path.moveTo(cx + 1.2f * u, cy - 3.4f * u);
+            path.lineTo(cx - 2.2f * u, cy + 0.4f * u);
+            path.lineTo(cx - 0.1f * u, cy + 0.4f * u);
+            path.lineTo(cx - 1.2f * u, cy + 3.4f * u);
+            path.lineTo(cx + 2.2f * u, cy - 0.6f * u);
+            path.lineTo(cx + 0.1f * u, cy - 0.6f * u);
+            path.close();
+            cv.drawPath(path, p);
+        }
+
+        private void drawVolume(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h / 2, u = h / 10f;
+            p.setStyle(Paint.Style.FILL);
+            path.reset();
+            path.moveTo(cx - 4 * u, cy - 1.6f * u);
+            path.lineTo(cx - 2 * u, cy - 1.6f * u);
+            path.lineTo(cx + 0.6f * u, cy - 3.6f * u);
+            path.lineTo(cx + 0.6f * u, cy + 3.6f * u);
+            path.lineTo(cx - 2 * u, cy + 1.6f * u);
+            path.lineTo(cx - 4 * u, cy + 1.6f * u);
+            path.close();
+            cv.drawPath(path, p);
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.07f);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            cv.drawArc(new RectF(cx - 1.6f * u, cy - 2.4f * u, cx + 3 * u, cy + 2.4f * u), -45, 90, false, p);
+            cv.drawArc(new RectF(cx - 1.6f * u, cy - 4 * u, cx + 4.6f * u, cy + 4 * u), -45, 90, false, p);
+        }
+
+        private void drawControl(Canvas cv, float w, float h) {
+            float cx = w / 2, cy = h / 2, u = h / 10f;
+            p.setStyle(Paint.Style.STROKE);
+            p.setStrokeWidth(h * 0.07f);
+            p.setStrokeCap(Paint.Cap.ROUND);
+            for (int i = 0; i < 2; i++) {
+                float y = cy + (i == 0 ? -2.2f : 2.2f) * u;
+                cv.drawLine(cx - 4 * u, y, cx + 4 * u, y, p);
+            }
+            p.setStyle(Paint.Style.FILL);
+            cv.drawCircle(cx + 1.6f * u, cy - 2.2f * u, 1.5f * u, p);
+            cv.drawCircle(cx - 1.6f * u, cy + 2.2f * u, 1.5f * u, p);
+        }
+
         private void drawBt(Canvas cv, float w, float h) {
             float x0 = w / 2 - h * 0.25f, y0 = h * 0.05f, s = h * 0.9f, k = s * 0.5f;
             path.reset();
