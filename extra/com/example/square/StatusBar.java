@@ -121,6 +121,12 @@ public final class StatusBar extends FrameLayout {
         addView(right, rp);
     }
 
+    private static void click(Icon i, final String pane, final String fallback) {
+        i.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { Mac.settings(v.getContext(), pane, fallback); }
+        });
+    }
+
     private static TextClock clock(Context c, String f12, String f24, int sp, float alpha) {
         TextClock t = new TextClock(c);
         t.setFormat12Hour(f12);
