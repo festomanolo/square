@@ -38,8 +38,33 @@ final class Shelf extends LinearLayout {
     private Shelf(Context c) {
         super(c);
         setOrientation(VERTICAL);
-        row("Streaming", STREAMING);
-        row("Apps", UTILITIES);
+        int gap = (int) Mac.dp(c, GAP_DP), tile = (int) Mac.dp(c, TILE_DP);
+        setMinimumWidth(tile * 4 + gap * 3);
+
+        LinearLayout top = new LinearLayout(c);
+        top.setOrientation(HORIZONTAL);
+        top.addView(glass(c, clock(c, "h:mm", "H:mm", 38, true)), new LayoutParams(tile * 2 + gap, tile));
+        LayoutParams dp = new LayoutParams(tile * 2 + gap, tile);
+        dp.leftMargin = gap;
+        top.addView(glass(c, clock(c, "EEEE\nMMMM d", "EEEE\nMMMM d", 20, false)), dp);
+        addView(top);
+
+        List<Mac.App> apps = new ArrayList<>();
+        for (String p : STREAMING) {
+            Mac.App a = Mac.find(c, p);
+            if (a != null) apps.add(a);
+        }
+        LinearLayout row = null;
+        for (int i = 0; i < apps.size(); i++) {
+            if (i % PER_ROW == 0) {
+                row = new LinearLayout(c);
+                row.setOrientation(HORIZONTAL);
+                LayoutParams rp = new LayoutParams(-2, -2);
+                rp.topMargin = gap;
+                addView(row, rp);
+            }
+            row.addView(tile(c, apps.get(i), tile), cell(tile, i % PER_ROW == 0 ? 0 : gap));
+        }
     }
 
     private void row(String title, String[] pkgs) {
