@@ -169,8 +169,8 @@ public final class StatusBar extends FrameLayout {
             }
         } catch (Throwable ignored) {
         }
-        wifi.setVisibility(wifiOn ? VISIBLE : GONE);
-        wifi.value = Math.max(0, Math.min(3, level));
+        wifi.setVisibility(eth ? GONE : VISIBLE);
+        wifi.value = wifiOn ? Math.max(0, Math.min(3, level)) : 0;
         ethernet.setVisibility(eth ? VISIBLE : GONE);
 
         boolean btOn = false;
