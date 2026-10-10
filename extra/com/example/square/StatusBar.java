@@ -295,6 +295,7 @@ public final class StatusBar extends FrameLayout {
         }
 
         private void drawBt(Canvas cv, float w, float h) {
+            p.setAlpha(flag ? 255 : 110);
             float x0 = w / 2 - h * 0.25f, y0 = h * 0.05f, s = h * 0.9f, k = s * 0.5f;
             path.reset();
             path.moveTo(x0 + 0.05f * k, y0 + 0.30f * s);
