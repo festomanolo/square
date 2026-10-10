@@ -36,7 +36,7 @@ final class Mac {
         return g;
     }
 
-    /** Remote-friendly: focusable, slight scale and a light ring while focused. No animation. */
+    /** Remote-friendly: focusable with a light ring while focused. No scaling or reordering, no animation. */
     static void focusable(final View v, final float radiusPx, final int normal, final int focused) {
         v.setFocusable(true);
         v.setClickable(true);
