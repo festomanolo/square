@@ -76,7 +76,8 @@ final class Launchpad extends FrameLayout {
         grid = new GridView(c);
         grid.setNumColumns(7);
         grid.setVerticalSpacing((int) Mac.dp(c, 14));
-        grid.setSelector(new android.graphics.drawable.ColorDrawable(0));
+        grid.setSelector(Mac.box(0x55FFFFFF, Mac.dp(c, 14), 0, 0));
+        grid.setHorizontalSpacing((int) Mac.dp(c, 6));
         grid.setAdapter(new Adapter());
         grid.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
             @Override public void onItemClick(android.widget.AdapterView<?> p, View v, int pos, long id) {
