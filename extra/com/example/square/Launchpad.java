@@ -160,6 +160,7 @@ final class Launchpad extends FrameLayout {
         } catch (Throwable ignored) {
         }
         if (getParent() instanceof ViewGroup) ((ViewGroup) getParent()).removeView(this);
+        open = null;
     }
 
     private void filter(String s) {
