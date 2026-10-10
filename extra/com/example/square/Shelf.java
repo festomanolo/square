@@ -22,12 +22,9 @@ final class Shelf extends LinearLayout {
         "com.spotify.tv.android", "tv.twitch.android.app", "org.xbmc.kodi", "com.google.android.youtube.tvmusic",
         "com.google.android.youtube", "com.android.vending",
     };
-    static final String[] UTILITIES = {
-        Mac.SETTINGS_PKG, "com.hy.projection", "com.softwinner.TvdFileManager", "com.estrongs.android.pop",
-        "com.softwinner.TvdVideo", "com.softwinner.music", "com.android.gallery3d",
-        "com.softwinner.miracastReceiver",
-    };
-    private static final int PER_ROW = 6;
+    private static final int PER_ROW = 7, TILE_DP = 104, GAP_DP = 14;
+
+    static Shelf instance;
 
     static void install(Activity a) {
         ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
