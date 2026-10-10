@@ -179,7 +179,7 @@ public final class StatusBar extends FrameLayout {
             btOn = ba != null && ba.isEnabled();
         } catch (Throwable ignored) {
         }
-        bt.setVisibility(btOn ? VISIBLE : GONE);
+        bt.flag = btOn;
 
         // Mains-only devices (no battery, e.g. projector/TV) are always "powered".
         int pct = 100;
