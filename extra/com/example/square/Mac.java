@@ -44,9 +44,6 @@ final class Mac {
         v.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override public void onFocusChange(View x, boolean has) {
                 x.setBackground(has ? box(focused, radiusPx, 0xFFFFFFFF, 3) : box(normal, radiusPx, 0, 0));
-                x.setScaleX(has ? 1.08f : 1f);
-                x.setScaleY(has ? 1.08f : 1f);
-                if (has && x.getParent() != null) x.bringToFront();
             }
         });
     }
