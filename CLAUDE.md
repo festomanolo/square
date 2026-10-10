@@ -45,3 +45,4 @@ Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modi
 
 - **No hidden exfiltration found.** No analytics/ad/tracker SDKs (no Firebase Analytics, Crashlytics, AppsFlyer, ad networks). `extra/` (status bar, dynamic wallpaper) makes no network calls.
 - **Injected modder code (LITEAPKS / 9MOD.COM), present in every shipped APK but never called** (no `invoke` of either entry point in the dex):
+  - `Xpk8a` (`smali/Xpk8a*.smali`): GET `https://update.9mod.com/<pkg>.txt`, shows a "Update Available" dialog that can force-exit the app. `StartGame` is stubbed to `return-void` in the repo smali (f468fdd) but `Xpk8a$2` still contains the URL.
