@@ -27,6 +27,7 @@ final class Dock extends LinearLayout {
     };
     private static final int ICON_DP = 44;
 
+    static Dock instance;
     private final Activity activity;
 
     static void install(Activity a) {
