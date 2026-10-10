@@ -102,8 +102,8 @@ public final class StatusBar extends FrameLayout {
         Icon[] icons = {boost, ethernet, bt, wifi, volume, control, battery};
         for (Icon i : icons) {
             LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(
-                    (int) ((i.type == BATTERY ? 40 : 30) * d), (int) (30 * d));
-            ip.leftMargin = (int) (14 * d);
+                    (int) ((i.type == BATTERY ? 38 : 28) * d), (int) (26 * d));
+            ip.leftMargin = (int) (4 * d);
             right.addView(i, ip);
         }
         LayoutParams rp = new LayoutParams(-2, -1, Gravity.END | Gravity.CENTER_VERTICAL);
