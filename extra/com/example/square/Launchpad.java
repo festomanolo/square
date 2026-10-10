@@ -32,6 +32,9 @@ final class Launchpad extends FrameLayout {
     private final EditText query;
     private final GridView grid;
     private final Dock dock;
+    private static Launchpad open;
+
+    static boolean isOpen() { return open != null && open.getParent() != null; }
 
     static Launchpad show(Activity a, Dock dock, boolean focusSearch) {
         ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
