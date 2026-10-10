@@ -50,7 +50,7 @@ final class Launchpad extends FrameLayout {
         this.dock = dock;
         all = Mac.allApps(c);
         shown.addAll(all);
-        setBackgroundColor(0xF2101216);
+        setBackgroundColor(0xFF101216);
         setClickable(true);
 
         LinearLayout col = new LinearLayout(c);
