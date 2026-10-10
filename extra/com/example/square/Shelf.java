@@ -67,12 +67,52 @@ final class Shelf extends LinearLayout {
         }
     }
 
-    private void row(String title, String[] pkgs) {
-        final Context c = getContext();
-        List<Mac.App> apps = new ArrayList<>();
-        for (String p : pkgs) {
-            Mac.App a = Mac.find(c, p);
-            if (a != null && apps.size() < PER_ROW) apps.add(a);
+    private static LayoutParams cell(int tile, int left) {
+        LayoutParams p = new LayoutParams(tile, tile);
+        p.leftMargin = left;
+        return p;
+    }
+
+    private static View glass(Context c, View inner) {
+        FrameLayout f = new FrameLayout(c);
+        f.setBackground(Mac.box(0xAA000000, Mac.dp(c, 22), 0x22FFFFFF, 2));
+        f.addView(inner, new FrameLayout.LayoutParams(-1, -1));
+        return f;
+    }
+
+    private static TextClock clock(Context c, String f12, String f24, int sp, boolean big) {
+        TextClock t = new TextClock(c);
+        t.setFormat12Hour(f12);
+        t.setFormat24Hour(f24);
+        t.setTextColor(0xFFFFFFFF);
+        t.setTextSize(sp);
+        t.setGravity(Gravity.CENTER);
+        if (big) t.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+        return t;
+    }
+
+    private static View tile(final Context c, final Mac.App a, int size) {
+        FrameLayout f = new FrameLayout(c);
+        ImageView img = new ImageView(c);
+        img.setImageDrawable(Mac.icon(c, a));
+        int is = size * 3 / 5;
+        f.addView(img, new FrameLayout.LayoutParams(is, is, Gravity.CENTER));
+        Mac.focusable(f, Mac.dp(c, 22), 0xAA000000, 0xDD303038);
+        f.setContentDescription(a.label);
+        f.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { Mac.launch(c, a.pkg); }
+        });
+        return f;
+    }
+
+    /** Focusable tiles, one list per visual row (for the remote navigator). */
+    List<List<View>> rows() {
+        List<List<View>> out = new ArrayList<>();
+        for (int i = 1; i < getChildCount(); i++) {
+            ViewGroup r = (ViewGroup) getChildAt(i);
+            List<View> l = new ArrayList<>();
+            for (int j = 0; j < r.getChildCount(); j++) if (r.getChildAt(j).isFocusable()) l.add(r.getChildAt(j));
+            if (!l.isEmpty()) out.add(l);
         }
         if (apps.isEmpty()) return;
         TextView t = new TextView(c);
