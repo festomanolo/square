@@ -106,6 +106,16 @@ public final class StatusBar extends FrameLayout {
             ip.leftMargin = (int) (4 * d);
             right.addView(i, ip);
         }
+        TextView clk = clock(c, "EEE MMM d   h:mm a", "EEE MMM d   H:mm", 14, 1f);
+        clk.setGravity(Gravity.CENTER);
+        clk.setPadding((int) (10 * d), 0, (int) (10 * d), 0);
+        Mac.focusable(clk, 8 * d, 0, 0x44FFFFFF);
+        clk.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { Mac.settings(c, "datetime", "android.settings.DATE_SETTINGS"); }
+        });
+        LinearLayout.LayoutParams cp = new LinearLayout.LayoutParams(-2, (int) (26 * d));
+        cp.leftMargin = (int) (6 * d);
+        right.addView(clk, cp);
         LayoutParams rp = new LayoutParams(-2, -1, Gravity.END | Gravity.CENTER_VERTICAL);
         rp.rightMargin = pad;
         addView(right, rp);
