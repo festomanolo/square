@@ -42,7 +42,7 @@ public final class StatusBar extends FrameLayout {
     public static void install(Activity a) {
         try {
             float d = a.getResources().getDisplayMetrics().density;
-            int h = (int) (46 * d);
+            int h = (int) (34 * d);
             ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
             StatusBar bar = new StatusBar(a, d);
             decor.addView(bar, new FrameLayout.LayoutParams(-1, h, Gravity.TOP));
