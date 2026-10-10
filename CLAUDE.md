@@ -44,3 +44,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modified.apk` and `Square-landscape-tv.apk`. Use `LC_ALL=C` with awk/grep on dexdump output (non-UTF8 strings).
 
 - **No hidden exfiltration found.** No analytics/ad/tracker SDKs (no Firebase Analytics, Crashlytics, AppsFlyer, ad networks). `extra/` (status bar, dynamic wallpaper) makes no network calls.
+- **Injected modder code (LITEAPKS / 9MOD.COM), present in every shipped APK but never called** (no `invoke` of either entry point in the dex):
