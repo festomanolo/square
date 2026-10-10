@@ -219,6 +219,9 @@ public final class StatusBar extends FrameLayout {
                 case WIFI: drawWifi(cv, w, h); break;
                 case BT: drawBt(cv, w, h); break;
                 case BATTERY: drawBattery(cv, w, h); break;
+                case BOOST: drawBoost(cv, w, h); break;
+                case VOLUME: drawVolume(cv, w, h); break;
+                case CONTROL: drawControl(cv, w, h); break;
                 default: drawEthernet(cv, w, h); break;
             }
         }
