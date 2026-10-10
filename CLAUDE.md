@@ -40,3 +40,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 - `assets/defaults/prefs` now has `tabletMode=true`, `oneHandMode=false`; with the backup's phone values the layout was a 360px column in the middle of the screen. Note: the repo `smali/`/`AndroidManifest.xml` still say `com.example.square`; the rename was done on the decoded APK only.
 
 ## Network / privacy audit (2026-10-10)
+
