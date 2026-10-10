@@ -56,3 +56,7 @@ Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modi
 
 - Deleted `smali/Xpk8a*.smali` and `smali/īi/` (dead 9mod/afmod code) and removed `android.permission.INTERNET` from `AndroidManifest.xml`. `Square-landscape-tv.apk` was rebuilt by decoding the existing TV APK, applying those two edits, `apktool b`, zipalign, debug-sign (verified). Result: no network at all, so RSS news tiles and Play links no longer load. To restore network, re-add the `INTERNET` uses-permission.
 - Not changed: accessibility service, notification listener, `QUERY_ALL_PACKAGES` (the launcher needs them); status bar / wallpaper timers.
+
+## MANOLO overlay UI (2026-10-10)
+
+`extra/` now also holds `Mac` (shared look/helpers), `Dock`, `Shelf`, `Launchpad`, `DroidBoost`; `StatusBar` became a clickable macOS-style menu bar (MANOLO, DroidBoost, network/BT/sound/settings icons, clock) and `DynamicWallpaper` reads `/sdcard/Wallpaper`. Build with `SCRATCH=<dir> tools/build_manolo.sh` -> `$SCRATCH/Square-manolo-tv.apk` (decodes `Square-landscape-tv.apk` with `-s`, adds storage/KILL_BACKGROUND_PROCESSES permissions, copies `assets/defaults`, swaps `classes2.dex`, signs with the debug key). `assets/defaults/layout/_initial` now only has the date and clock tiles. Settings icons call `com.manolo.settings` (`pane` extra) and fall back to `android.settings.*`. Not committed.

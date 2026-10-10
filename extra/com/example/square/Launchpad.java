@@ -32,10 +32,14 @@ final class Launchpad extends FrameLayout {
     private final EditText query;
     private final GridView grid;
     private final Dock dock;
+    private static Launchpad open;
+
+    static boolean isOpen() { return open != null && open.getParent() != null; }
 
     static Launchpad show(Activity a, Dock dock, boolean focusSearch) {
         ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
         Launchpad l = new Launchpad(a, dock);
+        open = l;
         decor.addView(l, new FrameLayout.LayoutParams(-1, -1));
         l.open(focusSearch);
         return l;
@@ -46,7 +50,7 @@ final class Launchpad extends FrameLayout {
         this.dock = dock;
         all = Mac.allApps(c);
         shown.addAll(all);
-        setBackgroundColor(0xF2101216);
+        setBackgroundColor(0xFF101216);
         setClickable(true);
 
         LinearLayout col = new LinearLayout(c);
@@ -72,7 +76,8 @@ final class Launchpad extends FrameLayout {
         grid = new GridView(c);
         grid.setNumColumns(7);
         grid.setVerticalSpacing((int) Mac.dp(c, 14));
-        grid.setSelector(new android.graphics.drawable.ColorDrawable(0));
+        grid.setSelector(Mac.box(0x55FFFFFF, Mac.dp(c, 14), 0, 0));
+        grid.setHorizontalSpacing((int) Mac.dp(c, 6));
         grid.setAdapter(new Adapter());
         grid.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
             @Override public void onItemClick(android.widget.AdapterView<?> p, View v, int pos, long id) {
@@ -155,6 +160,7 @@ final class Launchpad extends FrameLayout {
         } catch (Throwable ignored) {
         }
         if (getParent() instanceof ViewGroup) ((ViewGroup) getParent()).removeView(this);
+        open = null;
     }
 
     private void filter(String s) {

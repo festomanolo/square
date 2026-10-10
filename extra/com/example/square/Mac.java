@@ -36,7 +36,7 @@ final class Mac {
         return g;
     }
 
-    /** Remote-friendly: focusable, slight scale and a light ring while focused. No animation. */
+    /** Remote-friendly: focusable with a light ring while focused. No scaling or reordering, no animation. */
     static void focusable(final View v, final float radiusPx, final int normal, final int focused) {
         v.setFocusable(true);
         v.setClickable(true);
@@ -44,9 +44,6 @@ final class Mac {
         v.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override public void onFocusChange(View x, boolean has) {
                 x.setBackground(has ? box(focused, radiusPx, 0xFFFFFFFF, 3) : box(normal, radiusPx, 0, 0));
-                x.setScaleX(has ? 1.08f : 1f);
-                x.setScaleY(has ? 1.08f : 1f);
-                if (has && x.getParent() != null) x.bringToFront();
             }
         });
     }
@@ -78,7 +75,8 @@ final class Mac {
             Intent i = new Intent(Intent.ACTION_MAIN).addCategory(cat);
             for (ResolveInfo r : pm.queryIntentActivities(i, 0)) {
                 String p = r.activityInfo.packageName;
-                if (p.equals(c.getPackageName()) || !seen.add(p)) continue;
+                if (p.equals(c.getPackageName()) || p.equals("com.ss.squarehome2") || p.equals("com.android.traceur")
+                        || p.equals("com.manolo.settingsdev") || !seen.add(p)) continue;
                 App a = new App();
                 a.pkg = p;
                 a.cls = r.activityInfo.name;

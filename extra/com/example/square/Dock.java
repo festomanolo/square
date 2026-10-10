@@ -27,11 +27,13 @@ final class Dock extends LinearLayout {
     };
     private static final int ICON_DP = 44;
 
+    static Dock instance;
     private final Activity activity;
 
     static void install(Activity a) {
         ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
         Dock d = new Dock(a);
+        instance = d;
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(-2, -2, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
         lp.bottomMargin = (int) Mac.dp(a, 10);
         decor.addView(d, lp);
