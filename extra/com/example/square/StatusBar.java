@@ -82,6 +82,7 @@ public final class StatusBar extends FrameLayout {
         LinearLayout right = new LinearLayout(c);
         right.setOrientation(LinearLayout.HORIZONTAL);
         right.setGravity(Gravity.CENTER_VERTICAL);
+        boost = new Icon(c, BOOST);
         ethernet = new Icon(c, ETHERNET);
         bt = new Icon(c, BT);
         wifi = new Icon(c, WIFI);
