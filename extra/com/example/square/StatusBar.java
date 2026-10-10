@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 /** macOS-style menu bar: MANOLO + clock left; DroidBoost, network, Bluetooth, sound, settings, power right. Every item is clickable. */
 public final class StatusBar extends FrameLayout {
+    static StatusBar instance;
     private static final int WIFI = 0, BT = 1, BATTERY = 2, ETHERNET = 3, BOOST = 4, VOLUME = 5, CONTROL = 6;
 
     private final Handler handler = new Handler(Looper.getMainLooper());
