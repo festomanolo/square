@@ -114,44 +114,6 @@ final class Shelf extends LinearLayout {
             for (int j = 0; j < r.getChildCount(); j++) if (r.getChildAt(j).isFocusable()) l.add(r.getChildAt(j));
             if (!l.isEmpty()) out.add(l);
         }
-        if (apps.isEmpty()) return;
-        TextView t = new TextView(c);
-        t.setText(title);
-        t.setTextColor(0xCCFFFFFF);
-        t.setTextSize(14);
-        t.setTypeface(Typeface.DEFAULT_BOLD);
-        t.setPadding((int) Mac.dp(c, 8), (int) Mac.dp(c, 10), 0, (int) Mac.dp(c, 4));
-        addView(t);
-        LinearLayout r = new LinearLayout(c);
-        r.setOrientation(HORIZONTAL);
-        for (final Mac.App a : apps) {
-            LinearLayout card = new LinearLayout(c);
-            card.setOrientation(VERTICAL);
-            card.setGravity(Gravity.CENTER);
-            ImageView img = new ImageView(c);
-            card.addView(img, new LayoutParams((int) Mac.dp(c, 44), (int) Mac.dp(c, 44)));
-            img.setImageDrawable(Mac.icon(c, a));
-            TextView n = new TextView(c);
-            n.setText(a.label);
-            n.setTextColor(Color.WHITE);
-            n.setTextSize(12);
-            n.setSingleLine(true);
-            n.setEllipsize(android.text.TextUtils.TruncateAt.END);
-            n.setGravity(Gravity.CENTER);
-            LayoutParams np = new LayoutParams(-1, -2);
-            np.topMargin = (int) Mac.dp(c, 4);
-            card.addView(n, np);
-            int pd = (int) Mac.dp(c, 8);
-            card.setPadding(pd, pd, pd, pd);
-            Mac.focusable(card, Mac.dp(c, 16), 0x66000000, 0x99222228);
-            card.setOnClickListener(new OnClickListener() {
-                @Override public void onClick(View v) { Mac.launch(c, a.pkg); }
-            });
-            LayoutParams cp = new LayoutParams((int) Mac.dp(c, 140), (int) Mac.dp(c, 86));
-            cp.leftMargin = (int) Mac.dp(c, 4);
-            cp.rightMargin = (int) Mac.dp(c, 4);
-            r.addView(card, cp);
-        }
-        addView(r);
+        return out;
     }
 }
