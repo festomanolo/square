@@ -54,7 +54,7 @@ public final class StatusBar extends FrameLayout {
         }
     }
 
-    private StatusBar(Context c, float d) {
+    private StatusBar(final Context c, float d) {
         super(c);
         setBackgroundColor(0xB0000000);
         int pad = (int) (28 * d);
