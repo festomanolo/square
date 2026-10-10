@@ -46,6 +46,7 @@ public final class StatusBar extends FrameLayout {
             int h = (int) (34 * d);
             ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
             StatusBar bar = new StatusBar(a, d);
+            instance = bar;
             decor.addView(bar, new FrameLayout.LayoutParams(-1, h, Gravity.TOP));
             a.findViewById(android.R.id.content).setPadding(0, h, 0, 0);
             Shelf.install(a);
