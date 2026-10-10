@@ -141,7 +141,7 @@ public final class DynamicWallpaper {
             if (files != null) for (File x : files) if (isImage(x.getName())) names.add("f:" + x.getPath());
             // 2) legacy per-app folder
             File dir = activity.getExternalFilesDir("wallpaper");
-            File[] files = dir == null ? null : dir.listFiles();
+            files = dir == null ? null : dir.listFiles();
             if (files != null) for (File x : files) if (isImage(x.getName())) names.add("f:" + x.getPath());
             String[] assets = activity.getAssets().list("wallpaper");
             if (assets != null) for (String n : assets) if (isImage(n)) names.add("a:wallpaper/" + n);
