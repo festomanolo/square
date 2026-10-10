@@ -31,7 +31,7 @@ public final class StatusBar extends FrameLayout {
     private static final int WIFI = 0, BT = 1, BATTERY = 2, ETHERNET = 3, BOOST = 4, VOLUME = 5, CONTROL = 6;
 
     private final Handler handler = new Handler(Looper.getMainLooper());
-    private final Icon wifi, bt, battery, ethernet;
+    private final Icon wifi, bt, battery, ethernet, boost, volume, control;
     private final Runnable tick = new Runnable() {
         @Override public void run() {
             refresh();
