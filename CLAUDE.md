@@ -50,3 +50,4 @@ Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modi
   - Both would run in the **original** modded APK; if another phone got that APK (not ours), they can fire. Safe cleanup: delete `smali/Xpk8a*.smali` and `smali/īi/`.
 - **Real network users in the app:** RSS/news live tiles (`ky0`, feeds: BBC, CBC, Spiegel, Le Monde...), icon-pack Play Store link, and `f4` = Google datatransport CCT backend (Google library telemetry POSTs, from Play libs).
 - **Heavy-but-legit system hooks** (likelier cause of a sluggish phone than any beacon): `MyAccessibilityService` (windowStateChanged), `NotiListener`, `QUERY_ALL_PACKAGES`, `WRITE_SETTINGS`, `READ_CONTACTS/CALENDAR`, device admin receiver. Our additions also run timers: status bar refresh every 2s, dynamic wallpaper every 60s (bitmap decode).
+- Not verified: runtime traffic. To confirm on a device: `adb shell dumpsys netstats detail | grep -A3 <uid>` or a PCAPdroid/mitmproxy capture while online.
