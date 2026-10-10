@@ -89,7 +89,17 @@ public final class StatusBar extends FrameLayout {
         volume = new Icon(c, VOLUME);
         control = new Icon(c, CONTROL);
         battery = new Icon(c, BATTERY);
-        Icon[] icons = {ethernet, bt, wifi, battery};
+        boost.setContentDescription("DroidBoost");
+        boost.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View v) { DroidBoost.run(c); }
+        });
+        click(ethernet, "network", "android.settings.WIFI_SETTINGS");
+        click(wifi, "network", "android.settings.WIFI_SETTINGS");
+        click(bt, "bluetooth", "android.settings.BLUETOOTH_SETTINGS");
+        click(volume, "sound", "android.settings.SOUND_SETTINGS");
+        click(control, "general", "android.settings.SETTINGS");
+        click(battery, "about", "android.settings.DEVICE_INFO_SETTINGS");
+        Icon[] icons = {boost, ethernet, bt, wifi, volume, control, battery};
         for (Icon i : icons) {
             LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(
                     (int) ((i.type == BATTERY ? 40 : 30) * d), (int) (30 * d));
