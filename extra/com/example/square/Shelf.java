@@ -13,7 +13,7 @@ import android.widget.TextClock;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Home-page shelf: a "Streaming" row of installed streaming apps and an "Apps" row of utilities. */
+/** Home page: a clock and date tile, then icon-only tiles (no labels, no categories) for the installed streaming apps. */
 final class Shelf extends LinearLayout {
     static final String[] STREAMING = {
         "com.google.android.youtube.tv", "com.netflix.mediaclient", "com.amazon.amazonvideo.livingroom",
