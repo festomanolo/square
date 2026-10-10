@@ -75,7 +75,8 @@ final class Mac {
             Intent i = new Intent(Intent.ACTION_MAIN).addCategory(cat);
             for (ResolveInfo r : pm.queryIntentActivities(i, 0)) {
                 String p = r.activityInfo.packageName;
-                if (p.equals(c.getPackageName()) || !seen.add(p)) continue;
+                if (p.equals(c.getPackageName()) || p.equals("com.ss.squarehome2") || p.equals("com.android.traceur")
+                        || p.equals("com.manolo.settingsdev") || !seen.add(p)) continue;
                 App a = new App();
                 a.pkg = p;
                 a.cls = r.activityInfo.name;
