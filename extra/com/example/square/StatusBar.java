@@ -86,6 +86,8 @@ public final class StatusBar extends FrameLayout {
         ethernet = new Icon(c, ETHERNET);
         bt = new Icon(c, BT);
         wifi = new Icon(c, WIFI);
+        volume = new Icon(c, VOLUME);
+        control = new Icon(c, CONTROL);
         battery = new Icon(c, BATTERY);
         Icon[] icons = {ethernet, bt, wifi, battery};
         for (Icon i : icons) {
