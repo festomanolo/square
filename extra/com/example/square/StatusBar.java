@@ -196,7 +196,7 @@ public final class StatusBar extends FrameLayout {
         }
         battery.value = pct;
         battery.flag = charging;
-        for (Icon i : new Icon[]{wifi, bt, battery, ethernet}) i.invalidate();
+        for (Icon i : new Icon[]{wifi, bt, battery, ethernet, boost, volume, control}) i.invalidate();
     }
 
     private static final class Icon extends View {
