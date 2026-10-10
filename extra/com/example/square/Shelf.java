@@ -29,9 +29,10 @@ final class Shelf extends LinearLayout {
     static void install(Activity a) {
         ViewGroup decor = (ViewGroup) a.getWindow().getDecorView();
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(-2, -2, Gravity.TOP | Gravity.START);
-        lp.topMargin = (int) Mac.dp(a, 196);
-        lp.leftMargin = (int) Mac.dp(a, 14);
-        decor.addView(new Shelf(a), lp);
+        lp.topMargin = (int) Mac.dp(a, 34 + 22);
+        lp.leftMargin = (int) Mac.dp(a, 30);
+        instance = new Shelf(a);
+        decor.addView(instance, lp);
     }
 
     private Shelf(Context c) {
