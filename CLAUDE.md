@@ -42,3 +42,4 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 ## Network / privacy audit (2026-10-10)
 
 Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modified.apk` and `Square-landscape-tv.apk`. Use `LC_ALL=C` with awk/grep on dexdump output (non-UTF8 strings).
+
