@@ -51,3 +51,8 @@ Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modi
 - **Real network users in the app:** RSS/news live tiles (`ky0`, feeds: BBC, CBC, Spiegel, Le Monde...), icon-pack Play Store link, and `f4` = Google datatransport CCT backend (Google library telemetry POSTs, from Play libs).
 - **Heavy-but-legit system hooks** (likelier cause of a sluggish phone than any beacon): `MyAccessibilityService` (windowStateChanged), `NotiListener`, `QUERY_ALL_PACKAGES`, `WRITE_SETTINGS`, `READ_CONTACTS/CALENDAR`, device admin receiver. Our additions also run timers: status bar refresh every 2s, dynamic wallpaper every 60s (bitmap decode).
 - Not verified: runtime traffic. To confirm on a device: `adb shell dumpsys netstats detail | grep -A3 <uid>` or a PCAPdroid/mitmproxy capture while online.
+
+### Cleanup applied (2026-10-10)
+
+- Deleted `smali/Xpk8a*.smali` and `smali/īi/` (dead 9mod/afmod code) and removed `android.permission.INTERNET` from `AndroidManifest.xml`. `Square-landscape-tv.apk` was rebuilt by decoding the existing TV APK, applying those two edits, `apktool b`, zipalign, debug-sign (verified). Result: no network at all, so RSS news tiles and Play links no longer load. To restore network, re-add the `INTERNET` uses-permission.
+- Not changed: accessibility service, notification listener, `QUERY_ALL_PACKAGES` (the launcher needs them); status bar / wallpaper timers.
