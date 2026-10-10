@@ -26,7 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.TextClock;
 import android.widget.TextView;
 
-/** iOS-style status bar overlay: time/date left; ethernet, Bluetooth, 3-level Wi-Fi and power icons right. */
+/** macOS-style menu bar: MANOLO + clock left; DroidBoost, network, Bluetooth, sound, settings, power right. Every item is clickable. */
 public final class StatusBar extends FrameLayout {
     private static final int WIFI = 0, BT = 1, BATTERY = 2, ETHERNET = 3;
 
