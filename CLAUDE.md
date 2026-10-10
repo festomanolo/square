@@ -38,3 +38,16 @@ apktool 2.10 writes `.locals N` (not `.registers`) in decoded smali, and puts at
 - The projector firmware ships `com.example.square` as a **system app** (`/system/app/SquareHome`, other signing key), so debug-signed updates are rejected and `pm uninstall` fails. `Square-landscape-tv.apk` is the same app with manifest package `com.example.squaretv` (also the custom permission and provider authorities; classes keep `com.example.square.*`). Install: `adb install Square-landscape-tv.apk`, launch `am start -n com.example.squaretv/com.example.square.MainActivity`.
 - Make it the Home app: `adb shell cmd package set-home-activity com.example.squaretv/com.example.square.MainActivity` (otherwise Home opens the original portrait `com.ss.squarehome2`).
 - `assets/defaults/prefs` now has `tabletMode=true`, `oneHandMode=false`; with the backup's phone values the layout was a 360px column in the middle of the screen. Note: the repo `smali/`/`AndroidManifest.xml` still say `com.example.square`; the rename was done on the decoded APK only.
+
+## Network / privacy audit (2026-10-10)
+
+Scanned manifest, smali, decompiled `sources/`, and `dexdump -d` of `Square-modified.apk` and `Square-landscape-tv.apk`. Use `LC_ALL=C` with awk/grep on dexdump output (non-UTF8 strings).
+
+- **No hidden exfiltration found.** No analytics/ad/tracker SDKs (no Firebase Analytics, Crashlytics, AppsFlyer, ad networks). `extra/` (status bar, dynamic wallpaper) makes no network calls.
+- **Injected modder code (LITEAPKS / 9MOD.COM), present in every shipped APK but never called** (no `invoke` of either entry point in the dex):
+  - `Xpk8a` (`smali/Xpk8a*.smali`): GET `https://update.9mod.com/<pkg>.txt`, shows a "Update Available" dialog that can force-exit the app. `StartGame` is stubbed to `return-void` in the repo smali (f468fdd) but `Xpk8a$2` still contains the URL.
+  - `īi/ïi/pk` (`pk.process(Context)`): "Update Found" popup, base URL `https://afmod.com/`, strings hidden as float arrays (char = float*4). Never invoked.
+  - Both would run in the **original** modded APK; if another phone got that APK (not ours), they can fire. Safe cleanup: delete `smali/Xpk8a*.smali` and `smali/īi/`.
+- **Real network users in the app:** RSS/news live tiles (`ky0`, feeds: BBC, CBC, Spiegel, Le Monde...), icon-pack Play Store link, and `f4` = Google datatransport CCT backend (Google library telemetry POSTs, from Play libs).
+- **Heavy-but-legit system hooks** (likelier cause of a sluggish phone than any beacon): `MyAccessibilityService` (windowStateChanged), `NotiListener`, `QUERY_ALL_PACKAGES`, `WRITE_SETTINGS`, `READ_CONTACTS/CALENDAR`, device admin receiver. Our additions also run timers: status bar refresh every 2s, dynamic wallpaper every 60s (bitmap decode).
+- Not verified: runtime traffic. To confirm on a device: `adb shell dumpsys netstats detail | grep -A3 <uid>` or a PCAPdroid/mitmproxy capture while online.
